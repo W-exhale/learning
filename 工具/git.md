@@ -157,6 +157,10 @@ Warning: Permanently added 'github.com' (RSA) to the list of known hosts.
 >这个警告只会出现一次，后面的操作就不会有任何警告了。
 如果你实在担心有人冒充GitHub服务器，输入`yes`前可以对照[GitHub的RSA Key的指纹信息](https://help.github.com/articles/what-are-github-s-ssh-key-fingerprints/)是否与SSH连接给出的一致。
 
+- `git remote set-url origin git@github.com:W-exhale/learning.git`：修改
+- `git remote -v`：查看当前关联
+
+
 ### 删除远程库和本地的绑定关系
 - `git remote rm <name>`
 - 最好先用`git remote -v`查看远程库信息
@@ -174,6 +178,10 @@ Warning: Permanently added 'github.com' (RSA) to the list of known hosts.
 - 使用`https`除了速度慢以外，还有个最大的麻烦是每次推送都必须输入口令，但是在某些只开放`http`端口的公司内部就无法使用`ssh`协议而只能用`https`。
 
 - 更新最新的代码，`git pull`（假如是在gitee上上传文件更改，在vs code端使用这个命令更新）
+
+### 推送
+
+- `git push -u origin main`
 
 ## 分支管理
 分支类似平行宇宙，当你正在电脑前努力学习Git的时候，另一个你正在另一个平行宇宙里努力学习SVN。两个平行宇宙互不干扰，不过，在某个时间点，两个平行宇宙合并了，结果，你既学会了Git又学会了SVN！
