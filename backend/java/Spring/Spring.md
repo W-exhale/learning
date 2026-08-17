@@ -1,0 +1,223 @@
+## 总
+- 控制反转，Inversion of Control
+	- 早期
+		- `OrderService orderService = new OrderService();`
+		- 对象由自己创建，类和类之间强耦合，改实现很痛苦
+	- 使用Sring（下面只是其中一种方式）
+		- 只需要说一句“我需要一个OrderService”，对象的创建、生命周期、依赖关系都交给Spring容器（IOC Container）
+		- 控制权从程序员-->Spring
+		```java
+		@Autowired
+		private OrderService orderService;
+		```
+	- DI注入（用于实现IoC）
+		- Dependdency Injection，依赖注入
+		- Spring在合适的时机将对象注入到类中
+		- 注入方式
+			- 构造器注入
+			- 属性注入（@Autowired）
+			- Setter注入
+- 面向切面的编程（AOP，Aspect-oriented programming）
+	- 将与业务无关，但是到处要用的代码抽出来
+	- 常见场景
+		- 日志
+		- 事务
+		- 权限控制
+		- 性能统计
+	- 如果不用
+		```java
+		log();
+		doBusiness();
+		log();
+		```
+	- 用
+		- `doBusiness();`
+		- 日志和事务自动写入
+
+- Spring MVC
+	- 核心
+		- Controller
+		- 请求映射（URL-->方法）
+		- 参数绑定
+		- 返回JSON/页面
+	- 大部分东西都需要手动配置
+
+- Spring Boot
+	- 约定优于配置，有默认方案
+	- 自动配置
+		- 假如引用了`spring-boot-starter-web`
+		- 自动配Spring MVC、Tomcat、Jackson、JSON解析、默认异常处理
+	- 微服务友好
+		- 内嵌Tomcat
+		- 天然适合Docker
+		- Spring Cloud基于Boot构建
+
+
+## Spring Boot常用功能
+### Starter依赖管理
+- `spring-boot-starter-web`
+	- web框架：请求分发、参数绑定，返回值处理...
+		```java
+		@RestController
+		@GetMapping("/hello")
+		public String hello() {
+			return "hello";
+		}
+		```
+	- 内嵌web服务器（默认Tomcat）
+		- 不用单独装Tomcat，不用打war包，直接使用`java -jar`即可启动
+		- `Jetty`、`Undertow`可选
+	- JSON序列化/反序列化（jackson）
+		```java
+		@PostMapping("/users")
+		public void add(@RequestBody User user) {}
+		
+		```
+		- 请求JSON-->java对象：客户端发JSON，Spring Boot 自动将其变成Java对象（反序列化）
+			- json来，Spring Boot 看到 `@RequestBody`，发现请求是 `application/json`，Jackson 自动把 JSON → User 对象
+		- Java对象-->JSON响应：我返回Java对象，Spring Boot 自动将其变成JSON（序列化）
+			```java
+			@GetMapping("/users/1")
+			public User getUser() {
+				return new User("Tom", 18);
+			}
+			```
+			- 返回以上对象
+			- 客户端收到的响应
+				```json
+				{
+				  "name": "Tom",
+				  "age": 18
+				}
+				```
+			- 使用Jackson自动将Java对象-->JSON
+- `spring-boot-starter-data-jpa`
+- `spring-boot-starter-jdbc`
+- `spring-boot-starter-test`
+
+#### 序列化/反序列化核心机制
+```
+- 反序列化
+HTTP 请求
+  ↓
+DispatcherServlet
+  ↓
+HttpMessageConverter（Jackson）
+  ↓
+Java 对象
+```
+
+```
+-序列化
+Java 对象
+  ↓
+HttpMessageConverter（Jackson）
+  ↓
+JSON
+  ↓
+HTTP 响应
+```
+
+- 常见误区
+	- 为什么没写 @ResponseBody 也能返回 JSON？
+		- `@RestController` = `@Controller + @ResponseBody`
+	- JSON 字段和 Java 字段不一样怎么办？
+		```java
+		@JsonProperty("user_name") //jackson中的名字叫user_name
+		private String username; //java类中叫username
+		```
+		- 请求和响应都影响
+		- 名字相似的注解
+### 配置文件管理（application.yml）
+- 或application.properties
+- ![[Pasted image 20260128202105.png]]
+- RESTful Web开发
+	- JSON默认支持
+	- 注解驱动
+	- 前后端分离友好
+	```java
+	@RestController
+	@RequestMapping("/users")
+	public class UserController {
+	
+		@GetMapping("/{id}")
+		public User get(@PathVariable Long id) {
+			return userService.getById(id);
+		}
+	}
+	```
+	- IOC/DI 
+		- 常用注解
+			- @Component
+			- @Service
+			- @Repository
+			- @Autowired
+	- AOP（事务/日志/权限）
+		- 不用写try-catch？，Spring 自动回滚
+		- 事务常用
+		- 基于AOP实现
+		```java
+		@Transactional
+		public void createOrder() {
+		    // 多表操作
+		}
+		```
+	- 统一异常处理
+		- 接口返回格式统一
+		- 不污染业务代码
+		```java
+		@RestControllerAdvice
+		public class GlobalExceptionHandler {
+		
+		    @ExceptionHandler(Exception.class)
+		    public Result<?> handle(Exception e) {
+		        return Result.fail(e.getMessage());
+		    }
+		}
+		
+		```
+	- 参数校验
+		- 参数不合法直接400
+		```java
+		public class UserDTO {
+		    @NotBlank
+		    private String username;
+		    @Min(18)
+		    private Integer age;
+		}
+		
+		@PostMapping("/users")
+		public void add(@Valid @RequestBody UserDTO dto) {}
+		
+		```
+	- 日志系统（默认就有）
+		- 默认Logback
+		- 配置简单
+		- 分环境日志级别
+	- 嵌入式服务器
+		- 内嵌Tomcat
+		- 不用部署war
+		- 一个jar直接跑
+			- `java -jar app.jar`
+	- Actuator
+		- `spring-boot-starter-actuator`
+		- 健康检查 `/actuator/health`
+		- 指标监控
+		- 服务状态
+
+## Restful
+### 六大约束
+1. 客户端-服务器架构（前后端分离）
+2. 无状态（stateless）
+	- 不存任何session，使用token，客户端每次发来的请求都需要包含全部性信息
+3. 可缓存
+	- 可选。
+	- 如果可缓存，客户端可以直接用之前的数据，不用继续发送请求。
+4. 统一接口
+	- restful核心
+	- 资源的标识符全用url来代表、通过表现层传递数据（json）、自描述信息（发送数据的时候说明自己是啥），超媒体 作为 应用状态引擎
+5. 分层系统
+	- 客户端不知道与中间层通信还是服务器
+6. 按需代码
+	- 服务器可以向客户端发送可执行的代码和JavaScript的代码让客户端本地执行
+
