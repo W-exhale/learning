@@ -19,7 +19,8 @@ linux内核创始人：林纳斯（linus）
 	- `git status`：状态
 	- `git log`：历史记录
 	- `git reset -hard 7483927`：版本回退
-	- 
+- `git remote add origin https://github.com/W-exhale/learning.git`：连接到远程
+- `git push -u origin main`：推送到远程
 ## 安装
 ### windows
 1. 直接在官网下
