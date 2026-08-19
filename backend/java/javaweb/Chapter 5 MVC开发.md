@@ -558,7 +558,7 @@ public class FileServlet extends HttpServlet {
 
 运行代码，在浏览器中输入URL`http://localhost:8080/hello?name=Bob`可以看到如下页面：
 
-![[Pasted image 20250507114235.png|500]]
+![Pasted image 20250507114235](images/Pasted%20image%2020250507114235.png)
 
 为了把方法参数的名称编译到class文件中，以便处理`@GetMapping`时使用，我们需要打开编译器的一个参数，在Eclipse中勾选`Preferences`-`Java`-`Compiler`-`Store information about method parameters (usable via reflection)`；在Idea中选择`Preferences`-`Build, Execution, Deployment`-`Compiler`-`Java Compiler`-`Additional command line parameters`，填入`-parameters`；在Maven的`pom.xml`添加一段配置如下：
 

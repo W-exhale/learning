@@ -28,7 +28,7 @@
     file /bin/ls
     file .
     ```
-    ![[Pasted image 20250209212000.png]]
+    ![Pasted image 20250209212000](../%E6%A0%B8%E5%BF%83/linux/images/Pasted%20image%2020250209212000.png)
 ### `cat`: 查看文件全部内容 (适合小文件)
 *   `cat 文件名`: 将文件的全部内容**一次性**输出到终端 (`Concatenate`)。适合查看内容较少的文本文件。
 *   `cat -n 文件名`: 显示内容并**加上行号**。

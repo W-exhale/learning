@@ -27,7 +27,7 @@ String s = new Double(123.456); // compile error!
 例如，当 JVM 加载 `String` 类时：
 1.  读取 `String.class` 文件内容到内存。
 2.  为 `String` 类创建一个 `Class` 实例（可以想象成 `Class cls = new Class(String);`，但这只是概念表示，实际由 JVM 完成）。
-3. 这个 `Class` 实例就代表了 `String` 这个数据类型本身，并且 **在 JVM 中是唯一的**。![[Pasted image 20250422163151.png]]![[Pasted image 20250422163214.png]]
+3. 这个 `Class` 实例就代表了 `String` 这个数据类型本身，并且 **在 JVM 中是唯一的**。![Pasted image 20250422163151](images/Pasted%20image%2020250422163151.png)![Pasted image 20250422163214](images/Pasted%20image%2020250422163214.png)
 #### `Class` 实例的作用
 JVM 为每个加载的类型创建的 `Class` 实例中，保存了该类型的 **所有信息**：
 *   类名 (Full Name)
@@ -117,7 +117,7 @@ public class Main {
 *   数组类型（例如`String[]`）也是一种 `Class`，而且不同于`String.class`，其名称比较特殊（如 `[Ljava.lang.String;`）。
 *   基本类型（如 `int`, `boolean`）也有对应的 `Class` 实例（如 `int.class`）,通过`int.class`访问。
 **输出示例：**
-![[Pasted image 20250422175010.png]]
+![Pasted image 20250422175010](images/Pasted%20image%2020250422175010.png)
 
 
 #### 通过 `Class` 实例创建对象
@@ -268,7 +268,7 @@ public java.lang.String Person.name
 - `getModifiers()`：返回字段的修饰符，是一个 `int` 值，不同的bit表示不同的含义。（可以使用 `java.lang.reflect.Modifier` 类的静态方法 (如 `isPublic`, `isPrivate`, `isFinal`) 来解析这个整数值。）
 
 以`String`类的`value`字段为例，它的定义是：
-![[Pasted image 20250422193436.png]]
+![Pasted image 20250422193436](images/Pasted%20image%2020250422193436.png)
 ```java
 Field f = String.class.getDeclaredField("value");
 System.out.println("Name: " + f.getName());       // "value"

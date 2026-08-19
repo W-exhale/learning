@@ -1,6 +1,6 @@
 [详解Tomcat下载安装以及IDEA配置Tomcat（2023最新）-CSDN博客](https://blog.csdn.net/m0_48170265/article/details/129073985)
 
-![[Pasted image 20250307171709.png|600]]
+![Pasted image 20250307171709](images/Pasted%20image%2020250307171709.png)
 
 - idea中没有和eclipse一样的web项目，如果想要使用，需要创建一个java项目，然后在project Structure中的module设置
 

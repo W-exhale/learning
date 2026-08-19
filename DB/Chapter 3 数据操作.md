@@ -7,7 +7,7 @@
 
 `select * from teacher;`（\*是全部的意思，查询这张表所有的东西，from是指定表），但是这条语句效率不是很高，在性能上有缺陷
 
-![[Pasted image 20241007170930.png]]
+![Pasted image 20241007170930](images/Pasted%20image%2020241007170930.png)
 
 如果不写第一个括号内的内容，就必须按照table的顺序来，写了就按照第一个括号内的顺序来。
 
@@ -66,12 +66,12 @@ where后面的phone如果有三个人的phone都是12345，那么这三个人的
 ## 字符编码问题
 window的cmd是gbk，在使用mysql时，显示的也是gbk，但是在实际的开发过程中是不能使用gbk的，必须使用UTF-8.
 
-![[Pasted image 20241007181039.png]]
+![Pasted image 20241007181039](images/Pasted%20image%2020241007181039.png)
 
 如果在使用过程中出现字符编码问题，可以使用下面的语句查看字符编码
 `show variables like 'character_set_%'`
 
-![[Pasted image 20241007181443.png]]
+![Pasted image 20241007181443](images/Pasted%20image%2020241007181443.png)
 
 client是gbk，返回的results也是gbk，那就没关系，但是实际开发的时候全部都是utf8，除了binary。
 

@@ -10,7 +10,7 @@
 - 注意：
 	- 不能对空栈进行Pop和Top（一般会认为是栈ADT的错误）
 	- 运行Push时空间用尽（实现错误，不是ADT错误（不正确使用ADT））
-![[Pasted image 20240723233546.png|500]]
+![Pasted image 20240723233546](images/Pasted%20image%2020240723233546.png)
 
 
 
@@ -192,7 +192,7 @@ O(1)
 
 可以用动态数组实现，单向链表也可以。
 
-![[Pasted image 20240317111210.png|400]]
+![Pasted image 20240317111210](images/Pasted%20image%2020240317111210.png)
 
 push()叠盘子，无返回值
 peek() 返回栈顶元素，但不在堆栈中删除它。  

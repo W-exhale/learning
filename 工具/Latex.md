@@ -2,7 +2,7 @@
 文本排版（Typesetting Text）
 ### 序（preamble）
 - 序的基本结构
-![[Pasted image 20241105192448.png]]
+![Pasted image 20241105192448](images/Pasted%20image%2020241105192448.png)
 
 ### 块
 
@@ -31,9 +31,9 @@ x=\frac{-b \pm \sqrt{b^2-4ac}}{2a}
 \$...\$的方式就类似于`\begin{math}...\end{math}`
 ### 列表
 - itemize和enumerate创造列表环境
-![[Pasted image 20241105191446.png]]
+![Pasted image 20241105191446](images/Pasted%20image%2020241105191446.png)
 
-![[Pasted image 20241105192130.png]]
+![Pasted image 20241105192130](images/Pasted%20image%2020241105192130.png)
 
 ### 使用amsmath包
 
@@ -47,21 +47,21 @@ x=\frac{-b \pm \sqrt{b^2-4ac}}{2a}
 \end{equation*}
 ```
 bad那条会报错，必须用花括号包起来
-![[Pasted image 20241105193341.png]]
+![Pasted image 20241105193341](images/Pasted%20image%2020241105193341.png)
 
 这样输出右侧就没有编号
-![[Pasted image 20241105193626.png|400]]
+![Pasted image 20241105193626](images/Pasted%20image%2020241105193626.png)
 
 还可以用`\operatorname`，会加粗Cov属于运算符，会变成数学专用的符号样式
-![[Pasted image 20241105193857.png]]
+![Pasted image 20241105193857](images/Pasted%20image%2020241105193857.png)
 
 对齐：
-![[屏幕截图 2024-11-05 194137.png]]
+![屏幕截图 2024-11-05 194137](images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-11-05%20194137.png)
 
 ### 练习
-![[Pasted image 20241105200556.png]]
+![Pasted image 20241105200556](images/Pasted%20image%2020241105200556.png)
 
-![[Pasted image 20241105200610.png]]
+![Pasted image 20241105200610](images/Pasted%20image%2020241105200610.png)
 
 -注意：正常的N就是手写体，所以不用加\\operatorname，如果要用可以用上面注释中的方式。
 
@@ -87,7 +87,7 @@ Abstract goes here...
 \end{document}
 ```
 
-![[Pasted image 20241106202011.png|500]]
+![Pasted image 20241106202011](images/Pasted%20image%2020241106202011.png)
 
 ### 段落（Section）
 ```latex
@@ -104,7 +104,7 @@ We investigate \ldots
 \section{Results}
 \section{Conclusion}
 ```
-![[Pasted image 20241106202356.png|600]]
+![Pasted image 20241106202356](images/Pasted%20image%2020241106202356.png)
 
 
 ### 标签（label）和交叉引用（Cross-References）
@@ -127,16 +127,16 @@ By \eqref{eq:euler},we have \ldots
 
 ```
 
-![[Pasted image 20241106203310.png|500]]
+![Pasted image 20241106203310](images/Pasted%20image%2020241106203310.png)
 
 - \\eqref位于amsmath包中，\\label用于设置标签，\\ref用于引用标签
 
 ## Part 3 图片和表
 
 ### 图片
-![[Pasted image 20241106210939.png]]
+![Pasted image 20241106210939](images/Pasted%20image%2020241106210939.png)
 
-![[Pasted image 20241106210952.png]]
+![Pasted image 20241106210952](images/Pasted%20image%2020241106210952.png)
 
 - 上面0.5表示占周围文本的50%，caption表示题注，可以设置一个label，用ref引用
 
@@ -160,7 +160,7 @@ lrr表示left，right，right
 \end{tabular}
 ```
 
-![[Pasted image 20241106212328.png]]
+![Pasted image 20241106212328](images/Pasted%20image%2020241106212328.png)
 
 ```latex
 \begin{tabular}{|l|r|r|} \hline %l|r|r|中间的|表示竖线
@@ -171,7 +171,7 @@ Cable & 3 & 19.99 \\ \hline %hline表示横线
 \end{tabular}
 ```
 
-![[Pasted image 20241106212534.png]]
+![Pasted image 20241106212534](images/Pasted%20image%2020241106212534.png)
 
 
 ## Part 4 文献引用
@@ -179,7 +179,7 @@ Cable & 3 & 19.99 \\ \hline %hline表示横线
 - 使用natbib包
 Reference *\bibliography* at the end, and specify a *\bibliographystyle*.
 
-![[Pasted image 20241106213923.png]]
+![Pasted image 20241106213923](images/Pasted%20image%2020241106213923.png)
 
 还可以用biblatex包，但大部分都在natbib里有
 

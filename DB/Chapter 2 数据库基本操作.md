@@ -1,7 +1,8 @@
 ## Part 1 数据库的基本操作
 ### Section 1 databases解释
-进入mysql后可以通过`show databases;`命令的方式查看数据库
-![[Pasted image 20240919200849.png|400]]
+进入mysql后可以通过 `show databases;` 命令的方式查看数据库
+
+![Pasted image 20240919200849](images/Pasted%20image%2020240919200849.png)
 
 如上图有四个仓库，都是不同的。一个公司里会有DBA（数据库管理员）或架构师，专门管理数据库，搭建数据库（集群搭建....）
 1. information_schema 表示存储这个数据库整个仓库的信息
@@ -9,7 +10,7 @@
 3. information_schema 存储服务器性能
 4. sys 表示一些系统文件
 5. 可能还会有一个test，这个就是测试用的
-![[Pasted image 20240919202233.png]]
+![Pasted image 20240919202233](images/Pasted%20image%2020240919202233.png)
 
 ### Section 2 创建数据库
 
@@ -39,7 +40,7 @@
 
 `show create database student;`
 之后就会出现
-![[Pasted image 20240919205142.png]]
+![Pasted image 20240919205142](images/Pasted%20image%2020240919205142.png)
 可以查看这个仓库曾经是怎样创建的
 
 ### Section 5 字符编码
@@ -49,14 +50,14 @@
 常见的国际通用的字符编码是：GBK，UTF-8。GBK是中文简体
 - 如下，终端会显示中文就是因为我们设置是GBK。
 可以找到cmd的属性选项可以看到是GBK
-![[Pasted image 20240919205638.png]]
+![Pasted image 20240919205638](images/Pasted%20image%2020240919205638.png)
 
 - create database if not exists \`students\` charset=gbk
 可以通过上面的方式在创建的时候设置字符编码，但是我们实际开发的时候要注意使用utf8，windows上比较特殊，因为它的cmd是gbk的，所以在windows上学习的时候使用gbk。
 
 #### 查看字符编码
 - 设置好后查看新创建的库就可以看到字符编码
-![[Pasted image 20240919211302.png]]
+![Pasted image 20240919211302](images/Pasted%20image%2020240919211302.png)
 右下角：默认字符设置
 
 #### 修改字符编码
@@ -74,7 +75,7 @@ alter就表示更改等操作。
 - 创建好一个数据库之后当我们需要使用某数据库（这一步就是引用数据库，类似于JD物流发配）
 就需要使用`use school;`（假设创建的库是school）
 当我们需要查看该数据库中的表时：`show tables;`
-![[Pasted image 20240922173714.png]]
+![Pasted image 20240922173714](images/Pasted%20image%2020240922173714.png)
 
 ### Section 2 创建表
 
@@ -85,7 +86,7 @@ name varchar(30),
 age int
 );
 ```
-![[Pasted image 20240922195049.png]]
+![Pasted image 20240922195049](images/Pasted%20image%2020240922195049.png)
 
 - 更规范的写法
 ```mysql
@@ -106,7 +107,7 @@ address varchar(100) default '暂时未知' comment '住址'
 id不用default是已经声明了是primary key，所以没有default
 如果不输default，那么系统的默认值就会是NULL。
 id，name，phone等等都叫字段
-![[Pasted image 20240922204420.png]]
+![Pasted image 20240922204420](images/Pasted%20image%2020240922204420.png)
 
 ### Section 3 查看表
 
@@ -114,35 +115,35 @@ id，name，phone等等都叫字段
 `show create table teacher;`：这种方式显示出的是sql语句
 `desc teacher;`：这种方式会展示一个表，更为直观
 
-![[Pasted image 20240922204517.png]]
+![Pasted image 20240922204517](images/Pasted%20image%2020240922204517.png)
 
-![[Pasted image 20240922204529.png]]
+![Pasted image 20240922204529](images/Pasted%20image%2020240922204529.png)
 
 ### Section 4 删除表
 `drop table if exists abc;`
 
-![[Pasted image 20240922205034.png]]
+![Pasted image 20240922205034](images/Pasted%20image%2020240922205034.png)
 
 如上图，创建了abc，zhang两个废表，可以用逗号隔开删除两张表，如果加了if exists，即使abcd表不存在也可以将abc和zhang两张表删掉。
 
 ### Section 5 修改表
 
 - 假如说需要添加一行在表尾：`alter table student add phone varchar(20);`
-![[Pasted image 20240922211121.png]]
+![Pasted image 20240922211121](images/Pasted%20image%2020240922211121.png)
 - 如果要指定位置：`alter table student add gender varchar(1) after name;`
-![[Pasted image 20240922211154.png]]
+![Pasted image 20240922211154](images/Pasted%20image%2020240922211154.png)
 
 - 如果要放在表头：`alter table student add address varchar(1) first;`
-![[Pasted image 20240922211254.png]]
+![Pasted image 20240922211254](images/Pasted%20image%2020240922211254.png)
 
 - 如果要删除某一行：`alter table student drop address;`
-![[Pasted image 20240922211410.png]]
+![Pasted image 20240922211410](images/Pasted%20image%2020240922211410.png)
 
 - 修改某一行(change可以修改名字（字段）和类型)：`alter table student change phone telephone int(11);`
-![[Pasted image 20240922211505.png]]
+![Pasted image 20240922211505](images/Pasted%20image%2020240922211505.png)
 
 modify只能修改类型：`alter table student modify telephone varchar(13);`
-![[Pasted image 20240922211658.png]]
+![Pasted image 20240922211658](images/Pasted%20image%2020240922211658.png)
 
 - 改表名：`alter table student rename to students;`
 （注意在使用数据库的过程中，表名不要用复数）。

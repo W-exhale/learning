@@ -13,7 +13,7 @@
 > 可以在读取前使用 `hasNext()` 或其变体来判断是否有输入，避免程序因无输入而出错。
 
 ## Part 2: Number 类与包装类
-![[Pasted image 20241029172046.png]]
+![Pasted image 20241029172046](images/Pasted%20image%2020241029172046.png)
 -   **包装类 (Wrapper Classes)**：Java 为每种基本数据类型（`byte`, `short`, `int`, `long`, `float`, `double`, `char`, `boolean`）提供了对应的类（`Byte`, `Short`, `Integer`, `Long`, `Float`, `Double`, `Character`, `Boolean`），数据类型都放在这些类里面，Byte,Short...类都是包装类。这些类都继承自抽象类 `Number` (除了 `Character` 和 `Boolean`)。
 
 -   **装箱 (Boxing)**：编译器把内置类型装箱为包装类（一个Number箱子，往里面添加Byte，Short...等等），也就是编译器自动将基本数据类型转换为对应的包装类对象
@@ -245,9 +245,9 @@ public class Test{
 
 > [!INFO] 时间戳
 > 时间戳（Timestamp）通常是一个长整型数字，表示自某个特定时间点（如 1970 年 1 月 1 日 UTC）以来经过的毫秒数或纳秒数。
-> ![[Pasted image 20241029205139.png|300]]
+> ![Pasted image 20241029205139](images/Pasted%20image%2020241029205139.png)
 - 字符串型时间戳
-![[Pasted image 20241029205139.png|300]]
+![Pasted image 20241029205139](images/Pasted%20image%2020241029205139.png)
 
 种子就是数字型的时间戳
 - 随机数生成算法（种子？）·
@@ -256,9 +256,9 @@ public class Test{
 > [!NOTE] `Math.random()` vs `Random`
 > `Math.random()` 内部实际上也是使用 `Random` 类，但它只能生成 `[0.0, 1.0)` 范围的 `double` 值。如果需要生成其他类型（如 `int`）或指定范围、种子的随机数，应使用 `Random` 类。
 > 
-![[Pasted image 20241029190023.png]]
+![Pasted image 20241029190023](images/Pasted%20image%2020241029190023.png)
 可以看出属于Random类
-![[Pasted image 20241029190215.png]]
+![Pasted image 20241029190215](images/Pasted%20image%2020241029190215.png)
 
 ### `nextInt()` / `nextInt(int bound)`
 -   `nextInt()`: 返回一个随机的 `int` 值（可能为正、负或零）。
@@ -303,7 +303,7 @@ public class Test {
 `java.util.concurrent.ThreadLocalRandom` 是 `Random` 的子类，在多线程环境下性能更好，并且提供了方便的方法来生成指定范围的随机数。
 
 -   **获取实例**: 使用静态方法 `ThreadLocalRandom.current()` 获取当前线程的 `ThreadLocalRandom` 实例。静态方法（返回当前线程的ThreadLocalRandom类），所以不能直接只用下面的函数，current表示当前线程
-    ![[Pasted image 20241029211042.png]]
+    ![Pasted image 20241029211042](images/Pasted%20image%2020241029211042.png)
 -   **常用方法**:
     -   `nextInt(int origin, int bound)`: 返回 `[origin, bound)` 范围的随机 `int`。
     -   `nextDouble(double origin, double bound)`: 返回 `[origin, bound)` 范围的随机 `double`。
@@ -327,10 +327,10 @@ public class Test {
 ```
 
 ### javadoc查看方式：
-![[屏幕截图 2024-10-29 190953.png]]
+![屏幕截图 2024-10-29 190953](images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-10-29%20190953.png)
 
 例如，`SecureRandom` 是 `Random` 的子类，提供了更强的随机性。secureRandom就有三层
-![[Pasted image 20241029202903.png]]
+![Pasted image 20241029202903](images/Pasted%20image%2020241029202903.png)
 
 ## Part 5: 时间日期相关类 
 - 使用java.time
@@ -377,7 +377,7 @@ public class Test {
 String类型一旦创建就不能更改了
 下面是垃圾回收机制的一种：下面总共创建了3个对象（s1没有被回收，三个同时存在，详见垃圾回收）
 - s1指向了s1+s2的地址，原来的s1如果后序不被引用，最终会被垃圾回收
-![[Pasted image 20241113203707.png]]
+![Pasted image 20241113203707](images/Pasted%20image%2020241113203707.png)
 
 ### 常用操作
 `String` 类提供了大量用于操作字符串的方法，例如：

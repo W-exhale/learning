@@ -47,7 +47,7 @@
 *   **网关 (Gateway)**: 连接多个网络，负责将数据包从一个网络路由到另一个网络。（将一个网络的数据包发到另一个网络的过程叫路由）
 
 - 一台计算机的一个网卡会有3个关键配置：
-	![[Pasted image 20250423120312.png|500]]
+	![Pasted image 20250423120312](images/Pasted%20image%2020250423120312.png)
     1.  **IP 地址**: e.g., `192.168.112.117`
     2.  **子网掩码**: e.g., `255.255.255.0`
     3.  **网关 IP 地址**: e.g., `192.168.112.116`
@@ -131,7 +131,7 @@
 > Socket（套接字）是网络编程中的一个**抽象概念**。
 > 应用程序通过 Socket 来建立远程连接并进行数据传输。
 > 操作系统负责 Socket 底层的 TCP/IP 实现。（Socket内部通过TCP/IP协议把数据传输到网络）
-> ![[Pasted image 20250423142520.png]]
+> ![Pasted image 20250423142520](images/Pasted%20image%2020250423142520.png)
 > Java 的 `java.net.Socket` 和 `java.net.ServerSocket` 类是对操作系统 Socket 接口的封装。
 > - Socket、TCP和部分IP的功能都是由操作系统提供的，不同的编程语言只是提供了对操作系统调用的简单的封装。
 
@@ -588,7 +588,7 @@ MTA和MDA这样的服务器软件通常是现成的，我们不关心这些服�
 
 
 1. 我们需要创建一个Maven工程，并把JavaMail相关的两个**依赖**加入进来：
-![[Pasted image 20250424084124.png]]
+![Pasted image 20250424084124](images/Pasted%20image%2020250424084124.png)
 *(注意: 旧版本可能使用 `javax.mail` groupId)
 
 2. **连接 SMTP 服务器 (JavaMail)**:
@@ -671,7 +671,7 @@ try {
 > 大多数邮件服务器要求 `setFrom()` 设置的发件人地址必须与 SMTP 登录时使用的用户名（邮箱地址）**完全一致**，否则会因权限问题（如 `SendAsDeniedException`）导致发送失败。
 
 **SMTP 通信示例 (Debug 输出)**:
-![[Pasted image 20250424084556.png]]
+![Pasted image 20250424084556](images/Pasted%20image%2020250424084556.png)
 
 SMTP 是一个请求-响应协议。客户端发送命令（如 `EHLO`, `AUTH LOGIN`, `MAIL FROM`, `RCPT TO`, `DATA`），然后等待服务器响应，服务器响应返回状态码和信息。信息是用于调试的文本。以下是状态码
 *   `2xx`: 成功
@@ -679,7 +679,7 @@ SMTP 是一个请求-响应协议。客户端发送命令（如 `EHLO`, `AUTH LO
 *   `4xx`: 临时性错误
 *   `5xx`: 永久性错误
 (参考: [SMTP Enhanced Status Codes](https://www.iana.org/assignments/smtp-enhanced-status-codes/smtp-enhanced-status-codes.txt))
-![[Pasted image 20250424084839.png]]
+![Pasted image 20250424084839](images/Pasted%20image%2020250424084839.png)
 
 ### 发送HTML邮件
 只需在 `setText` 时指定 `contentType` 为 `text/html`：
@@ -704,7 +704,7 @@ Transport.send(message);
 ```
 
 HTML 邮件在客户端会渲染成网页样式：
-![[Pasted image 20250424084815.png|500]]
+![Pasted image 20250424084815](images/Pasted%20image%2020250424084815.png)
 
 ### 发送附件
 - 不能之间调用`message.setText()`方法，要构造一个`Multipart`对象来组合邮件的不同部分（正文、附件等）。
@@ -746,7 +746,7 @@ message.setContent(multipart);
 // ... 设置其他属性 (From, To, Subject) 并发送 ...
 Transport.send(message);
 ```
-![[Pasted image 20250424085650.png]]
+![Pasted image 20250424085650](images/Pasted%20image%2020250424085650.png)
 
 *   `setContent(body, "text/html;charset=utf-8")` 用于设置 HTML 正文。
 *   `setContent(body, "text/plain;charset=utf-8")` 用于设置纯文本正文。

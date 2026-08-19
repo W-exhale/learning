@@ -12,21 +12,21 @@ jdk9，jdk8现在用的比较多
 [IDE Eval Reset —— idea 重置试用期插件安装_ide-eval-resetter-CSDN博客](https://blog.csdn.net/qq_42547733/article/details/137639946)
 
 
-![[Pasted image 20240701220357.png|500]]![[Pasted image 20240701220430.png|500]]
-![[Pasted image 20240701220909.png|500]]
+![Pasted image 20240701220357](images/Pasted%20image%2020240701220357.png)![Pasted image 20240701220430](images/Pasted%20image%2020240701220430.png)
+![Pasted image 20240701220909](images/Pasted%20image%2020240701220909.png)
 
 
 将插件放在pulign文件夹里
 
-![[Pasted image 20240701222025.png|500]]
+![Pasted image 20240701222025](images/Pasted%20image%2020240701222025.png)
 
-![[Pasted image 20240701222142.png|500]]
+![Pasted image 20240701222142](images/Pasted%20image%2020240701222142.png)
 
-![[Pasted image 20240701222316.png]]
+![Pasted image 20240701222316](images/Pasted%20image%2020240701222316.png)
 
 关掉软件，再打开
 
-![[Pasted image 20240701222654.png|500]]
+![Pasted image 20240701222654](images/Pasted%20image%2020240701222654.png)
 
 updates设置不更新
 file Encodings设置UTF-8

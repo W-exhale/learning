@@ -1,7 +1,7 @@
 
 与家谱类比。
 
-![[a4ad774cfff280e56f89e78874efec2.jpg]]
+![a4ad774cfff280e56f89e78874efec2](images/a4ad774cfff280e56f89e78874efec2.jpg)
 
 sibling：兄弟
 A和B称为兄弟节点（sibling node），
@@ -95,7 +95,7 @@ O(M)，m：键的长度
 2. $n = n_0 + n_1 + n_2 +...+ n_m$ （n是总结点数，$n_i$ 是度为i的结点数）
 推导：
 从深度思考：总结点数 = $2d_2 + d_1$ + 1（二叉树）
-![[Pasted image 20240522132810.png|500]]
+![Pasted image 20240522132810](images/Pasted%20image%2020240522132810.png)
 
 - 从高度思考：总结点数 = e + 1（n是edge的数量）
 ### 树结点的计算
@@ -129,7 +129,7 @@ parent, first, next
 根节点有一个出栈又进栈的过程（但是出栈不入列）
 
 有规律可循的：
-![[Pasted image 20240516102705.png|500]]
+![Pasted image 20240516102705](images/Pasted%20image%2020240516102705.png)
 
 ## 广义表
 表头可以是原子或者广义表，表尾必须是广义表

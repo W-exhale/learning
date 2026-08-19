@@ -2,7 +2,7 @@
 ### 基础使用
 - 处理日期和时间的标准库
 - 获取当前日期和时间：
-![[Pasted image 20250319105700.png]]
+![Pasted image 20250319105700](images/Pasted%20image%2020250319105700.png)
 
 - datetime是一个模块，datetime还包含一个`datetime`类，通过导包`import datetime`导入的才是这个类
 - 如果只导入`import datetime`，用的时候就要用`datetime.datetime`
@@ -77,7 +77,7 @@ Mon, May 05 16:28
 ### 时间加减
 - 直接+或-，但是要导入`timedelta`类
 
-![[Pasted image 20250319111823.png]]
+![Pasted image 20250319111823](images/Pasted%20image%2020250319111823.png)
 
 ### 时区转换
 - `datetime`类型有一个`tzinfo`，默认为`None`，我们可以强行给`datetime`设置一个时区
@@ -144,7 +144,7 @@ assert t1 == 1433121030.0, t1
 t2 = to_timestamp('2015-5-31 16:10:30', 'UTC-09:00')
 assert t2 == 1433121030.0, t2
 ```
-![[Pasted image 20250319120541.png]]
+![Pasted image 20250319120541](images/Pasted%20image%2020250319120541.png)
 
 如果不往tzinfo中加东西，那么输出的内容就没有+07:00或者-09:00，设置时区后转化的时间戳也是当地的时间戳
 
@@ -154,7 +154,7 @@ assert t2 == 1433121030.0, t2
 - `namedtuple`：一个函数，可以用来创建一个自定义的`tuple`对象，并且规定了`tuple`元素的个数，用`.`来看tuple的某个元素
 
 - 表示坐标：可以用元组，但是光看`(1,2)`看不出是坐标，也不至于定义一个`class`。
-![[Pasted image 20250319205142.png]]
+![Pasted image 20250319205142](images/Pasted%20image%2020250319205142.png)
 上面创建的Point是tuple的一个子类
 ```plain
 >>> isinstance(p, Point)
@@ -327,7 +327,7 @@ print(sys.argv)
 source = sys.argv[1]
 target = sys.argv[2]
 ```
-![[Pasted image 20250321091614.png]]
+![Pasted image 20250321091614](images/Pasted%20image%2020250321091614.png)
 上面调用sys的方法只能应付一些简单的参数，如果参数比较复杂，可以用`-d`复制目录，使用`--filename *.py`过滤文件名
 
 - 可以用内置的`argparse`简化参数解析，定义好各个参数后能直接返回有效的参数
@@ -386,7 +386,7 @@ def main():
 if __name__ == '__main__':
     main()
 ```
-![[Pasted image 20250321112829.png]]
+![Pasted image 20250321112829](images/Pasted%20image%2020250321112829.png)
 
 ## base64
 - base64是一种用64个字符来表示任意二进制数据的方法
@@ -398,14 +398,14 @@ if __name__ == '__main__':
 ['A', 'B', 'C', ... 'a', 'b', 'c', ... '0', '1', ... '+', '/']
 ```
 - 对二进制数据进行处理，每3个字节一组，一共`3*8=24`bit，化为4组，每组正好6个bit
-![[Pasted image 20250321140836.png|400]]
+![Pasted image 20250321140836](images/Pasted%20image%2020250321140836.png)
 这样我们可以得到4个数字作为索引，然后查表获得相应的4个字符，就是编码后的字符串
 
 总的来说，就是Base64编码会把3字节的二进制数据编码为4字节的文本数据，长度增加为33%，好处是编码后的文本数据可以在邮件正文、网页等直接显示
 
 - 如果要编码的二进制数据不是3的倍数，最后剩下1个或2个，Base64会用`\x00`字节在末尾补足后，再在编码的末尾加上1个或2个=号，表示补了多少字节，解码的时候会自动去掉
 
-![[Pasted image 20250321142410.png|500]]
+![Pasted image 20250321142410](images/Pasted%20image%2020250321142410.png)
 
 - 假如要编码字符`+`和`/`，可以用“url safe”的base64编码，将+和/变成-和_
 

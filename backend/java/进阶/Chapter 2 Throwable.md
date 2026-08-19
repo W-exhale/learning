@@ -32,10 +32,10 @@ graph TD
 ### Exception (异常)
 -   **定义**: `Exception` 类及其子类表示程序运行时可能发生的可恢复问题或非致命错误。这些通常是由程序逻辑错误、无效输入或外部条件（如文件未找到）引起的。
 
-![[Pasted image 20241113211510.png]]
+![Pasted image 20241113211510](images/Pasted%20image%2020241113211510.png)
 
 - 可以去API里查错误
-![[Pasted image 20241113211724.png]]
+![Pasted image 20241113211724](images/Pasted%20image%2020241113211724.png)
 
 ### 编译时 vs 运行时错误
 -   **编译时错误 (Compile-time Error)**: 在代码编译阶段发现的错误，通常是语法错误或类型不匹配。如果存在编译错误，`.class` 文件不会生成。在out文件夹里点开对应的类，如果有class文件，就不是编译错误
@@ -43,7 +43,7 @@ graph TD
 -   **运行时错误 (Runtime Error/Exception)**: 在程序执行期间发生的错误或异常。即使代码成功编译（生成了 `.class` 文件），运行时仍可能出错。`Error` 和 `RuntimeException` 通常在运行时抛出。
 
 - 我们可以看除以0时的异常的父类
-![[Pasted image 20241113213150.png]]
+![Pasted image 20241113213150](images/Pasted%20image%2020241113213150.png)
 
 ## Part 2: 异常处理机制
 ### try...catch
@@ -60,7 +60,7 @@ graph TD
 - throws：
 
 - 快捷键：`Ctrl+Alt +t`
-![[Pasted image 20241114184509.png]]
+![Pasted image 20241114184509](images/Pasted%20image%2020241114184509.png)
 
 ```java
 import org.junit.Test;
@@ -219,11 +219,11 @@ throws和throw new搭配使用
     -   初始化对象变量。
 
 - NullPointerException
-![[Pasted image 20241114192709.png|500]]
+![Pasted image 20241114192709](images/Pasted%20image%2020241114192709.png)
 
 
 - 如果抛出了异常，多半是以下问题
-![[Pasted image 20241114193100.png]]
+![Pasted image 20241114193100](images/Pasted%20image%2020241114193100.png)
 
 
 > [!INFO] `java.util.Objects` 类
@@ -270,7 +270,7 @@ public void demo() throws ExhaleException {
 }
 ```
 -结果
-![[Pasted image 20241114200523.png]]
+![Pasted image 20241114200523](images/Pasted%20image%2020241114200523.png)
 
 ### 案例二
 ```java
@@ -295,7 +295,7 @@ public void test(){
 ```
 
 -结果
-![[Pasted image 20241114201448.png]]
+![Pasted image 20241114201448](images/Pasted%20image%2020241114201448.png)
 
 ## Part 5 辨析RuntimeException和Exception
 |**特性**|**受检异常（Checked Exception）**|**非受检异常（Unchecked Exception）**|
@@ -305,10 +305,10 @@ public void test(){
 |**继承关系**|继承自`Exception`，但不是`RuntimeException`|继承自`RuntimeException`|
 |**例子**|`IOException`, `SQLException`|`NullPointerException`, `ArithmeticException`|
 - 如果定义的是RuntimeException，那么只有在运行的时候才会报错，编译的时候是不会报错的
-![[Pasted image 20241114203414.png]]
+![Pasted image 20241114203414](images/Pasted%20image%2020241114203414.png)
 
 - 如果定义的是Exception，那么在编译的时候就会报错
-![[Pasted image 20241114203511.png]]
+![Pasted image 20241114203511](images/Pasted%20image%2020241114203511.png)
  *(如果 `ExhaleException` 继承 `RuntimeException`，`test` 方法调用 `sum` 时不需要 `try-catch` 或 `throws`，编译会通过，但运行时若条件满足仍会抛异常)*
 
 > [!CHOICE] 如何选择？
@@ -436,7 +436,7 @@ public class MyTest {
 }
 ```
 -结果
-![[Pasted image 20241114210632.png]]
+![Pasted image 20241114210632](images/Pasted%20image%2020241114210632.png)
 
 ### 优点
 

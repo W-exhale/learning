@@ -11,7 +11,7 @@
 `tty5` 指的是第 5 个虚拟控制台 (tty: Teletypewriter 的缩写)。
 
 - 白色是文件，蓝色的是文件夹，.开头的是隐藏文件
-![[Pasted image 20241121204420.png]]
+![Pasted image 20241121204420](images/Pasted%20image%2020241121204420.png)
 ## Part 2 目录操作
 ### `ls` 命令：列出目录内容
 #### 普通ls
@@ -20,13 +20,13 @@
 * `ls -l`: 以**长格式** (`long`) 显示文件详细信息，包括权限、所有者、大小、修改日期等。
 - `ll`：显示文件形式，所属用户，日期时间等等，显示当前目录所有文件的属性，作用和`ls -l -a`(`ls -al`)一样
 *   `ll`: 显示文件形式，所属用户，日期时间等等，显示当前目录所有文件的属性通常是 `ls -alF` 或 `ls -l --color=auto` 等命令的**别名** (`alias`)。
-	![[Pasted image 20241121204857.png]]
-	![[Pasted image 20241121204921.png]]
+	![Pasted image 20241121204857](images/Pasted%20image%2020241121204857.png)
+	![Pasted image 20241121204921](images/Pasted%20image%2020241121204921.png)
 *   `man ls`: 查看 `ls` 命令的**手册页** (`manual`)，获取详细用法说明。按 `q` 退出手册页。
-	![[Pasted image 20241121202932.png]]
+	![Pasted image 20241121202932](images/Pasted%20image%2020241121202932.png)
 
 - `ls -m`：文件名之间用逗号隔开
-	![[Pasted image 20241121205400.png]]
+	![Pasted image 20241121205400](images/Pasted%20image%2020241121205400.png)
 * `ls -F`: 在目录名后附加 `/`，可执行文件后附加 `*`，符号链接后附加 `@` 等，以区分文件类型。
 * `ls -R`: **递归** (`Recursive`) 列出所有子目录的内容。
 - `ls -FR`：遍历所有目录
@@ -69,7 +69,7 @@
 *   **Linux**: 使用**正斜杠 `/`** 作为路径分隔符，**没有盘符**概念。所有文件和目录都在一个**单一的根目录 `/`** 下。
     *   `~`：表示当前用户的**主目录** ( `/home/w-exhale`)。
     *   示例: `/home/user/Documents/1.txt`
-![[Pasted image 20241121211025.png]]![[Pasted image 20241121211208.png]]
+![Pasted image 20241121211025](images/Pasted%20image%2020241121211025.png)![Pasted image 20241121211208](images/Pasted%20image%2020241121211208.png)
 
 >[!WARNING] 注意
 Linux 没有 C 盘、D 盘等概念。安装软件时通常不需要像 Windows 那样选择安装目录，系统会根据 FHS 标准将其放置在合适的默认位置。
@@ -113,7 +113,7 @@ home相当于windows里的用户
 
 ## Part 4 练习
 练习：在这些文件夹里创建文件练习
-![[Pasted image 20241126212624.png]]
+![Pasted image 20241126212624](images/Pasted%20image%2020241126212624.png)
 
 ## Part 5 与文件有关的命令
 ### `touch`: 创建空文件或更新时间戳
@@ -166,7 +166,7 @@ home相当于windows里的用户
 #### `!$` 技巧
 
 `!$` 代表**上一条命令的最后一个参数**。
-![[Pasted image 20250208171655.png]]
+![Pasted image 20250208171655](images/Pasted%20image%2020250208171655.png)
 在图中，执行 `mv 1.txt ./file1/` 后，`!$` 就代表 `./file1/`。所以 `cd !$` 就相当于 `cd ./file1/`，可以快速进入刚才操作的目标目录。
 
 ### `rm`: 删除文件或目录
@@ -214,14 +214,14 @@ home相当于windows里的用户
 	```bash
 	ln -s 1.java 1_softlink
 	```
-	![[Pasted image 20250205220943.png]]
+	![Pasted image 20250205220943](images/Pasted%20image%2020250205220943.png)
 	(可以看到图中 `l` 开头表示符号链接，且指向 `1.java`，大小通常是路径字符串的长度)
 
 - 创建硬链接： `ln 目标文件 链接名称` (没有 `-s`)
 	```bash
 	ln 1.java 2_hardlink
 	```
-	![[Pasted image 20250205221511.png]]
+	![Pasted image 20250205221511](images/Pasted%20image%2020250205221511.png)
 	(图中 `ls -l` 显示链接数 `2`（第二列），表示有两个文件名指向同一个 inode，链接文件类型是普通文件 `-`，大小和源文件相同)
 
 
@@ -264,7 +264,7 @@ home相当于windows里的用户
     file /bin/ls
     file .
     ```
-    ![[Pasted image 20250209212000.png]]
+    ![Pasted image 20250209212000](images/Pasted%20image%2020250209212000.png)
 ### `cat`: 查看文件全部内容 (适合小文件)
 *   `cat 文件名`: 将文件的全部内容**一次性**输出到终端 (`Concatenate`)。适合查看内容较少的文本文件。
 *   `cat -n 文件名`: 显示内容并**加上行号**。

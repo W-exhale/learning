@@ -5,7 +5,7 @@
 
 ## Section 1 关系数据库的结构
 
-![[Pasted image 20241004214305.png]]
+
 
 - 如上图
 每行是一个元组（tuple），一列的表头表示的是一种属性，每个属性都存在一个允许取值的集合，这个是该属性的域（domain）。
@@ -21,7 +21,7 @@
 -关系≈变量，关系模式（relation schema）≈定义好的结构体
 -关系实例≈变量中的值，实例会变但是关系模式是不常变化的。
 
-![[Pasted image 20241007110746.png]]
+
 
 上表department关系的模式是`department(dept_name,building,budget)`
 
@@ -38,7 +38,7 @@
 
 ## Section 4 模式图
 - 一个含有主码和外码依赖的数据库模式可以用模式图（schema diagram）来表示。
-![[Pasted image 20241007114218.png]]
+
 
 主码用下划线标识了，箭头方向是从参照关系到被参照关系。
 
@@ -53,11 +53,11 @@
 
 
 ### 关系代数
-![[Pasted image 20241211213220.png]]
+![Pasted image 20241211213220](Images/Pasted%20image%2020241211213220.png)
 
-![[Pasted image 20241211213238.png]]
-![[Pasted image 20241211213252.png]]
+![Pasted image 20241211213238](Images/Pasted%20image%2020241211213238.png)
+![Pasted image 20241211213252](Images/Pasted%20image%2020241211213252.png)
 
-![[Pasted image 20241211213313.png]]
+![Pasted image 20241211213313](Images/Pasted%20image%2020241211213313.png)
 
-![[Pasted image 20241211213325.png]]
+![Pasted image 20241211213325](Images/Pasted%20image%2020241211213325.png)

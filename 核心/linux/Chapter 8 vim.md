@@ -5,9 +5,9 @@
 	- 普通模式（命令操作模式）：操作文件（编辑中的查找，删除，选择，保存）
 	- 插入模式：编辑的时候
 
-- 进入插入模式：`i`或者`a`，i的方块位置不变，a的方块位置会往后移动一个![[Pasted image 20250219204847.png]]
+- 进入插入模式：`i`或者`a`，i的方块位置不变，a的方块位置会往后移动一个![Pasted image 20250219204847](images/Pasted%20image%2020250219204847.png)
 - 退出插入模式：`esc`
-- 保存编辑：`:w`（w，write写入）![[Pasted image 20250219205059.png]]
+- 保存编辑：`:w`（w，write写入）![Pasted image 20250219205059](images/Pasted%20image%2020250219205059.png)
 - 保存并退出：`:wq`
 - 移动光标：`hjkl`替代上下左右（H：左，L：右，J：下，K：上）
 - 翻页：`Ctrl+f`，向上一页：`Ctrl+b`，向下一页：`Ctrl+e`：向下滚动，`Ctrl+y`：向上滚动
@@ -63,7 +63,7 @@
 - 配置颜色、主题之类的
 - vim安装的时候是没有在系统里配置的，所以如果我们要配置vim，就需要在系统中进行配置
 1. 在`~`目录创建`.vimrc`：`touch .vimrc`
-2. 用vim编辑：`vim .vimrc`![[Pasted image 20250220091500.png]]
+2. 用vim编辑：`vim .vimrc`![Pasted image 20250220091500](images/Pasted%20image%2020250220091500.png)
 3. 保存并退出，更新当前终端：`source .vimrc`
 - 跳跃行号：`98 gg`（假设跳跃到第98行）
 - 使用`vim .`的方式访问当前文件夹，使用hjkl移动，enter进入

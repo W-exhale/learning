@@ -1,12 +1,12 @@
 ## Part 0 概述
 ### Section 1 特点
-![[Pasted image 20241224213051.png|600]]
+![Pasted image 20241224213051](images/Pasted%20image%2020241224213051.png)
 - 组成：由两部分组成：组合逻辑电路、触发器构成的存储电路。
 - 逻辑功能特点：在数字电路中，任何时刻电路的稳态输出不仅和该时刻的输入信号有关，还取决于电路原来状态（这种都属于时序逻辑电路）
 - 时序逻辑电路的状态由存储电路（触发器）来记忆和表示，所以时序逻辑电路可以没有组合逻辑电路，但是一定要有触发器。
 ### Section 2 逻辑功能的表示方法
 #### 2.1 逻辑表达式
-![[Pasted image 20241225132423.png|400]]
+![Pasted image 20241225132423](images/Pasted%20image%2020241225132423.png)
 - X($x_1,x_2,...,x_i$)表示时序电路的现在输入信号；
 - Y($y_1,y_2,...,y_j$)表示时序电路现在输出信号；
 - W($w_1,w_2,...,w_k$)表示存储电路现在输入信号；
@@ -21,7 +21,7 @@ Q(t_{n+1})&=H[W(t_n),Q(t_n)]\end{align}$$
 	- 对于只含有触发器的电路来说，$Y(t_n)=Q(t_n),W(t_n)=X(t_n)$，所以只剩下状态方程，也就是特性方程。
 #### 2.2 状态转换表、状态转换图和时序图
 1. 状态转换表：在时钟触发沿或电平触发满足要求的条件下，将电路的输入变量和电路的初态（一般是0态）的取值代入状态方程和输出方程，即可计算出电路的次态和现态下的输出值。将得到的次态作为电路新的初态，与当前时刻的输入变量取值一起再代入状态方程和输出方程进行计算
-2. 状态转换图：每一个圆圈表示电路的状态，圆圈中填入以二进制或十进制编码来表示存储单元的状态值；圆圈之间用箭头表示在时钟信号控制下状态转换的方向，在箭头上标注实现状态转换所对应的输入变量取值和转换前的输出值。通常将输入变量的取值写在斜线的左侧，输出值写在右侧。如果没有输出变量或输出变量，其位置为空白。![[Pasted image 20241225193404.png|400]]
+2. 状态转换图：每一个圆圈表示电路的状态，圆圈中填入以二进制或十进制编码来表示存储单元的状态值；圆圈之间用箭头表示在时钟信号控制下状态转换的方向，在箭头上标注实现状态转换所对应的输入变量取值和转换前的输出值。通常将输入变量的取值写在斜线的左侧，输出值写在右侧。如果没有输出变量或输出变量，其位置为空白。![Pasted image 20241225193404](images/Pasted%20image%2020241225193404.png)
 3. 时序图：在时钟脉冲序列作用下的电路状态和输出随时间变化的波形图
 
 ### Section 3 分类
@@ -30,13 +30,13 @@ Q(t_{n+1})&=H[W(t_n),Q(t_n)]\end{align}$$
 	- 同步时序电路：电路状态改变时，电路中要更新状态的触发器中是同步翻转的。状态改变受同一个时钟脉冲控制，各个触发器的CP信号都是输入时钟脉冲。
 	- 异步时序电路：电路状态改变时，电路中要更新状态的触发器中是翻转有先后顺序。有的触发器的CP信号是输入时钟脉冲，有的不是，而是由其他触发器输出。
 - 按输出信号的特性分为Mealy型和Moore型
-	- Mealy型：输出与现态有关，还决定于电路的输入，即$Y(t_n)=F[X(t_n),Q(t_n)]$![[Pasted image 20241225194326.png|500]]
-	- Moore型：输出仅决定于电路的现态，即$Y(t_n)=F[Q(t_n)]$![[Pasted image 20241225194344.png|500]]
+	- Mealy型：输出与现态有关，还决定于电路的输入，即$Y(t_n)=F[X(t_n),Q(t_n)]$![Pasted image 20241225194326](images/Pasted%20image%2020241225194326.png)
+	- Moore型：输出仅决定于电路的现态，即$Y(t_n)=F[Q(t_n)]$![Pasted image 20241225194344](images/Pasted%20image%2020241225194344.png)
 - 能否编程；集成度不同；使用的开关元件类型
 ## Part 1 时序逻辑电路的基本分析和设计方法
 ### Section 1 分析方法介绍
 - 分析：根据给定的时序逻辑电路图，通过状态转换表、状态图或时序图来分析电路的逻辑功能。
-- 一般过程![[Pasted image 20241225195011.png|400]]
+- 一般过程![Pasted image 20241225195011](images/Pasted%20image%2020241225195011.png)
 1. 写方程式：
 	1. 时钟方程：各个触发器时钟信号的逻辑表达式。
 	2. 输出方程：时序电路各个输出信号的逻辑表达式
@@ -55,7 +55,7 @@ Q(t_{n+1})&=H[W(t_n),Q(t_n)]\end{align}$$
 	3. 画时序图时要明确，只有当CP触发沿到来时相应的触发器才会更新状态，否则只会保持原状态
 5. 电路功能说明：一般情况用状态图或状态表就可反映。但是实际应用中各个输入、输出信号都有确定的物理含义。
 ### Section 2 分析方法实例
-1. Moore型：![[Pasted image 20241225204002.png]]
+1. Moore型：![Pasted image 20241225204002](images/Pasted%20image%2020241225204002.png)
 1. 写方程式
 	1. 时钟方程：$CP_0=CP_1=CP_2=CP$，也可以不写这是同步时序电路，时钟信号都是CP
 	2. 输出方程：$Y=\overline{Q_2^n\overline Q_1^n\overline{Q}_0^n}$，这是一个Moore型电路，仅与电路现态有关（没有输入信号）
@@ -66,9 +66,9 @@ Q(t_{n+1})&=H[W(t_n),Q(t_n)]\end{align}$$
 2. 求状态方程：JK触发器的特性方程为：$Q^{n+1}=J\overline Q^n+\overline KQ^n$，将驱动方程代入特性方程$$\begin{cases}Q^{n+1}_0=J_0\overline Q_0^n+\overline K_0Q^n_0=\overline Q_2^n\overline Q_0^n+\overline Q_2^nQ^n_0=\overline{Q_2^n}\\
 Q^{n+1}_1=J_1\overline Q_1^n+\overline K_1Q^n_1=Q_0^n\overline Q_1^n+\overline{\overline {Q_0^n}}Q^n_1=Q_0^n\\
 Q^{n+1}_2=J_2\overline Q_2^n+\overline K_2Q^n_2=Q_1^n\overline Q_2^n+\overline{\overline {Q_1^n}}Q^n_2=Q_1^n\end{cases}$$
-3. 进行计算：依次假设$Q_2^nQ_1^nQ_0^n$代入状态方程和输出方程进行计算，求出相应的次态和输出![[Pasted image 20241225205800.png]]
-4. 画状态图和时序图![[Pasted image 20241225210401.png]]
-![[Pasted image 20241225210422.png|400]]
+3. 进行计算：依次假设$Q_2^nQ_1^nQ_0^n$代入状态方程和输出方程进行计算，求出相应的次态和输出![Pasted image 20241225205800](images/Pasted%20image%2020241225205800.png)
+4. 画状态图和时序图![Pasted image 20241225210401](images/Pasted%20image%2020241225210401.png)
+![Pasted image 20241225210422](images/Pasted%20image%2020241225210422.png)
 - 分析：这里的001下一个是011的原因：001是现态，它的次态是011
 
 - 一些概念：
@@ -108,15 +108,15 @@ Q^{n+1}_2=J_2\overline Q_2^n+\overline K_2Q^n_2=Q_1^n\overline Q_2^n+\overline{\
 	2. 若不能自启动，采取措施
 ### Section 4 设计方法实例1
 
-![[Pasted image 20241226084656.png]]
+![Pasted image 20241226084656](images/Pasted%20image%2020241226084656.png)
 - 已经给出状态图，可以省略1，2，3步
 1. 选择触发器，求时钟方程、输出方程和状态方程
 	1. 选择3个CP下降沿触发的边沿JK触发器
 	2. 求时钟方程（同步方案）：$CP_0=CP_1=CP_2=CP$（CP是时序电路的输入时钟脉冲）
 	3. 求输出方程
 		1. 确定约束项：可以看出上图没有出现110、111，他们是无效状态，对应的是$Q_2^nQ_1^n\overline {Q_0^n}$和$Q_2^nQ_1^nQ_0^n$是约束项
-		2. 可以画出卡诺图![[Pasted image 20241226085625.png|400]]$$Y=Q_2^nQ_0^n$$
-		3. 求状态方程，写出各触发器次态的卡诺图![[Pasted image 20241226090025.png]]可以得到状态方程：$$\begin{cases}Q_0^{n+1}=\overline{Q_0^n}\\
+		2. 可以画出卡诺图![Pasted image 20241226085625](images/Pasted%20image%2020241226085625.png)$$Y=Q_2^nQ_0^n$$
+		3. 求状态方程，写出各触发器次态的卡诺图![Pasted image 20241226090025](images/Pasted%20image%2020241226090025.png)可以得到状态方程：$$\begin{cases}Q_0^{n+1}=\overline{Q_0^n}\\
 		Q_1^{n+1}=\overline{Q}_2^n\overline{Q}_1^nQ_0^n+Q_1^n\overline Q_0^n\\
 		Q_2^{n+1}=Q_1^nQ_0^n+Q_2^n\overline Q_0^n\end{cases}
 		$$
@@ -138,7 +138,7 @@ Q^{n+1}_2=J_2\overline Q_2^n+\overline K_2Q^n_2=Q_1^n\overline Q_2^n+\overline{\
 	=Q_1^nQ_0^n·\overline Q_2^n+Q_1^n·Q_0^n\\
 	&=>J_2=Q_1^nQ_0^n,K_2=Q_1^n\end{align}
 		$$^changedquotion
-3. 画逻辑图![[Pasted image 20241226132736.png]]
+3. 画逻辑图![Pasted image 20241226132736](images/Pasted%20image%2020241226132736.png)
 4. 检查电路自启动：将无效状态110、111代入Y和[[Chapter 5 时序逻辑电路#^changedquotion|变换后的状态方程]]
 - 这个是Moore型的时序电路，因为输出$Y=Q_2^nQ_0^n$仅决定于电路的现态。
 
@@ -146,19 +146,19 @@ Q^{n+1}_2=J_2\overline Q_2^n+\overline K_2Q^n_2=Q_1^n\overline Q_2^n+\overline{\
 - 设计一个串行数据检测电路，对它的要求：连续输入3个或者3个以上1时输出为1，其他情况下输出为0.
 1. 进行逻辑抽象，建立原始状态图
 	1. 检测电路的输入信号是串行数据，输出信号是检测结果。从起始状态开始要记录连续输入3个及其以上1的情况，大体上应该设置4个内部状态，取M=4
-	2. 用X表示输入数据，Y表示输出信号，$S_0$表示起始状态，用$S_1$、$S_2$、$S_3$、表示连续输入1个1，2个1，3个1时的电路状态，画出原始状态图![[Pasted image 20241226152732.png|400]]
+	2. 用X表示输入数据，Y表示输出信号，$S_0$表示起始状态，用$S_1$、$S_2$、$S_3$、表示连续输入1个1，2个1，3个1时的电路状态，画出原始状态图![Pasted image 20241226152732](images/Pasted%20image%2020241226152732.png)
 2. 状态化简，画最简状态图
 	1. 确定等价状态，可以发现$S_2$和$S_3$是等价的。因为这里两个状态输出1时都是$S_3$，输入0时都是$S_0$
-	2. 合并等价状态![[Pasted image 20241226153234.png|400]]
+	2. 合并等价状态![Pasted image 20241226153234](images/Pasted%20image%2020241226153234.png)
 3. 状态分配，画用二进制编码后的状态图
 	1. 状态数M=3，n=2
 	2. 进行状态编码：$S_0=00,S_1=01,S_2=11,$（不固定）
-	3. 编码后的状态图![[Pasted image 20241226153453.png|400]]
+	3. 编码后的状态图![Pasted image 20241226153453](images/Pasted%20image%2020241226153453.png)
 4. 选择触发器，求时钟方程、输出方程和状态方程
 	1. 选用两个CP上升沿触发的边沿JK触发器。
 	2. 采用同步方案：$CP_0=CP_1=CP$
-	3. 求输出方程：$Y=XQ_1^n$![[Pasted image 20241226153709.png|300]]
-	4. 求状态方程：$Q_1^{n+1}=XQ_0^n$，$Q_0^{n+1}=X$![[屏幕截图 2024-12-26 154037.png|400]]
+	3. 求输出方程：$Y=XQ_1^n$![Pasted image 20241226153709](images/Pasted%20image%2020241226153709.png)
+	4. 求状态方程：$Q_1^{n+1}=XQ_0^n$，$Q_0^{n+1}=X$![屏幕截图 2024-12-26 154037](images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-12-26%20154037.png)
 5. 求驱动方程
 	1. JK触发器的特性方程为$Q^{n+1}=J\overline Q^n+\overline KQ^n$
 	2. 变换状态方程形式：$$\begin{cases}Q^{n+1}_1&=XQ_0^n(\overline Q_1^n+Q_1^n)=XQ_0^n\overline Q_1^n+XQ_0^nQ_1^n\\
@@ -171,8 +171,8 @@ Q^{n+1}_2=J_2\overline Q_2^n+\overline K_2Q^n_2=Q_1^n\overline Q_2^n+\overline{\
 		=X·\overline Q_0^n+X·Q_0^n\\ &=>J_0=X,K_0=\overline X\\
 		\end{align}
 		$$
-6. 画逻辑电路图![[Pasted image 20241226155729.png|400]]
-7.  检查自启动：将无效状态10代入：可以自启动![[Pasted image 20241226160406.png|200]]
+6. 画逻辑电路图![Pasted image 20241226155729](images/Pasted%20image%2020241226155729.png)
+7.  检查自启动：将无效状态10代入：可以自启动![Pasted image 20241226160406](images/Pasted%20image%2020241226160406.png)
 ## Part 2 计数器
 ### Section 1 特点和分类
 - 计数：把记忆输入CP脉冲个数的操作
@@ -187,8 +187,8 @@ Q^{n+1}_2=J_2\overline Q_2^n+\overline K_2Q^n_2=Q_1^n\overline Q_2^n+\overline{\
 #### 2.1 二进制同步计数器
 ##### 二进制同步加法计数器
 - 以三位二进制同步加法计数器说明二进制同步加法计数器的构成方法和连接规律。
-1. 结构示意框图与状态图：CP时输入计数脉冲，记满时计数器归零，高位进位(CO)![[Pasted image 20241226171240.png|500]]
-2. 状态图![[Pasted image 20241226171346.png|500]]
+1. 结构示意框图与状态图：CP时输入计数脉冲，记满时计数器归零，高位进位(CO)![Pasted image 20241226171240](images/Pasted%20image%2020241226171240.png)
+2. 状态图![Pasted image 20241226171346](images/Pasted%20image%2020241226171346.png)
 3. 选择触发器，求时钟方程、输出方程和状态方程
 	1. 触发器：3个时钟下降沿触发的边沿JK触发器
 	2. 求时钟方程(同步)：$CP_0=CP_1=CP_2=CP$
@@ -197,7 +197,7 @@ Q^{n+1}_2=J_2\overline Q_2^n+\overline K_2Q^n_2=Q_1^n\overline Q_2^n+\overline{\
 		Q_1^{n+1}
 		=\overline{Q}_1^nQ_0^n+Q_1^n\overline Q_0^n\\
 		Q_2^{n+1}=Q_2^n\overline Q_1^n+Q_2^n\overline Q_0^n+\overline Q^n_2Q_1^nQ_0^n\end{cases}
-		$$![[Pasted image 20241226171802.png]]
+		$$![Pasted image 20241226171802](images/Pasted%20image%2020241226171802.png)
 4. 求驱动方程
 	1. JK触发器的特性方程：$Q^{n+1}=J\overline Q^n+\overline KQ^n$
 	2. 变换形式：$$\begin{cases}Q_0^{n+1}=\overline{Q_0^n}=1·\overline{Q_0^n}+\overline1·Q_0^n\\
@@ -211,8 +211,8 @@ Q^{n+1}_2=J_2\overline Q_2^n+\overline K_2Q^n_2=Q_1^n\overline Q_2^n+\overline{\
 		J_2&=K_2=Q_1^nQ_0^n(FF2在Q0=Q1=1时，在下一个CP触发沿到来时翻转。)\end{align}
 		$$
 5. 逻辑电路图（有两种连接方式）
-	- 串行进位：![[Pasted image 20241226173005.png]]
-- 并行进位：![[Pasted image 20241226173634.png]]
+	- 串行进位：![Pasted image 20241226173005](images/Pasted%20image%2020241226173005.png)
+- 并行进位：![Pasted image 20241226173634](images/Pasted%20image%2020241226173634.png)
 - 区别：进位信号的产生方式不同，串行进位时间较长，需要低位到高位逐级传送，只用2输入端与门即可，各个触发器Q端所带的负载是均匀的；并行进位，时间较短，不需要逐级传送，但是计数器级数增加，与门输入端增加，各个触发器负载不均匀，越是低位带的负载越重。
 6. 二进制同步加法计数器级间连接规律
 	1. 从上面的逻辑图可以看出JK触发器转换成了T触发器，于是可以改写为$$\begin{align}T_0=J_0&=K_0=1\\
@@ -221,32 +221,32 @@ Q^{n+1}_2=J_2\overline Q_2^n+\overline K_2Q^n_2=Q_1^n\overline Q_2^n+\overline{\
 		$$
 	2. 根据推论可得：$T_i=Q^n_{i-1}·Q^n_{i-2}·...·Q^n_1·Q_0^n=\prod_{j=0}^{i-1}Q_j^n$（$FF_i$的驱动方程，$T_i$是第i位触发器$FF_i$的驱动信号）
  7. 用$T'$触发器构成二进制加法计数器
-	 如果把触发器$FF_i$换成$T'$触发器，把上面驱动方程放入$FF_i$的时钟条件，$FF_i$的时钟方程变为$CP_i=CP·\prod_{j=0}^{i-1}Q_j^n(i=1,2,...,n-1)$，这样就可以方便的构成n位二进制加法计数器。（如下图，严格来说已经不是真正的同步时序电路）![[Pasted image 20241226182053.png|600]]
+	 如果把触发器$FF_i$换成$T'$触发器，把上面驱动方程放入$FF_i$的时钟条件，$FF_i$的时钟方程变为$CP_i=CP·\prod_{j=0}^{i-1}Q_j^n(i=1,2,...,n-1)$，这样就可以方便的构成n位二进制加法计数器。（如下图，严格来说已经不是真正的同步时序电路）![Pasted image 20241226182053](images/Pasted%20image%2020241226182053.png)
 8. 概念：
 	1. 计数器的计数长度、进制或模M：计数器能够记忆输入脉冲的数目（电路的有效状态数）
 	2. 在二进制计数器中，$M=2^n$（n表示二进制中的位数）
 ##### 二进制同步减法计数器
-- 每输入一个CP脉冲，计数器减1，000时向高位接变成7(111)，同时发出借位信号![[Pasted image 20241226182934.png|500]]
-1. 状态图![[Pasted image 20241226183005.png]]
+- 每输入一个CP脉冲，计数器减1，000时向高位接变成7(111)，同时发出借位信号![Pasted image 20241226182934](images/Pasted%20image%2020241226182934.png)
+1. 状态图![Pasted image 20241226183005](images/Pasted%20image%2020241226183005.png)
 2. 时钟方程、输出方程、状态方程和驱动方程
-	![[Pasted image 20241226183050.png|500]]
+	![Pasted image 20241226183050](images/Pasted%20image%2020241226183050.png)
 3. 逻辑电路图（两种连接方式）
-	1. ![[Pasted image 20241226183201.png]]
-	2. ![[Pasted image 20241226183220.png]]
-4. 二进制同步减法计数器级间连接规律![[Pasted image 20241226183332.png|600]]
+	1. ![Pasted image 20241226183201](images/Pasted%20image%2020241226183201.png)
+	2. ![Pasted image 20241226183220](images/Pasted%20image%2020241226183220.png)
+4. 二进制同步减法计数器级间连接规律![Pasted image 20241226183332](images/Pasted%20image%2020241226183332.png)
 ##### 二进制同步可逆计数器
 1. 单时钟输入二进制同步可逆计数器
 	若用$\overline U/D$表示加减控制信号，且为0时进行加计数，为1时减计数，按照下面式子将T触发器级联起来即可$$T_i=\overline{\overline U/D}·\prod_{j=0}^{i-1}Q_j^n+\overline U/D·\prod _{j=0}^{i-1}\overline Q_j^n(i=1,2,...,n-1)$$其实就是将二进制同步加法计数器的驱动方程和减法计数器的驱动方程分别与加减控制信号相与之后再加起来得到的
-	- 驱动方程![[Pasted image 20241226201141.png|400]]
-	- 逻辑电路图：![[Pasted image 20241226201709.png]]
+	- 驱动方程![Pasted image 20241226201141](images/Pasted%20image%2020241226201141.png)
+	- 逻辑电路图：![Pasted image 20241226201709](images/Pasted%20image%2020241226201709.png)
 2. 双时钟输入二进制同步可逆计数器
 	$CP_U$表示加计数脉冲，$CP_D$表示减计数脉冲$$CP_i=CP_U·\prod_{j=0}^{i-1}Q_j^n+CP_D·\prod _{j=0}^{i-1}\overline Q_j^n(i=1,2,...,n-1)$$其实就是利用T'触发器构成的二进制计数器，将加法计数器和减法计数的时钟加起来
-	- 时钟方程![[Pasted image 20241226202809.png|400]]
-	- 逻辑电路图：双时钟可逆计数器的$CP_U$和$CP_D$是互相排斥的，只能分时工作，否则无法正常计数![[Pasted image 20241226202842.png]]
+	- 时钟方程![Pasted image 20241226202809](images/Pasted%20image%2020241226202809.png)
+	- 逻辑电路图：双时钟可逆计数器的$CP_U$和$CP_D$是互相排斥的，只能分时工作，否则无法正常计数![Pasted image 20241226202842](images/Pasted%20image%2020241226202842.png)
 ##### 集成二进制同步计数器
 - 分为加法计数和可逆计数两种。（自然加权二进制码）
 ###### 集成4位二进制同步加法器计数器（74LS161）
-- 增加了一些辅助功能，以74LS161为例![[Pasted image 20241226203225.png|600]]
+- 增加了一些辅助功能，以74LS161为例![Pasted image 20241226203225](images/Pasted%20image%2020241226203225.png)
 - 各符号表示的功能：
 	- CP：输入计数脉冲，也是加到各个触发器的时钟信号端的时钟脉冲
 	- $\overline {CR}$：清零端
@@ -255,22 +255,22 @@ Q^{n+1}_2=J_2\overline Q_2^n+\overline K_2Q^n_2=Q_1^n\overline Q_2^n+\overline{\
 	- $D_0\sim D_3$是并行输入数据端
 	- CO：进位信号输出端
 	- $Q_0\sim Q_4$：计数状态输出端
-- 74LS161状态表![[Pasted image 20241226203659.png]]
+- 74LS161状态表![Pasted image 20241226203659](images/Pasted%20image%2020241226203659.png)
 - 功能
 	- 异步清零：当$\overline {CR}=0$时，计数器清零。
 	- 同步并行置数功能：当$\overline {CR}=1、\overline{LD}=0$时，再CP上升沿操作下，并行输入数据$d_0\sim d_3$进入计数器，使$Q^{n+1}_3Q^{n+1}_2Q^{n+1}_1Q^{n+1}_0=d_3d_2d_1d_0$
 	- 二进制同步加法计数功能：当$\overline {CR}=\overline{LD}=1$时，若$CT_T=CT_P=1$，则计数器对CP信号按照4位自然加权二进制码进行加法计数。
 	- 保持功能：当$\overline {CR}=\overline{LD}=1$时，若$CT_T·CT_P=0$，则计数器保持原来不变；对于进位输出，如果$CT_T=0$，CO=0，如果=1，$CO=Q_3^nQ_2^nQ_1^nQ_0^n$
 - 74LS163采用同步清零，其他与161相同
-	- 状态表![[Pasted image 20241226210214.png]]
-	- CC4520是双4位二进制同步加法计数器，属于CMOS电路![[Pasted image 20241226210316.png]]
-	- 状态表![[Pasted image 20241226210352.png]]
-	- ![[Pasted image 20241226210412.png]]
+	- 状态表![Pasted image 20241226210214](images/Pasted%20image%2020241226210214.png)
+	- CC4520是双4位二进制同步加法计数器，属于CMOS电路![Pasted image 20241226210316](images/Pasted%20image%2020241226210316.png)
+	- 状态表![Pasted image 20241226210352](images/Pasted%20image%2020241226210352.png)
+	- ![Pasted image 20241226210412](images/Pasted%20image%2020241226210412.png)
 ###### 集成4位二进制同步可逆计数器
-- 有双时钟(T'触发器74193)和单时钟(T触发器74191)两种![[Pasted image 20241226210633.png]]
-- ![[Pasted image 20241226210650.png]]
-- 74193![[Pasted image 20241226210731.png]]
-- ![[Pasted image 20241226210749.png]]
+- 有双时钟(T'触发器74193)和单时钟(T触发器74191)两种![Pasted image 20241226210633](images/Pasted%20image%2020241226210633.png)
+- ![Pasted image 20241226210650](images/Pasted%20image%2020241226210650.png)
+- 74193![Pasted image 20241226210731](images/Pasted%20image%2020241226210731.png)
+- ![Pasted image 20241226210749](images/Pasted%20image%2020241226210749.png)
 #### 2.2 二进制异步计数器
 
 ### Section 3 十进制计数器
@@ -292,9 +292,9 @@ Q^{n+1}_2=J_2\overline Q_2^n+\overline K_2Q^n_2=Q_1^n\overline Q_2^n+\overline{\
 	P_{N-1}=P_{11}=\prod_{0\sim3}Q^1=Q_3^nQ_1^nQ_0^n\end{align}$$
 		解释：$P_{N-1}$表示状态$S_{N-1}$的译码，$\prod_{0\sim{n-1}}Q^1$代表$S_{N-1}$时状态为1的各个触发器Q端的连乘积，本来$P_{N-1}=\prod_{0\sim{n-1}}Q^1·\prod_{0\sim{n-1}}Q^0$，但是用同步归零法得到的N进制加法计数器中$S_N\sim S_{2^n-1}$不会出现，所以对应的最小项可以作为约束项处理，用完约束项进行化简后就是上面的样子。
 	3. 画连线图：
-		1. 同步清零$\overline{CR}$端构成，$D_0\sim D_3$可随意处理，下图都接0![[Pasted image 20241227112616.png|300]]
-		2. 同步置数$\overline{LD}$端构成，$D_0\sim D_3$必须都接0![[Pasted image 20241227112715.png|300]]
-	- 用卡诺图证明$P_{N-1}=\prod_{0\sim{n-1}}Q^1·\prod_{0\sim{n-1}}Q^0=\prod_{0\sim {n-1}}Q^1$![[Pasted image 20241227132630.png|400]]
+		1. 同步清零$\overline{CR}$端构成，$D_0\sim D_3$可随意处理，下图都接0![Pasted image 20241227112616](images/Pasted%20image%2020241227112616.png)
+		2. 同步置数$\overline{LD}$端构成，$D_0\sim D_3$必须都接0![Pasted image 20241227112715](images/Pasted%20image%2020241227112715.png)
+	- 用卡诺图证明$P_{N-1}=\prod_{0\sim{n-1}}Q^1·\prod_{0\sim{n-1}}Q^0=\prod_{0\sim {n-1}}Q^1$![Pasted image 20241227132630](images/Pasted%20image%2020241227132630.png)
 	据上图可得：
 	$S_{N-1}=S_0=0000,P_{N-1}=P_0=1$，$m_1\sim m_{15}$为约束项
 	$S_{N-1}=S_1=0001,P_{N-1}=P_1=Q_0^n$，$m_2\sim m_{15}$为约束项
@@ -311,16 +311,16 @@ Q^{n+1}_2=J_2\overline Q_2^n+\overline K_2Q^n_2=Q_1^n\overline Q_2^n+\overline{\
 	2. 求归零逻辑——异步清零端或置数控制端信号的逻辑表达式
 	3. 画连线图
 - 应用举例1
-	- 用74197构成十二进制计数器![[屏幕截图 2024-12-27 134517.png]]
-	![[Pasted image 20241227134810.png]]
+	- 用74197构成十二进制计数器![屏幕截图 2024-12-27 134517](images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-12-27%20134517.png)
+	![Pasted image 20241227134810](images/Pasted%20image%2020241227134810.png)
 - 应用举例2：用74161构成一个十二进制计数器
 - 74161是十六进制计数器，清零用的异步，置数用的同步
 	1. 写出$S_{N-1}$和$S_N$的二进制代码$$S_{N-1}=S_{12-1}=S_{11}=1011,S_N=S_{12}=1100$$
 	2. 求归零逻辑$$\begin{align}\overline {CR}=\overline P_N=\overline{\prod_{0\sim{n-1}}Q^1}=\overline{Q_3^nQ_2^n}\\
 	\overline{LD}=\overline P_{N-1}=\overline{\prod_{0\sim{n-1}}Q^1}=\overline{Q_3^nQ_1^nQ_0^n}\end{align}$$
 	3. 画连线图
-		1. 用异步清零$\overline{CR}$归零（c是对应的仿真波形）![[屏幕截图 2024-12-27 135541.png]]
-		2. 用同步置数$\overline{LD}$归零![[屏幕截图 2024-12-27 144804.png]]
+		1. 用异步清零$\overline{CR}$归零（c是对应的仿真波形）![屏幕截图 2024-12-27 135541](images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-12-27%20135541.png)
+		2. 用同步置数$\overline{LD}$归零![屏幕截图 2024-12-27 144804](images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-12-27%20144804.png)
 		- 可以从c中看出“1100”是一个瞬态。
 #### 4.3 计数器容量的扩展
 

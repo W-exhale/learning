@@ -1,22 +1,22 @@
 ## Part 1 进位计数制
 ### 1. 十、二、八、十六进制
-![[Pasted image 20250929195756.png]]
+![Pasted image 20250929195756](images/Pasted%20image%2020250929195756.png)
 
 - 二进制：0，1
 - 八进制：0，1，2，3，4，5，6，7
 - 十进制：0，1，2，3，4，5，6，7，8，9
 - 十六进制：0，1，2，3，4，5，6，7，8，9，A，B，C，D，E，F
 ### 2. 其他进制-->十进制
-![[Pasted image 20250929200027.png]]
+![Pasted image 20250929200027](images/Pasted%20image%2020250929200027.png)
 
 ### 3. 二、八、十六之间相互转换
-![[Pasted image 20250929200133.png]]
+![Pasted image 20250929200133](images/Pasted%20image%2020250929200133.png)
 
 ### 4. 十进制-->其他进制
 - 整数部分除以对应的进制，小数部分乘以对应的进制
-- 整数![[Pasted image 20250929200424.png|200]]
-- 小数![[Pasted image 20250929200509.png|200]]
-- 拼凑![[Pasted image 20250929200626.png]]
+- 整数![Pasted image 20250929200424](images/Pasted%20image%2020250929200424.png)
+- 小数![Pasted image 20250929200509](images/Pasted%20image%2020250929200509.png)
+- 拼凑![Pasted image 20250929200626](images/Pasted%20image%2020250929200626.png)
 
 ### 5. 真值和机器数
 - 真值：符合人类习惯的数字
@@ -66,10 +66,10 @@
 ### 1. 多路选择器&三态门
 - 多路选择器（MUX）
 	- 多个输入数据只允许一个数据通过
-	- 控制信号（op）的位数为mbit：如果有k个输入那么就有$m\geq log_2k$ ![[Pasted image 20250929210056.png]]
+	- 控制信号（op）的位数为mbit：如果有k个输入那么就有$m\geq log_2k$ ![Pasted image 20250929210056](images/Pasted%20image%2020250929210056.png)
 - 三态门
 	- 单个输入
-	- 控制信号为1时通，0时不通（高阻态）![[Pasted image 20250929210300.png|300]]
+	- 控制信号为1时通，0时不通（高阻态）![Pasted image 20250929210300](images/Pasted%20image%2020250929210300.png)
 ### 2. 加法器
 [[Chapter 3 组合逻辑电路#Part 3 加法器|加法器]]
 

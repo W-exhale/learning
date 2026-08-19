@@ -50,8 +50,8 @@
 `Web` 页面具有强交互性。由于页面用 `HTML` 编写，表现力强，且服务器端升级后客户端无需部署即可使用新版本，因此 `B/S` 架构升级非常容易。
 ### 1. HTTP协议
 -   在 Web 应用中，浏览器请求一个 `URL`，服务器将生成的 `HTML` 网页发送给浏览器，两者间的传输协议是 **HTTP**。
--   **HTTP** 协议基于 **TCP** 协议。在浏览器中检查网页元素可以看到 `HTML` 结构：![[Pasted image 20250429152923.png]]
--   查看网络(Network)面板可以看到请求和响应：![[Pasted image 20250429153135.png]]
+-   **HTTP** 协议基于 **TCP** 协议。在浏览器中检查网页元素可以看到 `HTML` 结构：![Pasted image 20250429152923](images/Pasted%20image%2020250429152923.png)
+-   查看网络(Network)面板可以看到请求和响应：![Pasted image 20250429153135](images/Pasted%20image%2020250429153135.png)
 
 **浏览器请求流程：**
 
@@ -61,7 +61,7 @@
 
 
 **HTTP 请求示例 (Headers):**
-![[Pasted image 20250429153633.png]]
+![Pasted image 20250429153633](images/Pasted%20image%2020250429153633.png)
 
 -   `:method`: 请求方法，如 `GET`。
 -   `:path`: 请求的资源路径，如 `/mdrama/82006`。
@@ -72,7 +72,7 @@
 -   `Accept-Language`: 浏览器偏好语言。
 -   `Accept-Encoding`: 浏览器支持的压缩类型。
 
-**HTTP 响应示例 (Headers):**![[Pasted image 20250429155245.png]]
+**HTTP 响应示例 (Headers):**![Pasted image 20250429155245](images/Pasted%20image%2020250429155245.png)
 -   `Content-Type`: 响应内容的类型 (e.g., `text/html`, `image/jpeg`)。
 -   `Content-Length`: 响应内容的长度 (字节数)。
 -   `Content-Encoding`: 响应内容的压缩算法 (e.g., `gzip`)。

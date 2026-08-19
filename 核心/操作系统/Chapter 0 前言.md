@@ -1,19 +1,19 @@
 ## 操作系统的目标和作用
-![[Pasted image 20250712111327.png]]
+![Pasted image 20250712111327](images/Pasted%20image%2020250712111327.png)
 
-![[Pasted image 20250712111415.png]]
+![Pasted image 20250712111415](images/Pasted%20image%2020250712111415.png)
 
-![[Pasted image 20250712111755.png]]
+![Pasted image 20250712111755](images/Pasted%20image%2020250712111755.png)
 
-![[Pasted image 20250712112034.png]]
+![Pasted image 20250712112034](images/Pasted%20image%2020250712112034.png)
 
-![[Pasted image 20250712112046.png]]
+![Pasted image 20250712112046](images/Pasted%20image%2020250712112046.png)
 
-![[Pasted image 20250712112056.png]]
+![Pasted image 20250712112056](images/Pasted%20image%2020250712112056.png)
 
-![[Pasted image 20250712112904.png]]
+![Pasted image 20250712112904](images/Pasted%20image%2020250712112904.png)
 
-![[Pasted image 20250712112913.png]]
+![Pasted image 20250712112913](images/Pasted%20image%2020250712112913.png)
 
 
 ## Part 1 操作系统功能
@@ -53,7 +53,7 @@
 
 ##  Part 2 计算机系统组成
 ### 2.1 运行
-- 一个或多个CPU和若干设备控制器，通过公用总线相连，总线提供共享内存的访问。每个设备控制器负责一类特定的设备。CPU和设备控制器可以并发执行，并且竞争访问内存。内存控制器用来协调访问内存。![[Pasted image 20250719164249.png]]
+- 一个或多个CPU和若干设备控制器，通过公用总线相连，总线提供共享内存的访问。每个设备控制器负责一类特定的设备。CPU和设备控制器可以并发执行，并且竞争访问内存。内存控制器用来协调访问内存。![Pasted image 20250719164249](images/Pasted%20image%2020250719164249.png)
 
 - 计算机电源打开开始运行时，运行一个引导程序（bootstrap program，位于计算机固件如ROM或EEPROM电可擦可编程只读内存）
 	- 初始化系统各个组件，从CPU寄存器、设备控制器到内存内容
@@ -68,7 +68,7 @@
 - CPU被中断时，停止正在做的事，立即转到固定位置再继续执行。
 	- 固定位置：中断服务程序的开始地址
 	- 中断服务程序开始执行，执行完后CPU重新执行被中断的计算
-	- ![[Pasted image 20250719165933.png]]
+	- ![Pasted image 20250719165933](images/Pasted%20image%2020250719165933.png)
 - 中断
 	- 需要调用一个通用程序检查中断信息后，该程序会调用特定的中断处理程序
 		- 中断处理要求快捷，只有少量预先定义的中断，可以通过中断处理程序的指针表（间接调用中断处理程序，无需通过其他中介程序）来提高速度

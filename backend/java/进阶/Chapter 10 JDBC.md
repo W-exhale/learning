@@ -2,12 +2,12 @@
 - 含义：一套规范，Java数据库连接（Java Database Connectivity），用来规范客户端程序如何来访问数据库的应用程序接口，提供查询和更新数据库中数据的方法，面向关系型数据库。
 
 - 连接数据库的方式
-![[Pasted image 20250122143827.png|400]]
-![[Pasted image 20250122144205.png|400]]
+![Pasted image 20250122143827](images/Pasted%20image%2020250122143827.png)
+![Pasted image 20250122144205](images/Pasted%20image%2020250122144205.png)
 之后就是正常的建表操作
 
 - 这是建立的表
-![[Pasted image 20250122152711.png]]
+![Pasted image 20250122152711](images/Pasted%20image%2020250122152711.png)
 
 ```java
 public class JDBCDemo01 {  
@@ -54,7 +54,7 @@ public class JDBCDemo01 {
     }  
 }
 ```
-![[Pasted image 20250122152911.png]]
+![Pasted image 20250122152911](images/Pasted%20image%2020250122152911.png)
 
 - 但是有一个问题，假如说我们不只需要selectAll函数，还需要selectById函数，那么我们就需要将上面的四个步骤又重复一遍：
 ```java
@@ -69,7 +69,7 @@ resultSet = statement.executeQuery("select * from info");
 ```
 
 - 为避免重复，我们可以使用配置文件，util是工具类文件
-![[Pasted image 20250122154615.png]]
+![Pasted image 20250122154615](images/Pasted%20image%2020250122154615.png)
 
 - 使用properties，要注意db.properties文件中的字符不用双引号
 
@@ -190,7 +190,7 @@ public class JDBCUtils {
 
 - 字符编码问题
 （sql语句插入中文）：输入`update info set name = '中文' where id = 4`
-![[Pasted image 20250126110513.png]]
+![Pasted image 20250126110513](images/Pasted%20image%2020250126110513.png)
 -如果要显示中文两个字，需要在db.properties文件里的url加上`?characterEncoding=utf8`，即`url = jdbc:mysql://localhost:3306/student?characterEncoding=utf8`，要注意不要有空格否则会无法识别
 - 一开始创建数据库时使用的字符集是utf8mb4，假如说我们改成gbk（windows中文系统是gbk），那JDBC的字符编码设置也要改成gbk。
 

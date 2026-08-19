@@ -18,14 +18,14 @@
 3. 关系型：这个模式有很多个表，每个表是一种东西，比如说软件工程，MySQL，money，然后里面的人都用编号进行标注，类似于学生ID。这些表有共性，也就是编号。
 
 ## Part 2 Mysql安装方式：
-![[屏幕截图 2024-09-01 213311.png]]
+![屏幕截图 2024-09-01 213311](images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-09-01%20213311.png)
 
-![[屏幕截图 2024-09-01 213457.png]]
+![屏幕截图 2024-09-01 213457](images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-09-01%20213457.png)
 
 用installer，archives下载是源代码文件（二进制），配置繁琐
-![[Pasted image 20240902093010.png]]
+![Pasted image 20240902093010](images/Pasted%20image%2020240902093010.png)
 后面就点next或e，
-![[Pasted image 20240902093145.png]]
+![Pasted image 20240902093145](images/Pasted%20image%2020240902093145.png)
 mysql57会在电脑中任务管理器的服务中创建一个叫MySQL57的东西
 
 如果mysql安装失败，要在服务中打开服务把mysql删掉
@@ -47,11 +47,11 @@ server 服务端：mysql是mysql server 属于服务端，所以mysql是C/S架�
 如果在任务管理器中把mysql的服务停止了，就表示客户端和服务端断开了，类似游戏维护进不去。
 
 如果是二进制的话，就得通过命令的方式来停止和启动服务，不能直接在任务管理器中一键开关
-![[Pasted image 20240902104157.png]]
+![Pasted image 20240902104157](images/Pasted%20image%2020240902104157.png)
 
 上面的情况是权限不够，我们可以用管理员身份打开Hyper，可以通过下面的命令来开关，和上面的一键开关是一样的
 
-![[Pasted image 20240902104537.png]]
+![Pasted image 20240902104537](images/Pasted%20image%2020240902104537.png)
 
 cls命令清屏
 f11铺满屏幕（hyper）
@@ -67,7 +67,7 @@ oracle（甲骨文）：....
 
 ## Part 4 文件介绍
 - 创建data文件夹
-![[Pasted image 20240902111610.png]]
+![Pasted image 20240902111610](images/Pasted%20image%2020240902111610.png)
 
 上图中，bin是一些二进制文件，包括可执行文件，一些mysql命令就在里面
 docs是文档
@@ -76,9 +76,9 @@ share表示一些字符编码（UTF-8等）
 lib是引入的一些库之类的东西
 
 总结下来，发现缺少data文件夹，表示仓库的位置
-![[Pasted image 20240902112817.png]]
+![Pasted image 20240902112817](images/Pasted%20image%2020240902112817.png)
 用管理员权限运行hyper用上面的方式创建data文件夹，不能直接新建，下面是创建好的data文件夹
-![[Pasted image 20240902112943.png]]
+![Pasted image 20240902112943](images/Pasted%20image%2020240902112943.png)
 
 
 

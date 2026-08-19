@@ -647,7 +647,7 @@ public class FileServlet extends HttpServlet {
 
 运行代码，在浏览器中输入URL `http://localhost:8080/hello?name=Bob` 可以看到如下页面：
 
-![[Pasted image 20250507114235.png|500]]
+![Pasted image 20250507114235](images/Pasted%20image%2020250507114235.png)
 
 >[!TIP] 编译参数 `-parameters`
 >为了把方法参数的名称编译到 `.class` 文件中，以便处理 **`@GetMapping`** 时使用，我们需要打开编译器的一个参数：

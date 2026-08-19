@@ -14,7 +14,7 @@
 ## Part 2 基本组成
 ### 1. 早期冯诺依曼结构
 - “存储程序”概念：将指令以二进制代码的形式一次性全部输入计算机的主存储器中，然后按地址顺序一条条执行指令
-![[Pasted image 20250927210702.png]]
+![Pasted image 20250927210702](images/Pasted%20image%2020250927210702.png)
 
 - 特点
 	1. 由五大部件组成
@@ -35,9 +35,9 @@
 		- 输入设备
 		- 输出设备
 - 存储器：主存、辅存
-![[Pasted image 20250927211309.png]]
+![Pasted image 20250927211309](images/Pasted%20image%2020250927211309.png)
 
-![[Pasted image 20250927211615.png]]
+![Pasted image 20250927211615](images/Pasted%20image%2020250927211615.png)
 
  - 计算机五大部件：控制器，存储器，运算器，输入设备，输出设备
 	- 控制器：控制各部件，使程序运行
@@ -58,7 +58,7 @@
 		- 工作方式：按存储单元的地址号来对存储字进行存取（按地址访问存储器，简称访存）
 	- MAR：反映存储单元的个数，4位=>$2^4$个存储单元
 	- MDR：MDR位数=存储字长，16位=>每个存储单元存放16bit（1Byte=6bit）
-![[Pasted image 20250927212614.png]]
+![Pasted image 20250927212614](images/Pasted%20image%2020250927212614.png)
 
 ### 2. 运算器
 - 作用：实现算数运算和逻辑运算
@@ -67,16 +67,16 @@
 	- MQ（Multiple-Quotient）：乘商寄存器，乘除运算存放操作数或运算结果
 	- X：通用的操作数寄存器
 	- ALU：算数逻辑单元
-![[Pasted image 20250916152719.png]]
+![Pasted image 20250916152719](images/Pasted%20image%2020250916152719.png)
 
 - 计算过程
-	- 加法：![[Pasted image 20250916152806.png]]
-	- 减法：![[Pasted image 20250916152822.png]]
-	- 乘法：![[Pasted image 20250916152940.png]]
-	- 除法：![[Pasted image 20250916153006.png]]
+	- 加法：![Pasted image 20250916152806](images/Pasted%20image%2020250916152806.png)
+	- 减法：![Pasted image 20250916152822](images/Pasted%20image%2020250916152822.png)
+	- 乘法：![Pasted image 20250916152940](images/Pasted%20image%2020250916152940.png)
+	- 除法：![Pasted image 20250916153006](images/Pasted%20image%2020250916153006.png)
 
 ### 3. 控制器
-![[Pasted image 20250927214615.png|200]]
+![Pasted image 20250927214615](images/Pasted%20image%2020250927214615.png)
 - 组成
 	- CU（Control Unit）：控制单元，分析指令，给出控制信号
 	- PC（Program Counter）：程序计数器，存放下一条指令地址，与主存MAR有直接通路，具有自动+1功能
@@ -101,7 +101,7 @@
 - 指令集体系结构（ISA，Instruction Set Architecture）：软件和硬件之间的界面，设计ISA就是定义一台计算机可以支持哪些指令，每条指令的作用和用法使什么
 
 ## Part 5 多级层次结构
-![[Pasted image 20250916141216.png|300]]
+![Pasted image 20250916141216](images/Pasted%20image%2020250916141216.png)
 - $M_0$和$M_1$属于硬件范围，其他属于软件范围
 
 - 计算机组成问题：与实现有关，例如实现乘法指令采用什么方式

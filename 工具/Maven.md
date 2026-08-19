@@ -80,7 +80,7 @@ a-maven-project/        # 项目根目录，项目名
 - 官网下载bin
 - 解压缩
 	- 环境变量配置
-	![[Pasted image 20250403094016.png]]
+	![Pasted image 20250403094016](images/Pasted%20image%2020250403094016.png)
 	- Path：`%MAVEN_HOME%\bin`
 - 在conf文件里的settings.xml配置本地仓库
 
@@ -143,7 +143,7 @@ Maven 的 `settings.xml` 可能有两个位置：
     
 建议修改 **用户配置** (`.m2/settings.xml`)，这样不会影响全局的 Maven 配置。
 - Maven镜像仓库定期从中央仓库同步：
-![[Pasted image 20250403093414.png|400]]
+![Pasted image 20250403093414](images/Pasted%20image%2020250403093414.png)
 
 - 在用户主目录下进入`.m2`目录，创建一个`settings.xml`配置文件，内容如下：
 ```xml
@@ -223,18 +223,18 @@ Maven 的 `settings.xml` 可能有两个位置：
 ### 2.5 在IDE中使用Maven
 ##### 为当前项目配置Maven
 - 依次点击 IDEA 菜单栏 ：_File | Settings_ :
-![[Pasted image 20250403103300.png]]
+![Pasted image 20250403103300](images/Pasted%20image%2020250403103300.png)
 
 ##### 全局配置
 
-![[Pasted image 20250403103948.png]]
+![Pasted image 20250403103948](images/Pasted%20image%2020250403103948.png)
 
 - 后面的步骤和上面一样
 
 ##### 创建maven项目
 - new project--> maven
 -  可以选择 `Create from archetype` 来使用项目模板，或者直接点击 `Next` 创建一个简单的 Maven 项目骨架。
-![[Pasted image 20250403104435.png]]
+![Pasted image 20250403104435](images/Pasted%20image%2020250403104435.png)
 
 ## 3. 构建流程
 - Maven不仅有标准化的项目结构，而且有一套标准化的构建标准，可以自动化实现编译，打包，发布等等
@@ -423,7 +423,7 @@ $ mvn tomcat:run
 ## 5. 模块管理
 ### 介绍
 - 软件开发中，把一个大项目拆分为多个模块是降低软件复杂度的有效方法
-![[Pasted image 20250404210544.png]]
+![Pasted image 20250404210544](images/Pasted%20image%2020250404210544.png)
 
 Maven可以有效地管理多个模块，我们只需要把每个模块当作一个独立的Maven项目，它们有各自独立的`pom.xml`。例如，模块A的`pom.xml`：
 ```xml

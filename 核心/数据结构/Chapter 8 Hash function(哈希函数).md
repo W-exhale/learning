@@ -29,7 +29,7 @@ $key_2$->value1,于是发生碰撞，有些高级语言会将其变成一个链�
 原因：多碰撞几次，hash表一直加。
 遍历的时间变长了（跟链表贴近）
 
-![[c69ebe457bca14f8356c12dadf053db.jpg|400]]
+![c69ebe457bca14f8356c12dadf053db](images/c69ebe457bca14f8356c12dadf053db.jpg)
 
 
 

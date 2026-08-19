@@ -13,14 +13,14 @@
 	- 互连网（internet）
 		- 网络的网络（用路由器把小网络连在一起）
 			- 网络连接计算机，互连网连接网络
-			- ![[Pasted image 20250917175331.png]]
+			- ![Pasted image 20250917175331](images/Pasted%20image%2020250917175331.png)
 			- 路由器
 				- 连接网络
 			- 集线器、交换机
 				- 连接同一网络的不同结点
 		- 家用路由器
 			- =路由器+交换机+其他功能
-			- ![[Pasted image 20251226145638.png]]
+			- ![Pasted image 20251226145638](images/Pasted%20image%2020251226145638.png)
 	- 互联网（Internet）
 		- 即因特网
 		- 由各大ISP和国际机构组建的覆盖全球范围的互连网
@@ -42,7 +42,7 @@
 			- 内部安装网络适配器(网卡)
 				- 将主机数据发送到网络上
 				- 接收来自网络的数据
-				- 有线网络适配器![[Pasted image 20251226155144.png|300]]
+				- 有线网络适配器![Pasted image 20251226155144](images/Pasted%20image%2020251226155144.png)
 		- 通信设备
 			- 集线器、交换机、路由器
 		- 通信链路
@@ -54,7 +54,7 @@
 		- 规定计算机网络中的通信规则
 		- 由硬件、软件共同实现
 			- 如，网络适配器+软件 实现网络通信协议
-	- ![[Pasted image 20251226154855.png]]
+	- ![Pasted image 20251226154855](images/Pasted%20image%2020251226154855.png)
 
 - 从工作方式看
 	- 边缘部分
@@ -65,7 +65,7 @@
 		- 工作方式
 			- 为边缘部分提供连通性，交换服务
 		- 由大量网络和连接这些网络的路由器组成
-	- ![[Pasted image 20251226155641.png]]
+	- ![Pasted image 20251226155641](images/Pasted%20image%2020251226155641.png)
 
 - 从逻辑功能看
 	- 资源子网
@@ -85,7 +85,7 @@
 - 资源共享
 	- 硬件、软件、数据资源
 	- 智能音箱请求服务器处理、应用商店、分享视频
-	- ![[Pasted image 20251226160534.png]]
+	- ![Pasted image 20251226160534](images/Pasted%20image%2020251226160534.png)
 - 分布式处理
 	- 将某个复杂任务分配给网络中多台计算机处理
 	- 大矩阵运算、MapReduce
@@ -101,7 +101,7 @@
 ## Part 3 交换技术
 ### 1. 电路交换
 - 电话网络
-	- ![[Pasted image 20251226161950.png]]
+	- ![Pasted image 20251226161950](images/Pasted%20image%2020251226161950.png)
 - 优点
 	- 分配一条专用物理线路，两个用户始终占用端到端线路资源
 	- 传输效率高，数据直送
@@ -114,7 +114,7 @@
 		- 无法发现传输过程中发生的数据错误
 ### 2. 报文交换
  - 电报网络
-	- ![[Pasted image 20251226162647.png]]
+	- ![Pasted image 20251226162647](images/Pasted%20image%2020251226162647.png)
 - 存储转发
 	- 将传送的数据单元存储进中间节点，再根据目的地址转发到下一节点
 
@@ -131,8 +131,8 @@
 
 ### 3. 分组交换
 - 现代网络
-	- ![[Pasted image 20251226163452.png]]
-- ![[Pasted image 20251226163644.png]]
+	- ![Pasted image 20251226163452](images/Pasted%20image%2020251226163452.png)
+- ![Pasted image 20251226163644](images/Pasted%20image%2020251226163644.png)
 
 - 优点（和报文交换一样）
 	- 通信前无需建立连接
@@ -152,7 +152,7 @@
 ### 4. 虚电路交换技术
 - 基于分组交换
 	- 在传送数据之前需要双方先建立连接
-- ![[Pasted image 20251226164341.png]]
+- ![Pasted image 20251226164341](images/Pasted%20image%2020251226164341.png)
 - 最终未采纳
 	- 将排序等交给了核心部分处理
 	- 实际上边缘部分的终端算力够强大，可以解决分组失序等问题
@@ -160,18 +160,18 @@
 ### 5. 性能分析
 #### 电路交换
 - 24ms
-	- ![[Pasted image 20251226165127.png]]
+	- ![Pasted image 20251226165127](images/Pasted%20image%2020251226165127.png)
 
 #### 报文交换
 - 31ms
-	- ![[Pasted image 20251226165406.png]]
+	- ![Pasted image 20251226165406](images/Pasted%20image%2020251226165406.png)
 
 #### 分组交换
 - 17.5ms
-	- ![[Pasted image 20251226165751.png]]
+	- ![Pasted image 20251226165751](images/Pasted%20image%2020251226165751.png)
 
 - 对比
-	- ![[Pasted image 20251226165924.png]]
+	- ![Pasted image 20251226165924](images/Pasted%20image%2020251226165924.png)
 
 ## Part 4 计网分类
 ### 1. 按分布范围分类
@@ -180,11 +180,11 @@
 - 局域网：LAN
 - 个域网
 
-- ![[Pasted image 20251226170423.png]]
+- ![Pasted image 20251226170423](images/Pasted%20image%2020251226170423.png)
 - 如今的局域网几乎都是用以太网实现的，所以以太网≈局域网
 
 - WAN与LAN
-	- ![[Pasted image 20251226170723.png]]
+	- ![Pasted image 20251226170723](images/Pasted%20image%2020251226170723.png)
  - 个域网PAN
 	 - 通常用无线技术
 		 - 蓝牙、zigbee（这两者比wifi更省电）
@@ -195,17 +195,17 @@
 - 总线型
 	- 物理上星形拓扑，逻辑上总线型
 	- 广播式
-	- ![[Pasted image 20251226171256.png|300]]
+	- ![Pasted image 20251226171256](images/Pasted%20image%2020251226171256.png)
 	- 集线器不能处理
 - 环形
 	- 只有拿到token的计算机才可以发送数据
 	- 广播式
-	- ![[Pasted image 20251226171707.png|400]]
+	- ![Pasted image 20251226171707](images/Pasted%20image%2020251226171707.png)
 - 星形
-	- ![[Pasted image 20251226171813.png|400]]
+	- ![Pasted image 20251226171813](images/Pasted%20image%2020251226171813.png)
 - 网状
 	- 常用于广域网，其他用于局域网
-	- ![[Pasted image 20251226171842.png|300]]
+	- ![Pasted image 20251226171842](images/Pasted%20image%2020251226171842.png)
 
 ### 3. 其他
 - 按传输技术分类
@@ -227,7 +227,7 @@
 		- 5G、WIFI、卫星
 
 - 历史
-	- ![[Pasted image 20251226172322.png]]
+	- ![Pasted image 20251226172322](images/Pasted%20image%2020251226172322.png)
 ## Part 5 性能指标
 ### 1. 速率、带宽、吞吐量
 - 速率
@@ -235,22 +235,22 @@
 	- 单位
 		- bps，bit/s，b/s
 	- 连接到网络上的节点在信道上传输数据的速率
-	- ![[Pasted image 20251226190119.png]]
+	- ![Pasted image 20251226190119](images/Pasted%20image%2020251226190119.png)
 	- 信道（Channel）
 		- 表示向某一方向传送信息的通道（≠通信线路）
 		- 一条通信线路在逻辑上往往对应一条发送信道和一条接收信道
-			- ![[Pasted image 20251226190423.png|400]]
+			- ![Pasted image 20251226190423](images/Pasted%20image%2020251226190423.png)
 - 带宽（bandwidth）
 	- 某信道所能传送的最高数据率
 	- 单位
 		- bps
-	- ![[Pasted image 20251226191235.png]]
+	- ![Pasted image 20251226191235](images/Pasted%20image%2020251226191235.png)
 	- 节点间通信实际能到达的最高速率由带宽、节点性能共同控制
-		- ![[Pasted image 20251226191737.png]]
+		- ![Pasted image 20251226191737](images/Pasted%20image%2020251226191737.png)
 	- 与通信原理中的带宽区别
 		- 单位：Hz
 		- 某信道允许通过的信号频带范围
-		- ![[Pasted image 20251226192052.png]]
+		- ![Pasted image 20251226192052](images/Pasted%20image%2020251226192052.png)
 		- 光纤带宽：500MHz
 		- 电话线带宽：3kHz
 		- 通过香农定理和奈氏准则联系
@@ -276,14 +276,14 @@
 		- 排队时延
 			- 数据排队进入、排队发出路由器所花的时间
 			- 同上
-		- ![[Pasted image 20251226193435.png]]
+		- ![Pasted image 20251226193435](images/Pasted%20image%2020251226193435.png)
 - 时延带宽积
 	- 传播时延×带宽
 	- 一条链路中已从发送端发出但未到达接收端的最大比特数
 - 往返时延RTT
 	- Round-Trip Time
 	- 表示从发送方*发送完数据*，直到发送方收到来自接收方的确认 总共经历的时间
-	- ![[Pasted image 20251226194738.png]]
+	- ![Pasted image 20251226194738](images/Pasted%20image%2020251226194738.png)
 
 ### 3. 信道利用率
 - 概念
@@ -298,26 +298,26 @@
 ## Part 6 计网的分层结构
 ### 1. 介绍
 - 分层结构思想
-	- ![[Pasted image 20251226202744.png]]
+	- ![Pasted image 20251226202744](images/Pasted%20image%2020251226202744.png)
 
 - 三种常见的计算机网络体系结构
-	- ![[Pasted image 20251226202852.png]]
+	- ![Pasted image 20251226202852](images/Pasted%20image%2020251226202852.png)
 ### 2. 各层之间的关系
 - 各层之间的关系
-	- ![[Pasted image 20251226203306.png]]
+	- ![Pasted image 20251226203306](images/Pasted%20image%2020251226203306.png)
 	- 实体
 		- 第n层的活动元素（软件+硬件）为第n层实体
 	- 协议
 		- 控制对等实体通信的规则
-	- ![[Pasted image 20251226203444.png]]
+	- ![Pasted image 20251226203444](images/Pasted%20image%2020251226203444.png)
 ### 3. 协议相关
 #### 协议的作用
 - 协议的作用
 	- 以数据传输为例
 		- 水平视角
-			- ![[Pasted image 20251226203713.png]]
+			- ![Pasted image 20251226203713](images/Pasted%20image%2020251226203713.png)
 		- 垂直视角
-			- ![[Pasted image 20251226203918.png]]
+			- ![Pasted image 20251226203918](images/Pasted%20image%2020251226203918.png)
 
 #### PDU、SDU、PCI
 - PDU
@@ -330,7 +330,7 @@
 		- PCI
 			- 协议控制信息
 			- 控制协议操作的信息。记为n-PCI
-- ![[Pasted image 20251226204537.png]]
+- ![Pasted image 20251226204537](images/Pasted%20image%2020251226204537.png)
 
 - 协议三要素
 	- 语法
@@ -346,13 +346,13 @@
 
 ## Part 7 OSI参考模型&TCP/IP模型
 - 术语说明
-	- ![[Pasted image 20251226205504.png]]
+	- ![Pasted image 20251226205504](images/Pasted%20image%2020251226205504.png)
 
 ### 1. OSI参考模型
 - 各层的名称和顺序
 	- 物联网叔会使用
 - 常见网络设备的功能层次
-	- ![[Pasted image 20251226205723.png]]
+	- ![Pasted image 20251226205723](images/Pasted%20image%2020251226205723.png)
 
 - 各层的功能
 	- 物理层
@@ -360,8 +360,8 @@
 			- 需要定义电路接口参数
 				- 形状、尺寸、引脚数
 			- 需要定义传输信号的含义
-				- 电气特征：假设5V表示1，1V表示0，每bit电信号持续时间为0.1ms![[Pasted image 20251226210105.png]]
-		- ![[Pasted image 20251226210435.png]]
+				- 电气特征：假设5V表示1，1V表示0，每bit电信号持续时间为0.1ms![Pasted image 20251226210105](images/Pasted%20image%2020251226210105.png)
+		- ![Pasted image 20251226210435](images/Pasted%20image%2020251226210435.png)
 	- 链路层
 		- 确保相邻节点之间的链路逻辑上无差错
 		- 功能
@@ -371,7 +371,7 @@
 			- 流量控制
 				- 协调两个节点的速率
 				- 发太快接不过来就会丢帧
-		- ![[Pasted image 20251226210310.png]]
+		- ![Pasted image 20251226210310](images/Pasted%20image%2020251226210310.png)
 	- 网络层
 		- 把分组从源节点转发到目的结点
 		- 功能
@@ -389,7 +389,7 @@
 					- 确保分组有序、不重复到达
 				- 可靠传输管理
 					- 接收方需要返回分组确认消息
-		- ![[Pasted image 20251226211159.png]]
+		- ![Pasted image 20251226211159](images/Pasted%20image%2020251226211159.png)
 	- 传输层
 		- 实现端到端通信（即进程到进程通信，端指端口）
 		- 功能
@@ -397,7 +397,7 @@
 				- 发送端的高层实体复用一条低层的连接，在接收端进行分用
 			- 其他功能
 				- 差错控制、流量控制、连接建立与释放、可靠传输管理
-			- ![[Pasted image 20251226211629.png]]
+			- ![Pasted image 20251226211629](images/Pasted%20image%2020251226211629.png)
 	- 5-7层
 		- 会话层
 			- 管理进程间会话
@@ -410,8 +410,8 @@
 			- HTTP等
 
 - 总结
-	- ![[Pasted image 20251226212104.png]]
-	- ![[Pasted image 20251226212147.png]]
+	- ![Pasted image 20251226212104](images/Pasted%20image%2020251226212104.png)
+	- ![Pasted image 20251226212147](images/Pasted%20image%2020251226212147.png)
 
 ### 2. TCP/IP模型
 - 各层的名称和顺序
@@ -420,24 +420,24 @@
 	- 应用层
 		- 对某些应用程序来说会话层和表示层的功能不一定能用上
 			- 如果某些应用需要使用，交给应用层的特定协议（包含该功能的协议）即可
-			- ![[Pasted image 20251226234726.png]]
+			- ![Pasted image 20251226234726](images/Pasted%20image%2020251226234726.png)
 	- 网络接口层
 		- TCP/IP模型认为网络硬件类型繁多，不应该像OSI模型一样有过多限制 
-			- ![[Pasted image 20251226235031.png]]
-			- ![[Pasted image 20251226235133.png]]
+			- ![Pasted image 20251226235031](images/Pasted%20image%2020251226235031.png)
+			- ![Pasted image 20251226235133](images/Pasted%20image%2020251226235133.png)
 	- 网络层
 		- 去除了 差错控制、流量控制、连接建立与释放、可靠传输管理
 		- 只要确保传输层（全局）正确，网络层（局部）肯定也正确
-		- ![[Pasted image 20251226235913.png]]
+		- ![Pasted image 20251226235913](images/Pasted%20image%2020251226235913.png)
 	- 传输层
-		- ![[Pasted image 20251227000002.png]]
+		- ![Pasted image 20251227000002](images/Pasted%20image%2020251227000002.png)
 	- 优点
 		- 降低了网络核心部分压力，即 差错控制、流量控制、连接建立与释放、可靠传输管理等功能由目的结点实现，而不由源结点实现
 		- 该模式下的路由器（核心部分）的功能简单，负载低
 
 - 各层功能
-	- ![[Pasted image 20251227000324.png]]
-	- ![[Pasted image 20251227000442.png]]
+	- ![Pasted image 20251227000324](images/Pasted%20image%2020251227000324.png)
+	- ![Pasted image 20251227000442](images/Pasted%20image%2020251227000442.png)
 
 
 
@@ -451,7 +451,7 @@
 	- 结点：计算机、交换机、路由器
 - internet（互连网）：网络的网络（用路由器把小网络连在一起）
 	- 网络连接计算机，互连网连接网络
-	- ![[Pasted image 20250917175331.png]]
+	- ![Pasted image 20250917175331](images/Pasted%20image%2020250917175331.png)
 - 主机：与网络相连的计算机（路由器不是主机）
 - Internet：互联网，专用名词，是一个特定的互连网
 - ISP：Internet Service Provider，互联网服务提供商
@@ -460,7 +460,7 @@
 	- 分类：主干ISP、地区ISP、本地ISP
 - IXP：互联网交换点，允许两个ISP网络直接相连并且交换分组（老古董）
 - ICP：内容提供者，各个网站
-	- ![[Pasted image 20250917180316.png]]
+	- ![Pasted image 20250917180316](images/Pasted%20image%2020250917180316.png)
 - 制定互联网正式标准
 	- 互联网草案
 	- 建议标准：RFC文档
@@ -468,8 +468,8 @@
 - 分类：边缘部分、核心部分
 	- 边缘部分：
 		- 端系统之间的通信方式（2种）
-			- C/S 方式：这里的C指客户机![[Pasted image 20250917180802.png]]
-			- P2P方式（peer to peer，对等方式）：![[Pasted image 20250917180914.png]]
+			- C/S 方式：这里的C指客户机![Pasted image 20250917180802](images/Pasted%20image%2020250917180802.png)
+			- P2P方式（peer to peer，对等方式）：![Pasted image 20250917180914](images/Pasted%20image%2020250917180914.png)
 	- 核心部分：
 		- 核心：路由器（router），实现分组交换（packet switching）
 		- 分组交换：存储转发技术
@@ -481,7 +481,7 @@
 	- 主机与路由器
 		- 主机：为用户进行信息处理
 		- 路由器：进行分组交换
-	- ![[Pasted image 20250917182047.png]]
+	- ![Pasted image 20250917182047](images/Pasted%20image%2020250917182047.png)
 	- 假设H1向H5发送数据，数据只占用一段链路
 		1. H1将分组逐个发给A
 		2. A把H1发来的分组放进缓存

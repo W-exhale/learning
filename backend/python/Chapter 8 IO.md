@@ -111,7 +111,7 @@ with open('/Users/michael/test.txt', 'w') as f:
 - StringIO就是在内存中读写`str`
 - 要将str写入`StringIO`，我们需要先创建一个`StringIO`，然后像文件一样写入即可
 
-![[Pasted image 20250312092613.png]]
+![Pasted image 20250312092613](images/Pasted%20image%2020250312092613.png)
 
 - `getvalue()`用来获得写入后的`str`
 - 要读取`StringIO`，可以用一个`str`初始化`StringIO`，然后像文件一样读取：
@@ -164,14 +164,14 @@ b'\xe4\xb8\xad\xe6\x96\x87'
 posix.uname_result(sysname='Darwin', nodename='MichaelMacPro.local', release='14.3.0', version='Darwin Kernel Version 14.3.0: Mon Mar 23 11:59:05 PDT 2015; root:xnu-2782.20.48~5/RELEASE_X86_64', machine='x86_64')
 ```
 所以os的某些函数跟操作系统有关
-![[Pasted image 20250312101822.png]]
+![Pasted image 20250312101822](images/Pasted%20image%2020250312101822.png)
 
 ### 环境变量
 - 操作系统中定义的环境变量，全部保存在`os.environ`这个变量中，可以直接查看
-![[Pasted image 20250312102131.png]]
+![Pasted image 20250312102131](images/Pasted%20image%2020250312102131.png)
 
 - 使用`os.environ.get('key')`获取某个环境变量的值
-![[Pasted image 20250312102346.png]]
+![Pasted image 20250312102346](images/Pasted%20image%2020250312102346.png)
 
 ### 操作文件和目录
 - 一部分放在os中，一部分放在`os.path`中
@@ -251,7 +251,7 @@ d = dict(name='Bob', age=20, score=88)
 - 将变量从序列化对象重新读到内存里叫做反序列化，即unpicking，python提供`pickle`实现序列化
 
 - 将一个对象序列化并写入文件
-![[Pasted image 20250312110958.png]]
+![Pasted image 20250312110958](images/Pasted%20image%2020250312110958.png)
 
 `pickle.dumps()`方法将任意对象序列化成一个`bytes`，然后可以将`bytes`写入文件，或者用`pickle.dump()`直接把对象序列化后写入一个file-立刻 Object：
 ```plain
@@ -282,7 +282,7 @@ d = dict(name='Bob', age=20, score=88)
 - json不仅是标准格式，而且比XML更快，也可以直接在Web页面中读取
 
 - json表示的对象就是标准的JavaScript语言对象，json和python内置的数据类型对应
-![[Pasted image 20250312112447.png]]
+![Pasted image 20250312112447](images/Pasted%20image%2020250312112447.png)
 
 - python内置的json提供了python对象到json格式的转换
 ```plain
@@ -318,8 +318,8 @@ s = Student('Bob', 20, 88)
 print(json.dumps(s))
 ```
 
-运行后报错了，原因是`Student`对象不是一个可序列化为json的对象![[Pasted image 20250312113852.png]]
-- 我们可以发现dumps除了obj参数外还提供了很多可选参数![[Pasted image 20250312114134.png]]
+运行后报错了，原因是`Student`对象不是一个可序列化为json的对象![Pasted image 20250312113852](images/Pasted%20image%2020250312113852.png)
+- 我们可以发现dumps除了obj参数外还提供了很多可选参数![Pasted image 20250312114134](images/Pasted%20image%2020250312114134.png)
 - 我们可以通过这些可选参数来定制json序列化，上面的代码会报错是因为默认情况下dumps方法不知道怎么将`Student`实例变成一个json的`{}`对象
 - 可选参数`default`将任意一个对象变成一个可序列为json的对象，我们只用为`Student`专门写一个转换函数，再把函数传进去就行
 ```python
@@ -366,6 +366,6 @@ s = json.dumps(obj, ensure_ascii=True)
 print(s)
 ```
 
-最后打印出来的小明是十六进制表示的，`\u`表示unicode码点![[Pasted image 20250312124215.png]]
+最后打印出来的小明是十六进制表示的，`\u`表示unicode码点![Pasted image 20250312124215](images/Pasted%20image%2020250312124215.png)
 `\u` 是 JSON 用来表示 Unicode 字符的转义形式，常用于表示非 ASCII 字符，比如中文、日文、韩文等。通过解析工具或代码可以轻松还原为可读文本。
 在 JSON 传输中，有些环境可能对非 ASCII 字符（如中文）支持不好，因此使用 Unicode 转义序列可以确保兼容性。

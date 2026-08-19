@@ -89,7 +89,7 @@ def greeting(name):
 - Pillow，MySQL驱动程序，Web框架Flask，科学计算Numpy等。
 - 用pip一个一个安装十分费时费力，还要考虑兼容性，可以直接使用[Anaconda](https://www.anaconda.com/)，这是一个基于Python的数据处理和科学计算平台，内置了很多有用的第三方库。
 - 可以从上面的官网下载GUI安装包，下载后直接安装，Anaconda会把系统Path中的python指向自己自带的Python，并且，Anaconda安装的第三方模块会安装在Anaconda自己的路径下，不影响系统已经安装的Python目录
-![[Pasted image 20250304205851.png]]
+![Pasted image 20250304205851](images/Pasted%20image%2020250304205851.png)
 可以尝试使用`import numpy`等已安装的第三方模块
 
 ### 模块搜索路径
@@ -102,7 +102,7 @@ Traceback (most recent call last):
 ImportError: No module named mymodule
 ```
 
-- 默认情况下，Python解释器会搜索当前目录、所有已安装的内置模块和第三方模块，搜索路径存放在`sys`模块的`path`变量中：![[Pasted image 20250304210248.png]]
+- 默认情况下，Python解释器会搜索当前目录、所有已安装的内置模块和第三方模块，搜索路径存放在`sys`模块的`path`变量中：![Pasted image 20250304210248](images/Pasted%20image%2020250304210248.png)
 - 如果要添加自己的搜索目录
 	1. 修改sys.path：`sys.path.append('/Users/michael/my_py_scripts')`，这种方法在运行时修改，运行结束后失效
 	2. 设置环境变量：`PYTHONPATH`，该环境变量的内容会被自动添加到模块搜索路径中。

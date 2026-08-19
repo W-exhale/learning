@@ -112,7 +112,7 @@ public final class Labrador extends Dogs{
 -Animal.java
 private static final String COMMUNITY_NAME = "NanG";
 ```
-![[Pasted image 20240818135555.png]]
+![Pasted image 20240818135555](images/Pasted%20image%2020240818135555.png)
 
 - final的特点
 	1. 遗产不能继承
@@ -154,13 +154,13 @@ public abstract void barking(){
 - 假如说一个抽象类中的方法全部都是abstract，那么其实没有必要给所有的方法都加上abstract，这时就需要使用到*接口*。
 
 new一个javaclass，但是不是选择Class，而是选interface
-![[Pasted image 20240925153312.png]]
+![Pasted image 20240925153312](images/Pasted%20image%2020240925153312.png)
 
-![[Pasted image 20240925153331.png]]
+![Pasted image 20240925153331](images/Pasted%20image%2020240925153331.png)
 
 接口当中所有的方法都是抽象的
 - 创建一个新的类Chinese，这时候就不能用extends，需要用到implements，意思是实现接口。（Alt + 回车，光标放到public那一行，可以快捷生成重写）
-![[Pasted image 20240925154122.png|400]]
+![Pasted image 20240925154122](images/Pasted%20image%2020240925154122.png)
 
 - 这时候在main中不能new Human，要使用就得用Chinese。
 

@@ -19,7 +19,7 @@ auto_increment对应的一定是primary key，使用了自增，删除某个元�
 -比如说每个老师的电话号码不一样等等，和其他表关系就不是很大。
 如下，如果在唯一键创建了一个重复的值就会报错
 
-![[Pasted image 20241009192653.png]]
+![Pasted image 20241009192653](images/Pasted%20image%2020241009192653.png)
 
 - 后期添加唯一键
 `alter table test_1 add unique(phone);`
@@ -33,12 +33,12 @@ auto_increment对应的一定是primary key，使用了自增，删除某个元�
 
 ## 注释
 
-![[Pasted image 20241009194222.png]]
+![Pasted image 20241009194222](images/Pasted%20image%2020241009194222.png)
 
 - 一般是看SQL内注释，字段注释，comment
-![[Pasted image 20241009194445.png]]
+![Pasted image 20241009194445](images/Pasted%20image%2020241009194445.png)
 
-![[Pasted image 20241009194628.png]]
+![Pasted image 20241009194628](images/Pasted%20image%2020241009194628.png)
 
 ## 数据完整性
 
@@ -77,7 +77,7 @@ desc的方式看不到外键，只能用show...的方式
 2. 级联操作：也全部干掉，如果是更改，这里也是更改
 （在删除的时候一般不使用级联使用置空，在更新的时候一般使用级联）
 
-![[Pasted image 20241009204054.png]]
+![Pasted image 20241009204054](images/Pasted%20image%2020241009204054.png)
 
-![[Pasted image 20241009204112.png]]
+![Pasted image 20241009204112](images/Pasted%20image%2020241009204112.png)
 

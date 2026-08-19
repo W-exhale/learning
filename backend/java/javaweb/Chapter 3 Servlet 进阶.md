@@ -196,7 +196,7 @@ Location: /hello
 └───────┘   200 <html>    └───────────────┘
 ```
 
-可以在浏览器的网络请求中看到两次HTTP请求，并且地址栏路径自动更新为`/hello`：![[Pasted image 20250430145950.png]]
+可以在浏览器的网络请求中看到两次HTTP请求，并且地址栏路径自动更新为`/hello`：![Pasted image 20250430145950](images/Pasted%20image%2020250430145950.png)
 - 重定向有两种：
     *   **302 Found**: 临时重定向。浏览器下次访问 `/hi` 仍会先请求 `/hi`。`resp.sendRedirect()` 默认使用 302。
     *   **301 Moved Permanently**: 永久重定向。浏览器可能会缓存这个重定向关系，下次直接请求 `/hello`。可以通过 `setStatus` 和 `setHeader` 实现：
@@ -379,7 +379,7 @@ public class SignOutServlet extends HttpServlet {
 - 然后这个ID通过一个名为`JSESSIONID`的Cookie发送给浏览器
 * 浏览器在后续的请求中会自动带上这个Cookie，服务器从而能够识别并关联到正确的`HttpSession`对象。
 
-![[Pasted image 20250506182237.png]]
+![Pasted image 20250506182237](images/Pasted%20image%2020250506182237.png)
 
 
 >[!IMPORTANT] 关于 `JSESSIONID` 和登录逻辑
@@ -478,7 +478,7 @@ public class LanguageServlet extends HttpServlet {
 >- Cookie在有效期内；
 >- Cookie设置了secure时必须以https访问
 >
->当服务器通过`resp.addCookie(cookie)`添加Cookie后，它会在HTTP响应头中包含一个或多个`Set-Cookie`字段，如下所示：![[Pasted image 20250506201830.png]]
+>当服务器通过`resp.addCookie(cookie)`添加Cookie后，它会在HTTP响应头中包含一个或多个`Set-Cookie`字段，如下所示：![Pasted image 20250506201830](images/Pasted%20image%2020250506201830.png)
 
 **2. 读取Cookie (`IndexServlet`)**
 我们可以从`HttpServletRequest`对象中读取浏览器发送过来的Cookie。

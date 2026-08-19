@@ -39,8 +39,8 @@ public class MyTest {
 - 主要分为两种：Collection和Map
 
 
-![[Pasted image 20250112155344.png]]
-![[Pasted image 20250112155359.png]]
+![Pasted image 20250112155344](images/Pasted%20image%2020250112155344.png)
+![Pasted image 20250112155359](images/Pasted%20image%2020250112155359.png)
 ## Part 2 ArrayList
 ### Section 1 介绍
 - List：List接口可以自动扩容（检测到元素增加）
@@ -60,7 +60,7 @@ public void arrayList1(){
     System.out.println(arrayList);  
 }
 ```
-![[Pasted image 20250112165924.png]]
+![Pasted image 20250112165924](images/Pasted%20image%2020250112165924.png)
 
 ### Section 3 方法的使用
 1. add()
@@ -118,7 +118,7 @@ public class Student {
     }  
 }
 ```
-![[Pasted image 20250112170327.png]]
+![Pasted image 20250112170327](images/Pasted%20image%2020250112170327.png)
 
 `//将一个数组(arrayList1)放到另一个数组(arrayList)中`  
 `arrayList.addAll(arrayList1);`
@@ -200,7 +200,7 @@ public void hashSet1(){
     System.out.println(hashSet);  
 }
 ```
-![[Pasted image 20250121160139.png]]
+![Pasted image 20250121160139](images/Pasted%20image%2020250121160139.png)
 
 - 可以看到输出是无序的，不是按照输入顺序来的
 - 同时也不是重复的，后续添加重复的值是静止添加，不是覆盖
@@ -228,10 +228,10 @@ public void hashSet1(){
     }  
 }
 ```
-![[Pasted image 20250121162046.png]]
+![Pasted image 20250121162046](images/Pasted%20image%2020250121162046.png)
 
 ## Part 6 Map
-![[Pasted image 20250112155359.png]]
+![Pasted image 20250112155359](images/Pasted%20image%2020250112155359.png)
 ### Section 1 HashMap
 ```java
 public void hashMap1(){  
@@ -254,14 +254,14 @@ public void hashMap1(){
     System.out.println(hashMap.containsKey(100001));  
 }
 ```
-![[Pasted image 20250121163549.png]]
+![Pasted image 20250121163549](images/Pasted%20image%2020250121163549.png)
 
 - keySet的使用：
 ```java
 Set<Integer> keys = hashMap.keySet();  
 System.out.println(keys);
 ```
-![[Pasted image 20250121164324.png]]
+![Pasted image 20250121164324](images/Pasted%20image%2020250121164324.png)
 主要是用来遍历
 
 - 装值：Entry

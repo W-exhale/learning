@@ -1,27 +1,27 @@
 ## Part 1 功能
-- ![[Pasted image 20260101011425.png]]
+- ![Pasted image 20260101011425](images/Pasted%20image%2020260101011425.png)
 - 网络应用模型
-	- ![[Pasted image 20260101011521.png]]
-	- ![[Pasted image 20260101011556.png]]
+	- ![Pasted image 20260101011521](images/Pasted%20image%2020260101011521.png)
+	- ![Pasted image 20260101011556](images/Pasted%20image%2020260101011556.png)
 
 - DNS
-	- ![[Pasted image 20260101011634.png]]
-	- ![[Pasted image 20260101011730.png]]
-	- ![[Pasted image 20260101011806.png]]
-	- ![[Pasted image 20260101011850.png]]
+	- ![Pasted image 20260101011634](images/Pasted%20image%2020260101011634.png)
+	- ![Pasted image 20260101011730](images/Pasted%20image%2020260101011730.png)
+	- ![Pasted image 20260101011806](images/Pasted%20image%2020260101011806.png)
+	- ![Pasted image 20260101011850](images/Pasted%20image%2020260101011850.png)
 - www
-	- ![[Pasted image 20260101011951.png]]
-	- ![[Pasted image 20260101012020.png]]
-	- ![[Pasted image 20260101012052.png]]
-	- ![[Pasted image 20260101012117.png]]
-	- ![[Pasted image 20260101012202.png]]
-- ![[Pasted image 20260101012242.png]]
-- ![[Pasted image 20260101012259.png]]
+	- ![Pasted image 20260101011951](images/Pasted%20image%2020260101011951.png)
+	- ![Pasted image 20260101012020](images/Pasted%20image%2020260101012020.png)
+	- ![Pasted image 20260101012052](images/Pasted%20image%2020260101012052.png)
+	- ![Pasted image 20260101012117](images/Pasted%20image%2020260101012117.png)
+	- ![Pasted image 20260101012202](images/Pasted%20image%2020260101012202.png)
+- ![Pasted image 20260101012242](images/Pasted%20image%2020260101012242.png)
+- ![Pasted image 20260101012259](images/Pasted%20image%2020260101012259.png)
 
 - HTTP
-	- ![[Pasted image 20260101012342.png]]
-	- ![[Pasted image 20260101012501.png]]
-- ![[Pasted image 20260101012528.png]]
+	- ![Pasted image 20260101012342](images/Pasted%20image%2020260101012342.png)
+	- ![Pasted image 20260101012501](images/Pasted%20image%2020260101012501.png)
+- ![Pasted image 20260101012528](images/Pasted%20image%2020260101012528.png)
 
 
 

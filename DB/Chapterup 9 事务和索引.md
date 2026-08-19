@@ -6,17 +6,17 @@
 
 要有一个东西必须确定之后才能进行更新，这个东西就是事务
 
-![[Pasted image 20241105205818.png|300]]
+![Pasted image 20241105205818](images/Pasted%20image%2020241105205818.png)
 
 假设把1号的钱转到2号，要存在一个确定的动作使得数据更新
 
-![[Pasted image 20241105211001.png]]
+![Pasted image 20241105211001](images/Pasted%20image%2020241105211001.png)
 
 当数据输入错误，但是还没有commit时，就可以回滚rollback，不会改变数据
 
 commit后就不能rollback
 
-![[Pasted image 20241105211901.png]]
+![Pasted image 20241105211901](images/Pasted%20image%2020241105211901.png)
 
 - savepoint类似于一个快照的功能，可以用rollback回滚到相对应的点
 
@@ -38,7 +38,7 @@ D：durability       持久性（commit后在数据库中的数据一直保持�
 
 primary key主键索引
 - 添加索引
-![[Pasted image 20241105213617.png]]
+![Pasted image 20241105213617](images/Pasted%20image%2020241105213617.png)
 
 不带东西的是普通索引，unique index是唯一键索引，
 

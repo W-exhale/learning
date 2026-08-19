@@ -11,7 +11,7 @@ else:
 	print('I (%s) just created a child process (%s).' % (os.getpid(),pid))
 ```
 
-![[Pasted image 20250314082525.png]]
+![Pasted image 20250314082525](images/Pasted%20image%2020250314082525.png)
 
 - `os.fork()`：在Unix系统中用于创建子进程的系统调用
 	- 调用这个方法后，当前进程会被复制成两个独立的进程：一个父进程一个子进程
@@ -65,7 +65,7 @@ if __name__ == '__main__':
     p.join() #等待所有任务完成，阻塞主进程，直到进程池中所有任务完成
     print('All subprocesses done.')
 ```
-![[Pasted image 20250314110927.png]]
+![Pasted image 20250314110927](images/Pasted%20image%2020250314110927.png)
 
 - 对Pool对象调用`join()`方法会等待所有子进程执行完毕，调用`join()`之前先调用`close()`，调用完`close()`之后就不能加新的Process了
 - 可以看到上面0123是立刻执行的，因为我们设定的是四个进程，task4要等前面某个task执行完后才能执行
@@ -86,7 +86,7 @@ print('Exit code:', r) #打印退出状态码，0表示成功，其他值表示�
 - 用`subprocess`模块调用系统命令`nslookup`来查询`www.python.org`的DNS信息
 - 用`nslookup www.python.org`来查询`www.python.org`的IP地址或DNS信息，
 
-![[Pasted image 20250314113532.png]]
+![Pasted image 20250314113532](images/Pasted%20image%2020250314113532.png)
 
 - 如果子进程还需要输入，可以通过`communicate()`方法输入：
 ```python
@@ -115,7 +115,7 @@ print('Exit code:', p.returncode)
 #p.returncode：获取子进程的退出状态码，正常完成返回0，非0表示发生错误
 ```
 
-![[Pasted image 20250314130910.png]]
+![Pasted image 20250314130910](images/Pasted%20image%2020250314130910.png)
 
 ### 进程间通信
 `Process`之间肯定需要进行通信。python的`multiprocessing`模块包装了底层的机制，提供了`Queue`、`Pipes`等多种方式来交换数据
@@ -153,7 +153,7 @@ if __name__ == '__main__':
     #pr进程是死循环，无法等待其结束，只能强行终止：
     pr.terminate()
 ```
-![[Pasted image 20250314141933.png]]
+![Pasted image 20250314141933](images/Pasted%20image%2020250314141933.png)
 
 - 在Unix/Linux下，`multiprocessing`模块封装了`fork()`调用，我们不用关注`fork()`的细节。而Windows没有`fork`调用，因此，`multiprocessing`需要模拟出`fork`的效果，父进程所有Python对象都必须通过pickle序列化在传到子进程中序，所以如果`multiprocessing`在Windows下调用失败了，要先考虑是不是pickle失败了
 
@@ -201,7 +201,7 @@ t.start()
 t.join()
 print('thread %s ended.' % threading.current_thread().name)
 ```
-![[Pasted image 20250314162928.png|600]]
+![Pasted image 20250314162928](images/Pasted%20image%2020250314162928.png)
 
 如果没有取LoopThread的名字，就是默认的Thread-1，如果还有其他线程就是Thread-2....
 
@@ -529,7 +529,7 @@ Result: 7866 * 7866 = 61873956
 这个简单的Master/Worker模型有什么用？其实这就是一个简单但真正的分布式计算，把代码稍加改造，启动多个worker，就可以把任务分布到几台甚至几十台机器上，比如把计算`n*n`的代码换成发送邮件，就实现了邮件队列的异步发送。
 
 Queue对象存储在哪？注意到`task_worker.py`中根本没有创建Queue的代码，所以，Queue对象存储在`task_master.py`进程中：
-![[Pasted image 20250314211007.png]]
+![Pasted image 20250314211007](images/Pasted%20image%2020250314211007.png)
 而`Queue`之所以能通过网络访问，就是通过`QueueManager`实现的。由于`QueueManager`管理的不止一个`Queue`，所以，要给每个`Queue`的网络调用接口起个名字，比如`get_task_queue`。
 
 `authkey`有什么用？这是为了保证两台机器正常通信，不被其他机器恶意干扰。如果`task_worker.py`的`authkey`和`task_master.py`的`authkey`不一致，肯定连接不上。

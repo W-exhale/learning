@@ -434,12 +434,12 @@ a.company != b.company
 	- 长度不一样，短的后位补字典序中的最小值
 ## 异或运算
 ### 认识
-- ![[Pasted image 20260307091353.png]]
+- ![Pasted image 20260307091353](images/Pasted%20image%2020260307091353.png)
 	- 白+黑--> 黑（0+1--> 0）
 	- 白+白 or 黑+黑 --> 白（0+0 or 1+1 --> 1）
 	- 袋中有a个0，b个1，相当于将所有球异或最后1的概率
 - 答案
-	- ![[Pasted image 20260307091416.png]]
+	- ![Pasted image 20260307091416](images/Pasted%20image%2020260307091416.png)
 - 性质
 	- 可以理解为无进位相加
 	- 同一批数异或出来的结果一样
@@ -719,9 +719,9 @@ public static class Bitset{
 
 - 使用对数器验证
 	- 等概率调用三种函数
-	- ![[Pasted image 20260308232443.png]]
-	- ![[Pasted image 20260308232520.png]]
-	- ![[Pasted image 20260308232547.png]]
+	- ![Pasted image 20260308232443](images/Pasted%20image%2020260308232443.png)
+	- ![Pasted image 20260308232520](images/Pasted%20image%2020260308232520.png)
+	- ![Pasted image 20260308232547](images/Pasted%20image%2020260308232547.png)
 
 ### 位运算实现加减乘除
 - 加法：无进位（异或）+进位信息
@@ -798,7 +798,7 @@ public static int div(int a, int b){
 }
 ```
 - 整数最小值单独分析
-![[Pasted image 20260309104729.png]]
+![Pasted image 20260309104729](images/Pasted%20image%2020260309104729.png)
 
 
 ### 取模
@@ -1199,7 +1199,7 @@ class FreqStack{
 ### 全O(1)的数据结构
 - 一个用于存储字符串计数的数据结构，并能够返回计数最小和最大的字符串
 - 使每个函数都满足$O(1)$的平均时间复杂度
-	- ![[Pasted image 20260310185110.png]]
+	- ![Pasted image 20260310185110](images/Pasted%20image%2020260310185110.png)
 
 - 双向链表+哈希表
 	- 初始阶段准备两个结点（桶），0和整数最大
@@ -1424,7 +1424,7 @@ public class Code01_Subsequences {
 
 ### 同余原理
 
-- ![[Pasted image 20260416110035.png]]
+- ![Pasted image 20260416110035](images/Pasted%20image%2020260416110035.png)
 - 
 
 
@@ -1446,7 +1446,7 @@ public class Code01_Subsequences {
 
 
 ## 二分答案法
-- ![[Pasted image 20260416095849.png]]
+- ![Pasted image 20260416095849](images/Pasted%20image%2020260416095849.png)
 
 ```java
 // 爱吃香蕉的珂珂

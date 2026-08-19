@@ -3,7 +3,7 @@
 ### Section 1 关键字
 1. select \`你好 \`; select 2 * 7;
 2. as：起别名：select 2 * 7 as res;
-	![[Pasted image 20241019143551.png|300]]
+	![Pasted image 20241019143551](images/Pasted%20image%2020241019143551.png)
 3. from（后面计算笛卡尔积）表1.1对表2.1,表1.2对表2.1....，表1.1对表2.2...
 4. dual：默认的伪表（上面2号语句的表实际上是select 2 * 7 as res from dual）
 5. where：条件筛选（select * from teacher where ....），and，or，大于(>)，小于(<)，!=, ...
@@ -16,14 +16,14 @@
 ### Section 2 聚合函数（mysql自带的函数用于计算等等）
 
 1. 求和sum()
-	![[Pasted image 20241019152314.png|400]]
+	![Pasted image 20241019152314](images/Pasted%20image%2020241019152314.png)
 
 2. 求平均值avg
-	![[Pasted image 20241019152558.png]]
+	![Pasted image 20241019152558](images/Pasted%20image%2020241019152558.png)
 3. 最大值，最小值
-	![[Pasted image 20241019152626.png]]
+	![Pasted image 20241019152626](images/Pasted%20image%2020241019152626.png)
 4. 计算多少个数据
-![[Pasted image 20241019152700.png]]
+![Pasted image 20241019152700](images/Pasted%20image%2020241019152700.png)
 
 但是注意尽量不要使用count(\*) ，注意区别count(1)和count(\*)，前面计算数据时不会计算null行，后面会计算所有行的数量，除了count(\*)，其他所有的聚合函数都会忽略null
 
@@ -33,18 +33,18 @@
 
 
 可以通过新建查询的方式来select（带提示，不推荐）
-![[Pasted image 20241019163929.png|300]]
+![Pasted image 20241019163929](images/Pasted%20image%2020241019163929.png)
 
-![[Pasted image 20241019164007.png|300]]
+![Pasted image 20241019164007](images/Pasted%20image%2020241019164007.png)
 
 ### Section 5 模糊查询（like）
 使用like关键字
 
 - 百分号可以代表多个字符，
-![[Pasted image 20241019163402.png]]
+![Pasted image 20241019163402](images/Pasted%20image%2020241019163402.png)
 
 - 一个下划线代表一个字符
-![[Pasted image 20241019163435.png]]
+![Pasted image 20241019163435](images/Pasted%20image%2020241019163435.png)
 
 '% comp%'可以匹配任何含有comp子串的字符串
 ‘`___%`’
@@ -62,20 +62,20 @@ SQL中字符串有多种函数，不同数据库系统提供的不一样
 
 
 ### Section 6 分组查询（group by）
-![[Pasted image 20241019165729.png|300]]
+![Pasted image 20241019165729](images/Pasted%20image%2020241019165729.png)
 
-![[Pasted image 20241019165103.png]]
+![Pasted image 20241019165103](images/Pasted%20image%2020241019165103.png)
 
 查年龄平均值和性别，依照来自info表的性别分组来显示
 
-![[Pasted image 20241019165628.png]]
+![Pasted image 20241019165628](images/Pasted%20image%2020241019165628.png)
 
 - 格式必须是：`select 聚合函数 (as ...), 依据分组项 (as ...) from table group by 依据分组项;`
 
 - 还可以加desc降序（根据地址来的）
-![[Pasted image 20241019170249.png]]
+![Pasted image 20241019170249](images/Pasted%20image%2020241019170249.png)
 
-聚合使用：![[Pasted image 20241019185153.png]]
+聚合使用：![Pasted image 20241019185153](images/Pasted%20image%2020241019185153.png)
 ### Section 7 having（与where同级）
 - where的筛选方式是一条一条筛选，比如说查语文成绩，先看id为1的语文成绩再判断是否符合要求，符合要求就拿出来，再看id为2的....（从原本的表里去筛选）
 
@@ -83,24 +83,24 @@ SQL中字符串有多种函数，不同数据库系统提供的不一样
 select avg(age) as '年龄平均值',address as '地址' from info group by address where '年龄平均值' > 23.0;
 ```
 如果想要在选出来的伪表里面进行筛选就不能用where，因为where是用于原始表的，像上面的查询方式就是错误的。这时候就要用到having
-![[Pasted image 20241019190929.png]]
+![Pasted image 20241019190929](images/Pasted%20image%2020241019190929.png)
 
 having是对查询之后的内容进行筛选
 where和having可以同时用
 ### Section 8 limit 范围查询
 `select * from info limit 起始位置,数据个数;`
-![[Pasted image 20241019192243.png|400]]
+![Pasted image 20241019192243](images/Pasted%20image%2020241019192243.png)
 
 offset 跳过数据
 `select * from info limit 3 offset 1`：跳过第一条数据，留下剩下的三条
 如果只有一个数就默认从0开始
-![[Pasted image 20241019192330.png|400]]
+![Pasted image 20241019192330](images/Pasted%20image%2020241019192330.png)
 - 排序
 也可以用order by进行指定
-![[Pasted image 20241019192653.png]]
+![Pasted image 20241019192653](images/Pasted%20image%2020241019192653.png)
 
 用desc降序，升序用asc，mysql默认是升序
-![[Pasted image 20241019192711.png]]
+![Pasted image 20241019192711](images/Pasted%20image%2020241019192711.png)
 
 - 注：limit后面的数不能是运算表达式，如下方式是不合法的
 ```sql
@@ -113,7 +113,7 @@ offset 跳过数据
 
 ### Section 8 distinct
 作用：去重
-![[Pasted image 20241019193155.png]]
+![Pasted image 20241019193155](images/Pasted%20image%2020241019193155.png)
 
 平时写语句`select address from info;`，这个是隐藏all的，其实有一个all`select all address from info;`
 
@@ -124,7 +124,7 @@ select age,gender from info union (all/distinct) select `name`,phone from teache
 ```
 - 注意：union前后的字段个数要一样
 
-![[Pasted image 20241024211614.png]]
+![Pasted image 20241024211614](images/Pasted%20image%2020241024211614.png)
 
 union是并，intersect是交，except是差
 
@@ -134,10 +134,10 @@ union是并，intersect是交，except是差
 ```sql
 select name,chinese from student inner join score_student on student.id=score_student.id;
 ```
-![[Pasted image 20241024213251.png|300]]
-![[Pasted image 20241024213302.png|300]]
+![Pasted image 20241024213251](images/Pasted%20image%2020241024213251.png)
+![Pasted image 20241024213302](images/Pasted%20image%2020241024213302.png)
 
-![[Pasted image 20241024213333.png|300]]
+![Pasted image 20241024213333](images/Pasted%20image%2020241024213333.png)
 
 ### Section 3 left join左连接
 以左表为基准，左表忽略的表会设置为null，
@@ -146,18 +146,18 @@ select name,chinese from student inner join score_student on student.id=score_st
 select name,chinese from student left join score_student on student.id=score.id;
 ```
 
-![[Pasted image 20241024214218.png]]
+![Pasted image 20241024214218](images/Pasted%20image%2020241024214218.png)
 
 ### Section 4 right join 右连接
 以右边为基准，右表的内容必须在
-![[Pasted image 20241024214603.png]]
+![Pasted image 20241024214603](images/Pasted%20image%2020241024214603.png)
 
 ### Section 5 crossing join 
 - 返回的笛卡尔积
 ```mysql
 select * from info crossing join student;
 ```
-![[Pasted image 20241024214849.png]]
+![Pasted image 20241024214849](images/Pasted%20image%2020241024214849.png)
 
 - 如果后面加上where的约束条件就不是笛卡尔积
 
@@ -229,10 +229,10 @@ select * from student where exists (select stuid from score where score>=85);
 ### Section 2 查询时显示null值
 - 注：一般null都是空字符串）
 以下面题目为例（leetcode176.第二高的薪水）
-![[Pasted image 20241119144107.png|300]]
+![Pasted image 20241119144107](images/Pasted%20image%2020241119144107.png)
 - 要求：查询并返回 `Employee` 表中第二高的 **不同** 薪水 。如果不存在第二高的薪水，查询应该返回 `null(Pandas 则返回 None)` 。
-- 例表：![[Pasted image 20241119144253.png|400]]
-	![[Pasted image 20241119144413.png|400]]
+- 例表：![Pasted image 20241119144253](images/Pasted%20image%2020241119144253.png)
+	![Pasted image 20241119144413](images/Pasted%20image%2020241119144413.png)
 1. 使用聚合函数，在select后使用聚合函数，如果没有数据会返回null而不是空字符串
 ```sql
 select max(salary) as SecondHighestSalary
@@ -263,10 +263,10 @@ NULLIF(expr1,expr2)，如果expr1=expr2，返回NULL，否则返回expr1，和�
 ### Section 3 涉及函数
 如果返回的是整型，就不用担心空结果集的情况，会自动返回NULL
 - 例题，leetcode，177.第n高的薪水
-![[Pasted image 20241119154646.png|400]]
+![Pasted image 20241119154646](images/Pasted%20image%2020241119154646.png)
 
 查询 `Employee` 表中第 `n` 高（要去重）的工资。如果没有第 `n` 个最高工资，查询结果应该为 `null` 。
-![[Pasted image 20241119154915.png]]
+![Pasted image 20241119154915](images/Pasted%20image%2020241119154915.png)
 
 ```sql
 CREATE FUNCTION getNthHighestSalary(N INT) RETURNS INT

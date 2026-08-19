@@ -6,7 +6,7 @@
 ## 介绍
 ### 什么是链表？
 链表由一系列不必在内存中相连的结构组成。每一个结构均含有元素和指向该结构的下一个结构的指针（Next指针）。最后一个单元的Next指向NULL。
-![[Pasted image 20240704164044.png]]
+![Pasted image 20240704164044](images/Pasted%20image%2020240704164044.png)
 
 ### 编程细节
 - 提出问题
@@ -16,7 +16,7 @@
 
 - 解决问题
 使用带表头（header or dummy node）的链表：
-![[Pasted image 20240704172950.png]]
+![Pasted image 20240704172950](images/Pasted%20image%2020240704172950.png)
 
 解决问题2，删除第一个元素时，就可以直接将2号作为表头的下一个
 
@@ -37,8 +37,8 @@
 - 当不需要时，就需要使用free，使用free之后，P指向的地址没变，只是地址上的数据变成了未定义状态
 
 - 循环free列表的时候不能直接free P，否则找P的下一个时会因为P指向未定义而出错，这时候应该使用一个指针将P的信息保存。
-- 错误的![[Pasted image 20240704184747.png|200]]
-- 正确的![[Pasted image 20240704185009.png|200]]
+- 错误的![Pasted image 20240704184747](images/Pasted%20image%2020240704184747.png)
+- 正确的![Pasted image 20240704185009](images/Pasted%20image%2020240704185009.png)
 ## 单链表
 
 node ：节点
@@ -194,7 +194,7 @@ void free_memory(Node** Head) {
 第一个prev指向NULL，最后一个next指向NULL。
 
 NULL<->0<->1<->2<->3<->NULL
-![[Pasted image 20240723185618.png]]
+![Pasted image 20240723185618](images/Pasted%20image%2020240723185618.png)
 
 1. 访问头部，尾部：O(1)
 2. 访问中间：O(N)
@@ -255,7 +255,7 @@ NULL<->0<->1<->2<->3<->NULL
 
 思路：可以使用二维数组来实现，但是需要很多项，于是，我们可以使用循环链表的方式来实现
 
-![[Pasted image 20240415145209.png|500]]
+![Pasted image 20240415145209](images/Pasted%20image%2020240415145209.png)
 
 - 使用循环链表的缺点：节省空间但是要花时间
 假设一个学生报名了所有课程，那么表中的每一项都需要检测来确定这个学生所有的课程名
@@ -267,7 +267,7 @@ NULL<->0<->1<->2<->3<->NULL
 	2. 一个新的结构体可以通过调用malloc而从系统全局内存（global memory）得到，并且可以通过free释放
 
 我们可以用创建一个next数组，这个数组里面是下个元素的位置，
-![[Pasted image 20240902194340.png|250]]
+![Pasted image 20240902194340](images/Pasted%20image%2020240902194340.png)
 ```C
 typedef unsigned int node_ptr;
 struct node

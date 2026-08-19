@@ -1,5 +1,5 @@
 ## Part 1 数据链路层功能与组帧
-- ![[Pasted image 20251227143427.png]]
+- ![Pasted image 20251227143427](images/Pasted%20image%2020251227143427.png)
 ### 1. 功能
 - 封装成帧（组帧）
 	- 帧定界
@@ -37,12 +37,12 @@
 		- 帧长=计数字段长度+帧的数据部分长度
 	- 缺点
 		- 任何一个计数字段出错，都会导致后续所有帧无法定界
-	- ![[Pasted image 20251227144944.png]]
+	- ![Pasted image 20251227144944](images/Pasted%20image%2020251227144944.png)
 - 字节填充法
 	- Escape Character
 	- Start of Header
 	- End of Transmission
-	- ![[Pasted image 20251227145332.png]]
+	- ![Pasted image 20251227145332](images/Pasted%20image%2020251227145332.png)
 	- 发送方在特殊字符前填充转义字符ESC，接收方删除ESC
 
 - 零比特填充法（常用）
@@ -50,14 +50,14 @@
 		- 数据部分遇到连续5个1就填充一个0
 		- 接收方在数据部分遇到五个1就删掉后面的0
 	- HDLC、PPP
-	- ![[Pasted image 20251227145827.png]]
+	- ![Pasted image 20251227145827](images/Pasted%20image%2020251227145827.png)
 
 - 违规编码法（常用）
 	- 利用*曼彻斯特编码*中间一定会跳变的特性
 		- 如果没有跳变则“违规”，表示开始和结束
 	- 数据原样给到物理层
 		- 需要物理层配合在开始和结束插入一个时钟周期的违规信号
-	- ![[Pasted image 20251227150152.png]]
+	- ![Pasted image 20251227150152](images/Pasted%20image%2020251227150152.png)
 ## Part 2 差错控制
 - 任务
 	- 发现并解决一个帧内部的位错
@@ -76,7 +76,7 @@
 		- 整个校验码1的个数为奇数（包括校验位）
 	- 偶校验码
 		- 整个校验码1的个数为偶数
-	- ![[Pasted image 20251227151011.png]]
+	- ![Pasted image 20251227151011](images/Pasted%20image%2020251227151011.png)
 - 检错方式
 	- 偶校验更常用
 		- 可以用异或门（模2加）来实现
@@ -84,7 +84,7 @@
 		- 接收方验证时将所有数相加应=0，若为1即出错
 		- 缺点
 			- 无法检测偶数次错误
-	- ![[Pasted image 20251227151450.png]]
+	- ![Pasted image 20251227151450](images/Pasted%20image%2020251227151450.png)
 #### CRC校验码
 - 循环冗余校验，Cyclic Redundancy Check
 - 基本思想
@@ -104,7 +104,7 @@
 	- 对移位后的信息码进行模2除法，产生余数，得到校验位
 		- 模2除（+模2减，效果和模2加一样，就是异或）
 			- 取商只看最高位，如果是1就上1
-			- ![[Pasted image 20251227152833.png]]
+			- ![Pasted image 20251227152833](images/Pasted%20image%2020251227152833.png)
 	- 得到的CRC码
 		- 信息码+001
 
@@ -132,21 +132,21 @@
 		- n+k位中任何一位都可能出错
 		- 所以，$2^k>=n+k+1$
 		- 速记
-			- ![[Pasted image 20251227154708.png]]
+			- ![Pasted image 20251227154708](images/Pasted%20image%2020251227154708.png)
 
 - 求解步骤
 	1. 确定海明码位数
 		- 设置信息位$D_4D_3D_2D_1$，则校验位$P_3P_2P_1$
 		- 规定
 			- 校验位$P_i$必须在海明码$2^{i-1}$位置
-			- ![[Pasted image 20251227155115.png]]
+			- ![Pasted image 20251227155115](images/Pasted%20image%2020251227155115.png)
 	2. 求校验位的值
 		- 将信息位进行分组
-			- ![[Pasted image 20251227155606.png]]
-			- ![[Pasted image 20251227155650.png]]
+			- ![Pasted image 20251227155606](images/Pasted%20image%2020251227155606.png)
+			- ![Pasted image 20251227155650](images/Pasted%20image%2020251227155650.png)
 	3. 检错纠错
 		- 用相同方式进行分组
-		- ![[Pasted image 20251227155940.png]]
+		- ![Pasted image 20251227155940](images/Pasted%20image%2020251227155940.png)
 - 检错能力
 	- 检错：2位
 		- 上面的方法无法确定是1位还是两位发送错误
@@ -165,7 +165,7 @@
 - 接收窗口$W_R$
 	- receive
 	- 在接收窗口内的帧才能接收
-- ![[Pasted image 20251229092740.png]]
+- ![Pasted image 20251229092740](images/Pasted%20image%2020251229092740.png)
 
 - 确认机制
 	- 确认帧ACK_i
@@ -202,18 +202,18 @@
 	- 要求
 		- $W_T+W_R\leq 2^n$ 
 	- 用于判断是否是重复帧
-- ![[Pasted image 20251229132239.png]]
+- ![Pasted image 20251229132239](images/Pasted%20image%2020251229132239.png)
 - 示例（可靠传输）
 	- 正常
-		- ![[Pasted image 20251229132336.png]]
+		- ![Pasted image 20251229132336](images/Pasted%20image%2020251229132336.png)
 	- 数据帧丢失
-		- ![[Pasted image 20251229132430.png]]
-		- ![[Pasted image 20251229132509.png]]
+		- ![Pasted image 20251229132430](images/Pasted%20image%2020251229132430.png)
+		- ![Pasted image 20251229132509](images/Pasted%20image%2020251229132509.png)
 	- 确认帧丢失
-		- ![[Pasted image 20251229132549.png]]
-		- ![[Pasted image 20251229132611.png]]
+		- ![Pasted image 20251229132549](images/Pasted%20image%2020251229132549.png)
+		- ![Pasted image 20251229132611](images/Pasted%20image%2020251229132611.png)
 	- 数据帧有差错
-		- ![[Pasted image 20251229132842.png]]
+		- ![Pasted image 20251229132842](images/Pasted%20image%2020251229132842.png)
 - 
 ### 3. 后退N帧协议（GBN）
 - Go-Back-N
@@ -237,18 +237,18 @@
 - 特殊
 	- 确认帧
 		- 可以累计确认，连续收到多个数据帧时，仅返回接收到的最后一个帧的ACK（ACK_i表示及之前的所有帧）
-		- ![[Pasted image 20251229133554.png]]
+		- ![Pasted image 20251229133554](images/Pasted%20image%2020251229133554.png)
 	- 超时重传
 		- 发送方未收到ACK_i，则重传i及其后的所有帧
 - 示例
 	- 数据帧丢失
-		- ![[Pasted image 20251229133813.png]]
-		- ![[Pasted image 20251229133934.png]]
+		- ![Pasted image 20251229133813](images/Pasted%20image%2020251229133813.png)
+		- ![Pasted image 20251229133934](images/Pasted%20image%2020251229133934.png)
 	- 确认帧丢失
-		- ![[Pasted image 20251229134052.png]]
-		- ![[Pasted image 20251229134119.png]]
+		- ![Pasted image 20251229134052](images/Pasted%20image%2020251229134052.png)
+		- ![Pasted image 20251229134119](images/Pasted%20image%2020251229134119.png)
 - 如果不满足$W_T+W_R\leq 2^n$ 
-	- ![[Pasted image 20251229134304.png]]
+	- ![Pasted image 20251229134304](images/Pasted%20image%2020251229134304.png)
 - 缺点
 	- 如果接收方接收帧的速度很慢，或者信道误码率很高，可能导致发送方的发送进度经常需要后退，传输效率低下
 ### 4. 选择重传协议（SR）
@@ -282,45 +282,45 @@
 			- 如果大于，那么大于大于发送窗口的部分经常为空
 - 示例
 	- 正常
-		- ![[Pasted image 20251229135434.png]]
+		- ![Pasted image 20251229135434](images/Pasted%20image%2020251229135434.png)
 	-  数据帧丢失
-		- ![[Pasted image 20251229135532.png]]
-		- ![[Pasted image 20251229135612.png]]
+		- ![Pasted image 20251229135532](images/Pasted%20image%2020251229135532.png)
+		- ![Pasted image 20251229135612](images/Pasted%20image%2020251229135612.png)
 	- 数据帧差错丢弃
-		- ![[Pasted image 20251229135705.png]]
-		- ![[Pasted image 20251229135744.png]]
+		- ![Pasted image 20251229135705](images/Pasted%20image%2020251229135705.png)
+		- ![Pasted image 20251229135744](images/Pasted%20image%2020251229135744.png)
 	- 确认帧丢失
-		- ![[Pasted image 20251229135831.png]]
-		- ![[Pasted image 20251229135856.png]]
-		- ![[Pasted image 20251229135912.png]]
+		- ![Pasted image 20251229135831](images/Pasted%20image%2020251229135831.png)
+		- ![Pasted image 20251229135856](images/Pasted%20image%2020251229135856.png)
+		- ![Pasted image 20251229135912](images/Pasted%20image%2020251229135912.png)
 ### 5. 信道利用率
 #### S-W协议
 - 理想情况
-	- ![[Pasted image 20251229141057.png]]
+	- ![Pasted image 20251229141057](images/Pasted%20image%2020251229141057.png)
 	- 确认帧很短
-		- ![[Pasted image 20251229141224.png]]
+		- ![Pasted image 20251229141224](images/Pasted%20image%2020251229141224.png)
 
 #### GBN、SR协议
 - 理想情况
-	- ![[Pasted image 20251229141445.png]]
-	- ![[Pasted image 20251229141552.png]]
+	- ![Pasted image 20251229141445](images/Pasted%20image%2020251229141445.png)
+	- ![Pasted image 20251229141552](images/Pasted%20image%2020251229141552.png)
 
 #### 补充
 - 滑动窗口协议
-	- ![[Pasted image 20251229141645.png]]
+	- ![Pasted image 20251229141645](images/Pasted%20image%2020251229141645.png)
 - ARQ协议
 	- Automatic repeat request
 		- 自动重传请求协议
 	- 连续ARQ协议
 		- 连续自动重传
-	- ![[Pasted image 20251229141829.png]]
+	- ![Pasted image 20251229141829](images/Pasted%20image%2020251229141829.png)
 ## Part 4 信道划分 介质访问控制
 
 - 介质访问控制
 	- Medium Access Control，MAC
 	- 多个结点共享同一个“总线型”广播信道时，可能发生信号冲突
 		- 例子
-			- ![[Pasted image 20251229142118.png]]
+			- ![Pasted image 20251229142118](images/Pasted%20image%2020251229142118.png)
 
 ### 1. 信道划分
 #### 时分复用（TDM）、统计时分复用（STDM）
@@ -332,7 +332,7 @@
 	- 缺点
 		- 每个节点最多只能分配到信道总带宽的$\frac{1}{m}$
 		- 如果某节点暂时不发送数据，会导致被分配的“时隙”闲置，信道利用率↓
-	- ![[Pasted image 20251229142923.png]]
+	- ![Pasted image 20251229142923](images/Pasted%20image%2020251229142923.png)
 
 - 统计时分复用
 	- Statistic Time Division Multiplexing，STDM
@@ -342,17 +342,17 @@
 	- 优点
 		- 如果有需要，一个节点可以在一段时间内获得所有信道带宽资源
 		- 如果某节点暂不发送数据，可以不分配“时隙”，信道利用率更高
-	- ![[Pasted image 20251229143205.png]]
+	- ![Pasted image 20251229143205](images/Pasted%20image%2020251229143205.png)
 
 #### 频分复用（FDM）、波分复用（WDM）
 - 如果两个信号频率很接近，就很难分辨
 	- 将信道频率进行拆分，用不同的频率范围发送信号
-	- ![[Pasted image 20251229143539.png|200]]
+	- ![Pasted image 20251229143539](images/Pasted%20image%2020251229143539.png)
 - 频分复用
 	- Frequency Division Multiplexing，FDM
 	- 解释
 		- 将信道的总频带划分为多个子频带，每个子频带作为一个子信道，每对用户使用一个子信道进行通信
-	- ![[Pasted image 20251229143809.png]]
+	- ![Pasted image 20251229143809](images/Pasted%20image%2020251229143809.png)
 	- 优点
 		- 各节点可同时发送信号，充分利用了信道带宽
 	- 缺点
@@ -361,7 +361,7 @@
 - 波分复用
 	- Wavelength Division Multiplexing，WDM
 	- 光的频分复用
-	- ![[Pasted image 20251229144111.png]]
+	- ![Pasted image 20251229144111](images/Pasted%20image%2020251229144111.png)
 	- 利用了光信号频带范围大的特点，本质上还是频分复用
 #### 码分复用（CDM）
 - 2G、3G时代，节点之间通信使用CDMA（Code Division Multiple Access）技术
@@ -379,28 +379,28 @@
 2. 发送方如何发送数据
 	- 节点发出m个信号值与“码片序列”相同，表示比特1
 	- 节点发出m个信号值与“码片序列”相同，表示比特1
-	- ![[Pasted image 20251229150108.png]]
+	- ![Pasted image 20251229150108](images/Pasted%20image%2020251229150108.png)
 3. 信号在传输过程中“叠加”
 	- 当多个发送方同时发送数据时，信号值会叠加
 		- 本质是多个m维向量的加法
-		- ![[Pasted image 20251229150539.png]]
+		- ![Pasted image 20251229150539](images/Pasted%20image%2020251229150539.png)
 4. 接收方接收数据
 	- 接收方收到的是叠加信号，需要从中分离出发送方的数据
 	- 叠加信号与发送方的码片序列进行规格化内积
 		- 1-->1
 		- -1-->0
-		- ![[Pasted image 20251229151423.png]]
+		- ![Pasted image 20251229151423](images/Pasted%20image%2020251229151423.png)
 
 ### 2. 随机访问
 #### ALOHA协议
 - Additive Links On-line Hawaii Area
 - 纯ALOHA
-	- ![[Pasted image 20251229152133.png]]
-	- ![[Pasted image 20251229152354.png]]
+	- ![Pasted image 20251229152133](images/Pasted%20image%2020251229152133.png)
+	- ![Pasted image 20251229152354](images/Pasted%20image%2020251229152354.png)
 
 - 时隙ALOHA
-	- ![[Pasted image 20251229152433.png]]
-	- ![[Pasted image 20251229152659.png]]
+	- ![Pasted image 20251229152433](images/Pasted%20image%2020251229152433.png)
+	- ![Pasted image 20251229152659](images/Pasted%20image%2020251229152659.png)
 	- 优点
 		- 避免了用户发送数据的随意性，降低了冲突概率，提高了信道的利用率
 
@@ -408,21 +408,21 @@
 - Carrier Sense Multiple Access
 	- 载波监听多路访问协议
 - 在ALOHA基础上：在发送数据1之前监听信道是否空闲，只有信道空闲时，才会尝试发送
-	- ![[Pasted image 20251229152922.png]]
+	- ![Pasted image 20251229152922](images/Pasted%20image%2020251229152922.png)
 ##### 1-坚持CSMA
-- ![[Pasted image 20251229153019.png]]
+- ![Pasted image 20251229153019](images/Pasted%20image%2020251229153019.png)
 - 优点
 	- 信道利用率高
 - 缺点
 	- 多个节点准备好数据时，一旦信道空闲，会有多个节点同时发送数据，冲突概率大
 ##### 非-坚持CSMA
-- ![[Pasted image 20251229153246.png]]
+- ![Pasted image 20251229153246](images/Pasted%20image%2020251229153246.png)
 - 优点
 	- 多个节点准备好数据时，如果信道不空闲，随机暂停一段时间监听，同时发送数据的概率↓
 - 缺点
 	- 信道刚空闲时，可能不会被立即使用，导致信道利用率↓
 ##### p-坚持CSMA
-- ![[Pasted image 20251229153535.png]]
+- ![Pasted image 20251229153535](images/Pasted%20image%2020251229153535.png)
 
 #### CSMA/CD协议
 - CSMA/Collision Detection（冲突检测）
@@ -441,18 +441,18 @@
 	- 注
 		- 第10次冲突是随机重发的分水岭
 		- 第16次冲突直接放弃传帧，报告上级（网络层）
-- ![[Pasted image 20251229155045.png]]
+- ![Pasted image 20251229155045](images/Pasted%20image%2020251229155045.png)
 - 争用期
 	- =2×最远单向传播时延（考虑距离最远的两个节点）
 	- 如果争用期内为检测到冲突，则本次帧发送不会发送冲突
 	- CSMA/CD没有ACK机制，所以无冲突=发送成功
-	- ![[Pasted image 20251229155725.png]]
+	- ![Pasted image 20251229155725](images/Pasted%20image%2020251229155725.png)
 - 最短帧长
 	- =2×最大单向传播时延×信道带宽
 	- 若收到的帧小于最短帧长，视为无效帧
 	- 如果实际发送的数据很少，可以填充至合法长度后发送
 - 接收方
-	- ![[Pasted image 20251229160158.png]]
+	- ![Pasted image 20251229160158](images/Pasted%20image%2020251229160158.png)
 - 最长帧长
 	- 防止某些节点一直占用信道
 - 以太网规定
@@ -463,11 +463,11 @@
 	- 不检测冲突，发送前尽量避免冲突
 - 用于IEEE 802.11无线局域网（WIFI）
 - 家用路由器
-	- ![[Pasted image 20251229160915.png]]
+	- ![Pasted image 20251229160915](images/Pasted%20image%2020251229160915.png)
 	- 校园网
-		- ![[Pasted image 20251229161010.png]]
+		- ![Pasted image 20251229161010](images/Pasted%20image%2020251229161010.png)
 - 假如使用CSMA/CD
-	- ![[Pasted image 20251229161334.png]]
+	- ![Pasted image 20251229161334](images/Pasted%20image%2020251229161334.png)
 - 机制
 	- 发送方
 		- 先听后发，忙则退避
@@ -480,7 +480,7 @@
 		- 停止等待协议
 			- 每收到一个正确数据帧都返回ACK
 			- 若发送方超时未收到则“随即退避”
-	- ![[Pasted image 20251229162146.png]]
+	- ![Pasted image 20251229162146](images/Pasted%20image%2020251229162146.png)
 - 帧间间隔IFS（Inter Frame Gap）
 	- DIFS
 		- 分布式协调IFS
@@ -496,7 +496,7 @@
 		2. AP广播CTS控制帧（需在RTS、CTS中指明预约时长）
 		3. 其他无关节点收到CTS后自觉禁言一段时间（虚拟载波监听机制），发送方收到CTS后发送数据帧
 		4. AP收到数据帧后，进行CRC校验，若无差错就返回ACK帧
-	- ![[Pasted image 20251229162813.png]]
+	- ![Pasted image 20251229162813](images/Pasted%20image%2020251229162813.png)
 	- 在IEEE 802.11中规定了数据帧达到怎样的长度才启用预约机制
 ### 3. 轮询访问
 - 令牌传递协议
@@ -505,13 +505,13 @@
 	- 特点
 		- 环形拓扑结构，各节点“轮询访问”信道，不会发生冲突
 - 机制
-	- ![[Pasted image 20251229163437.png]]
-- ![[Pasted image 20251229163521.png]]
+	- ![Pasted image 20251229163437](images/Pasted%20image%2020251229163437.png)
+- ![Pasted image 20251229163521](images/Pasted%20image%2020251229163521.png)
 
 - 构建
-	- ![[Pasted image 20251229163611.png]]
-	- ![[Pasted image 20251229163640.png]]
-- ![[Pasted image 20251229163821.png]]
+	- ![Pasted image 20251229163611](images/Pasted%20image%2020251229163611.png)
+	- ![Pasted image 20251229163640](images/Pasted%20image%2020251229163640.png)
+- ![Pasted image 20251229163821](images/Pasted%20image%2020251229163821.png)
 ## Part 5 局域网（LAN）
 ### 1. 基本概念与体系结构
 - IEEE
@@ -521,10 +521,10 @@
 			- 802.8、802.5 已解散
 			- 802.3
 			- 802.11
-		- ![[Pasted image 20251229164346.png]]
-	- ![[Pasted image 20251229164504.png]]
-	- ![[Pasted image 20251229164601.png]]
-	- ![[Pasted image 20251229164621.png]]
+		- ![Pasted image 20251229164346](images/Pasted%20image%2020251229164346.png)
+	- ![Pasted image 20251229164504](images/Pasted%20image%2020251229164504.png)
+	- ![Pasted image 20251229164601](images/Pasted%20image%2020251229164601.png)
+	- ![Pasted image 20251229164621](images/Pasted%20image%2020251229164621.png)
 
 #### 基本概念
 - 特点
@@ -532,7 +532,7 @@
 	- 较低的时延和误码率
 	- 局域网内各节点之间以“帧”为单位进行传输
 	- 支持单播、广播、多播
-		- ![[Pasted image 20251229165313.png]]
+		- ![Pasted image 20251229165313](images/Pasted%20image%2020251229165313.png)
 
 #### 分类
 - 关注点
@@ -547,7 +547,7 @@
 			- 传输介质：
 				- 同轴电缆（用中继器连接多个同轴电缆网段）
 				- 10Base5
-				- ![[Pasted image 20251229170023.png]]
+				- ![Pasted image 20251229170023](images/Pasted%20image%2020251229170023.png)
 			- 介质访问控制方式：CSMA/CD协议
 		- 后期
 			- 双绞线
@@ -555,16 +555,16 @@
 				- 用集线器连接
 					- 物理上星形，逻辑上总线型
 					- CSMA/CD协议
-					- ![[Pasted image 20251229170728.png]]
+					- ![Pasted image 20251229170728](images/Pasted%20image%2020251229170728.png)
 				- 用交换机连接
 					- CSMA/CD协议或NULL
 					- 半双工用CSMA/CD，全双工NULL
-					- ![[Pasted image 20251229170845.png]]
+					- ![Pasted image 20251229170845](images/Pasted%20image%2020251229170845.png)
 			- 光纤
 				- 10BaseF
 				- 点对点（用于中继器/集线器/交换机之间的传输，通常不会直接连接终端节点）
 				- NULL（不用介质访问控制，两条光纤实现全双工通信）
-				- ![[Pasted image 20251229170430.png]]
+				- ![Pasted image 20251229170430](images/Pasted%20image%2020251229170430.png)
 	- 令牌环网（Token Ring）（1984-2000）
 		- 拓扑结构：环形
 		- 传输介质：同轴电缆 or 双绞线
@@ -578,8 +578,8 @@
 - 每个节点至少会拥有一个全球唯一的MAC地址
 	- 物理地址，48bit
 	- 生成
-		- ![[Pasted image 20251229171155.png]]
-- ![[Pasted image 20251229171301.png]]
+		- ![Pasted image 20251229171155](images/Pasted%20image%2020251229171155.png)
+- ![Pasted image 20251229171301](images/Pasted%20image%2020251229171301.png)
 - 现在很多电脑没有以太网适配器，需要购买转接口（带以太网适配器）
 - 网络适配器
 	- 把帧发送到局域网
@@ -599,12 +599,12 @@
 
 
 #### 物理层技术标准
-- ![[Pasted image 20251231204826.png]]
-- ![[Pasted image 20251231204900.png]]
-- ![[Pasted image 20251231204921.png]]
-- ![[Pasted image 20251231204944.png]]
-- ![[Pasted image 20251231205003.png]]
-- ![[Pasted image 20251231205339.png]]
+- ![Pasted image 20251231204826](images/Pasted%20image%2020251231204826.png)
+- ![Pasted image 20251231204900](images/Pasted%20image%2020251231204900.png)
+- ![Pasted image 20251231204921](images/Pasted%20image%2020251231204921.png)
+- ![Pasted image 20251231204944](images/Pasted%20image%2020251231204944.png)
+- ![Pasted image 20251231205003](images/Pasted%20image%2020251231205003.png)
+- ![Pasted image 20251231205339](images/Pasted%20image%2020251231205339.png)
 - 路由器隔离冲突域和广播域
 - 交换机隔离冲突域，不隔离广播域
 - 集线器都不
@@ -613,58 +613,58 @@
 - 冲突域
 	- 两个节点同时发送数据会冲突
 
-- ![[Pasted image 20251231205655.png]]
+- ![Pasted image 20251231205655](images/Pasted%20image%2020251231205655.png)
 
 ### 3. IEEE 802.11 无线局域网
 #### 基本概念
 
-![[Pasted image 20251231210455.png]]
+![Pasted image 20251231210455](images/Pasted%20image%2020251231210455.png)
 
 - 普通家用路由器
-	- ![[Pasted image 20251231210556.png]]
-- ![[Pasted image 20251231210641.png]]
-- ![[Pasted image 20251231210747.png]]
-- ![[Pasted image 20251231210832.png]]
+	- ![Pasted image 20251231210556](images/Pasted%20image%2020251231210556.png)
+- ![Pasted image 20251231210641](images/Pasted%20image%2020251231210641.png)
+- ![Pasted image 20251231210747](images/Pasted%20image%2020251231210747.png)
+- ![Pasted image 20251231210832](images/Pasted%20image%2020251231210832.png)
 - 
 #### 802.11 帧
 - 分类
-	- ![[Pasted image 20251231210852.png]]
-	- ![[Pasted image 20251231211153.png]]
+	- ![Pasted image 20251231210852](images/Pasted%20image%2020251231210852.png)
+	- ![Pasted image 20251231211153](images/Pasted%20image%2020251231211153.png)
 - 格式
-	- ![[Pasted image 20251231210928.png]]
-- ![[Pasted image 20251231211106.png]]
+	- ![Pasted image 20251231210928](images/Pasted%20image%2020251231210928.png)
+- ![Pasted image 20251231211106](images/Pasted%20image%2020251231211106.png)
 ### 4. VLAN基本概念
 - IEEE 802.1Q
-- ![[Pasted image 20251231205935.png]]
+- ![Pasted image 20251231205935](images/Pasted%20image%2020251231205935.png)
 - VLAN
-	- ![[Pasted image 20251231210014.png]]
+	- ![Pasted image 20251231210014](images/Pasted%20image%2020251231210014.png)
 - vlan划分方式
-	- ![[Pasted image 20251231210056.png]]
+	- ![Pasted image 20251231210056](images/Pasted%20image%2020251231210056.png)
 - 802.1Q帧
-	- ![[Pasted image 20251231210215.png]]
+	- ![Pasted image 20251231210215](images/Pasted%20image%2020251231210215.png)
 	- 结构
-		- ![[Pasted image 20251231210302.png]]
-- ![[Pasted image 20251231210322.png]]
+		- ![Pasted image 20251231210302](images/Pasted%20image%2020251231210302.png)
+- ![Pasted image 20251231210322](images/Pasted%20image%2020251231210322.png)
 ## Part 6 广域网
 ### 1. 广域网介绍
-- ![[Pasted image 20251231211245.png]]
-- ![[Pasted image 20251231211339.png]]
+- ![Pasted image 20251231211245](images/Pasted%20image%2020251231211245.png)
+- ![Pasted image 20251231211339](images/Pasted%20image%2020251231211339.png)
 
 
 ### 2. PPP协议
-- ![[Pasted image 20251231211451.png]]
-- ![[Pasted image 20251231211515.png]]
-- ![[Pasted image 20251231211834.png]]
+- ![Pasted image 20251231211451](images/Pasted%20image%2020251231211451.png)
+- ![Pasted image 20251231211515](images/Pasted%20image%2020251231211515.png)
+- ![Pasted image 20251231211834](images/Pasted%20image%2020251231211834.png)
 - PPPoe
-	- ![[Pasted image 20251231211924.png]]
+	- ![Pasted image 20251231211924](images/Pasted%20image%2020251231211924.png)
 - 
 ## Part 7 以太网交换机
-- ![[Pasted image 20251231212024.png]]
+- ![Pasted image 20251231212024](images/Pasted%20image%2020251231212024.png)
 
-- ![[Pasted image 20251231212041.png]]
+- ![Pasted image 20251231212041](images/Pasted%20image%2020251231212041.png)
 
 - 自学习功能
-	- ![[Pasted image 20251231212125.png]]
-	- ![[Pasted image 20251231212159.png]]
-- ![[Pasted image 20251231212231.png]]
+	- ![Pasted image 20251231212125](images/Pasted%20image%2020251231212125.png)
+	- ![Pasted image 20251231212159](images/Pasted%20image%2020251231212159.png)
+- ![Pasted image 20251231212231](images/Pasted%20image%2020251231212231.png)
 

@@ -317,7 +317,7 @@ $ python -m pdb err.py
 0
 ```
 - `q`结束调试，退出程序
-![[Pasted image 20250306162319.png]]
+![Pasted image 20250306162319](images/Pasted%20image%2020250306162319.png)
 
 
 ### pdb.set_trace()

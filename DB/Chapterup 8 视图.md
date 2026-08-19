@@ -16,15 +16,15 @@ select name,chinese from student inner join score_student on student.id = score_
 这样就可以对视图之外的数据进行保密，同时需要知道该视图中的所有数据时，就不用再写一遍SQL语句了更为便捷
 
 ## Part 2 显示视图
-![[Pasted image 20241028185415.png|300]]
+![Pasted image 20241028185415](images/Pasted%20image%2020241028185415.png)
 1. 和表类似
-![[Pasted image 20241028185427.png]]
+![Pasted image 20241028185427](images/Pasted%20image%2020241028185427.png)
 
 2. 和表类似
-![[Pasted image 20241028185449.png]]
+![Pasted image 20241028185449](images/Pasted%20image%2020241028185449.png)
 
 3. 显示视图信息（没什么用）
-![[Pasted image 20241028185530.png]]
+![Pasted image 20241028185530](images/Pasted%20image%2020241028185530.png)
 
 ## Part 3 更新、删除视图
 - 更新

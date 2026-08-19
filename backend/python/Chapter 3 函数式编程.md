@@ -40,7 +40,7 @@ print(add(-5, 6, abs))
 - map和reduce都是python内建的函数
 - map()：接收两个参数，一个函数，一个Iterable，map将传入的函数作用于序列的每个元素，最后将结果作为新的Iterator返回
 - 举例：假如我们要得到一个列表的平方和
-![[Pasted image 20250303112954.png|400]]
+![Pasted image 20250303112954](images/Pasted%20image%2020250303112954.png)
 
 ```plain
 >>> def f(x):

@@ -13,21 +13,21 @@
 java自带的API里面没有相应的功能，就需要引入jar包，jar包也可以用构建工具（maven）导入更加方便，这里用的是手动导入的方式
 ### 官网下载对应的jar包
 - maven repository
-![[Pasted image 20241113200310.png]]
+![Pasted image 20241113200310](images/Pasted%20image%2020241113200310.png)
 
-![[Pasted image 20241113200351.png]]
+![Pasted image 20241113200351](images/Pasted%20image%2020241113200351.png)
 
-![[Pasted image 20241113200427.png]]
+![Pasted image 20241113200427](images/Pasted%20image%2020241113200427.png)
 
 ### 增加依赖，不然用不了
 发现会报错，这是缺少依赖
-![[Pasted image 20241106183038.png]]
+![Pasted image 20241106183038](images/Pasted%20image%2020241106183038.png)
 
 所以需要在下载junit的jar页面往下翻找到compile dependency，点击version下载，再次导入jar包
-![[Pasted image 20241113200535.png]]
+![Pasted image 20241113200535](images/Pasted%20image%2020241113200535.png)
 
 ### 右击项目创建lib的directory
-![[Pasted image 20241106173209.png]]
+![Pasted image 20241106173209](images/Pasted%20image%2020241106173209.png)
 
 导入成功后右击jar包add as library，点击ok，能展开就是可以用了
 
@@ -81,14 +81,14 @@ public class MainTest {
     *   `assertTrue(condition)`: 验证条件是否为真。
     *   `assertFalse(condition)`: 验证条件是否为假。
     *   `assertNotNull(object)`: 验证对象是否不为 null。
-![[Pasted image 20241106183808.png]]
+![Pasted image 20241106183808](images/Pasted%20image%2020241106183808.png)
 
 下面是√就表示通过
 
-![[Pasted image 20241106183949.png]]
+![Pasted image 20241106183949](images/Pasted%20image%2020241106183949.png)
 
 - 但是有的数值不能通过人工计算，应该让计算机自己去计算
-![[Pasted image 20241106184605.png]]
+![Pasted image 20241106184605](images/Pasted%20image%2020241106184605.png)
 
 ## Part 5 断言
 ### 介绍与使用

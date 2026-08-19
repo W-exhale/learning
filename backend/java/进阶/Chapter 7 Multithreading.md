@@ -5,10 +5,10 @@
 - CPU：中央处理器
 - 单核cpu一个脑子不能多用，就切换着用（挂起（暂停））：表面上是同时运行，实际上是切换的快
 - 多个cpu就多个一起用
-![[Pasted image 20241127222625.png|500]]
+![Pasted image 20241127222625](images/Pasted%20image%2020241127222625.png)
 可以在英特尔官网上看到这是12核16线程，这里的12核就相当于是有12个脑子
 
-一个核操纵两个程序，通过来回切换来使用，假如说一个软件一个进程，使用其中一个程序就需要挂起另一个程序的进程（实际上一个软件还可能占用多个进程，如下图，任务管理器占用一个进程，C++blabla占用多个进程）![[Pasted image 20241127223336.png]]
+一个核操纵两个程序，通过来回切换来使用，假如说一个软件一个进程，使用其中一个程序就需要挂起另一个程序的进程（实际上一个软件还可能占用多个进程，如下图，任务管理器占用一个进程，C++blabla占用多个进程）![Pasted image 20241127223336](images/Pasted%20image%2020241127223336.png)
 线程：一个程序给多个人用
 [[核,线程关系.excalidraw|核，进程，线程关系]]
 
@@ -29,7 +29,7 @@
 ### Section 3 并发与并行
 - 并发：在有限的核心和有限的进程中如何运行多个应用程序（来回切换）
 - 并行：一个核执行一个线程，另一个核执行另一个线程
-![[Pasted image 20241127231027.png]]
+![Pasted image 20241127231027](images/Pasted%20image%2020241127231027.png)
 
 ## Part 2 多线程执行
 [[多线程的执行.excalidraw|多线程执行示意图]]
@@ -119,7 +119,7 @@ System.out.println("main..d.....Thread....");
     }  
 }
 ```
-![[Pasted image 20241204211806.png|500]]
+![Pasted image 20241204211806](images/Pasted%20image%2020241204211806.png)
 
 ### Section 3 方式3 （匿名内部类）
 ```java
@@ -162,10 +162,10 @@ public static void main(String[] args) {
     new Thread(nikeThread,"Alice").start();  
 }
 ```
-![[Pasted image 20241204212915.png]]
+![Pasted image 20241204212915](images/Pasted%20image%2020241204212915.png)
 
 ### Secition 5 后台守护线程
-我们使用电脑可以发现进程有前台的也有后台的，如下：上面的就是前台的进程，下面就是后台的进程![[Pasted image 20241204213314.png]]
+我们使用电脑可以发现进程有前台的也有后台的，如下：上面的就是前台的进程，下面就是后台的进程![Pasted image 20241204213314](images/Pasted%20image%2020241204213314.png)
 - 那么相对应的，应该也存在前台的线程和后台的线程
 ```java
 -DamonThread.java
@@ -191,7 +191,7 @@ public static void main(String[] args) {
     new Thread(nikeThread,"Alice").start();  
 }
 ```
-![[Pasted image 20241204214130.png|500]]
+![Pasted image 20241204214130](images/Pasted%20image%2020241204214130.png)
 
 - 判断是否是守护线程
 `System.out.println(dThread.isDaemon());`

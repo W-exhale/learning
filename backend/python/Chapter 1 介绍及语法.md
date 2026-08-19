@@ -1,7 +1,7 @@
 ## 对比C语言
 - 运行
-	- C语言：可执行文件是已经编译好的机器语言，也就是可以直接点击exe文件运行，很快![[Pasted image 20250220232725.png]]
-	- python：不会生成可执行文件，每次运行都要翻译一遍源码。通过解释器翻译成字节码文件，然后再由PVM将字节码进行翻译并执行，比较慢![[Pasted image 20250220233247.png]]
+	- C语言：可执行文件是已经编译好的机器语言，也就是可以直接点击exe文件运行，很快![Pasted image 20250220232725](images/Pasted%20image%2020250220232725.png)
+	- python：不会生成可执行文件，每次运行都要翻译一遍源码。通过解释器翻译成字节码文件，然后再由PVM将字节码进行翻译并执行，比较慢![Pasted image 20250220233247](images/Pasted%20image%2020250220233247.png)
 - 代码不能加密，要给别人用只能发源码
 - 应用
 	1. 可以做日常任务，比如自动备份你的MP3；
@@ -23,10 +23,10 @@
 
 Python交互模式的代码是输入一行，执行一行，Python交互模式主要是为了调试Python代码用的
 
-![[Pasted image 20241110183324.png]]
+![Pasted image 20241110183324](images/Pasted%20image%2020241110183324.png)
 
 - 命令行运行.py文件
-![[Pasted image 20241110184229.png|400]]
+![Pasted image 20241110184229](images/Pasted%20image%2020241110184229.png)
 
 
 ## 输出
@@ -52,7 +52,7 @@ Python交互模式的代码是输入一行，执行一行，Python交互模式�
 
 ## 输入
 
-![[Pasted image 20241110185212.png]]
+![Pasted image 20241110185212](images/Pasted%20image%2020241110185212.png)
 
 
 - *input返回是string*，所以在用数字的时候，需要使用数字类型转换
@@ -325,7 +325,7 @@ Unicode标准最常用的是UCS-16编码，用两个字节表示一个字符（�
 在计算机内存中，统一使用Unicode编码，当需要保存到硬盘或者需要传输的时候，就转换为UTF-8编码。
 
 用记事本编辑的时候，从文件读取的UTF-8字符被转换为Unicode字符到内存里，编辑完成后，保存的时候再把Unicode转换为UTF-8保存到文件：
-![[Pasted image 20241110192432.png|400]]
+![Pasted image 20241110192432](images/Pasted%20image%2020241110192432.png)
 
 在最新的Python 3版本中，字符串是以Unicode编码的，也就是说，Python的字符串支持多语言
 
@@ -435,12 +435,12 @@ UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-1: ordin
 'Hi, Michael, you have $1000000.'
 ```
 
-![[Pasted image 20241110193943.png]]
+![Pasted image 20241110193943](images/Pasted%20image%2020241110193943.png)
 
 用%时，可以用`%%` 来表示一个%
 
 - format()，用数字编号，冒号后面是精度条件等等，用中括号括起来
-![[Pasted image 20241110194315.png]]
+![Pasted image 20241110194315](images/Pasted%20image%2020241110194315.png)
 
 将前面的字符串当成一个整体，直接.加函数
 
@@ -459,13 +459,13 @@ The area of a circle with radius 2.5 is 19.62
 - 比较像数组
 可以用`len`来获取list元素的个数
 
-![[屏幕截图 2024-11-10 195219.png]]
+![屏幕截图 2024-11-10 195219](images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-11-10%20195219.png)
 
 用负数也可以表示，但是不能到-4，不然也会越界
 
 - 函数
 - `append()`，`insert()`，`pop()`，删除
-![[Pasted image 20241110195453.png]]
+![Pasted image 20241110195453](images/Pasted%20image%2020241110195453.png)
 
 list里面的数据类型可以不同
 
@@ -673,7 +673,7 @@ print(my_abs(-99))
 - 如果没有`return`语句，函数执行完毕后也会返回结果，只是结果为`None`。`return None`可以简写为`return`。
 
 - 在Python交互环境中定义函数时，注意Python会出现`...`的提示。函数定义结束后需要按两次回车重新回到`>>>`提示符下：
-![[Pasted image 20241110204344.png|300]]
+![Pasted image 20241110204344](images/Pasted%20image%2020241110204344.png)
 
 - 如果`my_abs()`的函数定义在`abstest.py`文件中，在交互模式中需要使用`from abstest import my_abs`来导入`my_abs()`函数，注意`abstest`是文件名（不含`.py`扩展名）：
 ```

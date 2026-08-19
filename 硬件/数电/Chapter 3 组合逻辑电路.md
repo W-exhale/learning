@@ -1,9 +1,9 @@
 ## Part 1 概述
 - 组合逻辑电路（组合电路）：任何时刻电路的稳定输出，仅仅只决定于该时刻各个输入变量的取值。（由常用门电路组合而成）
 
-![[Pasted image 20241101101807.png]]
+![Pasted image 20241101101807](images/Pasted%20image%2020241101101807.png)
 
-![[Pasted image 20241101101846.png|400]]
+![Pasted image 20241101101846](images/Pasted%20image%2020241101101846.png)
 
 - $t_n$是时间。上面式子表示$t_n$时刻电路的稳定输出Y($t_n$)仅决定于$t_n$时刻的输入$I(t_n)$。上面的式子可以叫做组合逻辑函数
 
@@ -22,7 +22,7 @@
 2. 化简
 3. 写真值表
 4. 说明功能
-![[屏幕截图 2024-11-01 103347.png]]
+![屏幕截图 2024-11-01 103347](images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-11-01%20103347.png)
 
 ### Section 2 基本设计方法
 1. 设定变量
@@ -30,8 +30,8 @@
 3. 化简（可以用卡诺图）
 4. 画逻辑图
 
-![[Pasted image 20241101103618.png]]
-![[Pasted image 20241101103634.png]]
+![Pasted image 20241101103618](images/Pasted%20image%2020241101103618.png)
+![Pasted image 20241101103634](images/Pasted%20image%2020241101103634.png)
 
 ## Part 3 加法器
 
@@ -62,24 +62,24 @@
 - 半加：两个1位二进制数相加
 - 三种情况：0+0=0；0+1=1；1+1=10
 
-![[屏幕截图 2024-11-01 110446.png]]
+![屏幕截图 2024-11-01 110446](images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-11-01%20110446.png)
 
 #### 2.2 全加器
 - 全加：有进位的加法运算（1+1 = 10不算，111+101=1100才算）
 
-![[Pasted image 20241101110912.png]]
+![Pasted image 20241101110912](images/Pasted%20image%2020241101110912.png)
 
 - 化简
-![[Pasted image 20241101110945.png]]
+![Pasted image 20241101110945](images/Pasted%20image%2020241101110945.png)
 
 -与门和或门实现
 
-![[Pasted image 20241101111021.png]]
+![Pasted image 20241101111021](images/Pasted%20image%2020241101111021.png)
 
 
 -与或非门实现
 
-![[Pasted image 20241101111108.png]]
+![Pasted image 20241101111108](images/Pasted%20image%2020241101111108.png)
 
 - 集成全加器
 在一个器件中封装两个上面的全加器，组成两个功能相同又相互独立的全加器。可以单独使用，也可将一个全加器的进位输出段和另一个全加器的进位输入端连接起来，组成2位串行加法器，级联方便，十分灵活
@@ -96,10 +96,10 @@
 2. 超前进位加法器：在做加法运算时，各位数的进位信号由输入二进制数直接产生的加法器。（其实就是已经算好了公式，直接套进去，加快运算速度，弥补了串行进位加法器的缺点）
 
 进位公式：
-![[Pasted image 20241102204647.png]]
+![Pasted image 20241102204647](images/Pasted%20image%2020241102204647.png)
 
 - 电路组成
-![[Pasted image 20241102204718.png|450]]
+![Pasted image 20241102204718](images/Pasted%20image%2020241102204718.png)
 
 -适用于高速数字计算、数据采集及控制系统，而且扩展方便
 
@@ -121,7 +121,7 @@ Binary Code Decimal，BCD码.
 #### 1.2 循环码
 -反射码，格雷码。相邻两个编码只有1位状态不同。（缺点：不够直观）
 
-![[Pasted image 20241102210752.png]]
+![Pasted image 20241102210752](images/Pasted%20image%2020241102210752.png)
 
 #### 1.3 ISO编码
 international standardization organization 编码是国际标准化组织编制的一组8位二进制代码，主要用在信息传递上。
@@ -139,68 +139,68 @@ international standardization organization 编码是国际标准化组织编制�
 
 ##### 3位二进制编码器
 输入是8个进行编码的信号，输出是用来进行编码的3位二进制代码
-![[Pasted image 20241102211746.png|350]]
+![Pasted image 20241102211746](images/Pasted%20image%2020241102211746.png)
 
 - 编码器再任何时刻，只能对一个输入信号进行编码，即不允许有两个和两个以上输入信号同时存在的情况出现，也就是说$I_0...I_7$是一组互相排斥的变量
 
-![[Pasted image 20241102212012.png]]
+![Pasted image 20241102212012](images/Pasted%20image%2020241102212012.png)
 
-![[Pasted image 20241102212058.png]]
+![Pasted image 20241102212058](images/Pasted%20image%2020241102212058.png)
 
 #####  3位二进制优先编码器
 
 允许几个信号同时输入，但是电路只对其中优先级别最高的进行编码
-![[Pasted image 20241102212350.png|300]]
+![Pasted image 20241102212350](images/Pasted%20image%2020241102212350.png)
 
-![[屏幕截图 2024-11-02 212411.png]]
+![屏幕截图 2024-11-02 212411](images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-11-02%20212411.png)
 
-![[屏幕截图 2024-11-02 214729.png]]
+![屏幕截图 2024-11-02 214729](images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-11-02%20214729.png)
 
-![[Pasted image 20241103135825.png]]
+![Pasted image 20241103135825](images/Pasted%20image%2020241103135825.png)
 
 ##### 集成8线-3线
-![[Pasted image 20241103140106.png]]
+![Pasted image 20241103140106](images/Pasted%20image%2020241103140106.png)
 
-![[Pasted image 20241103140931.png]]
+![Pasted image 20241103140931](images/Pasted%20image%2020241103140931.png)
 
-![[Pasted image 20241103141532.png|400]]
+![Pasted image 20241103141532](images/Pasted%20image%2020241103141532.png)
 
 #### 2.2 二-十进制编码器
 - 能实现BCD码的电路
 
 ##### 8421 BCD编码器
-![[Pasted image 20241103141719.png]]
+![Pasted image 20241103141719](images/Pasted%20image%2020241103141719.png)
 
-![[Pasted image 20241103141806.png|500]]
+![Pasted image 20241103141806](images/Pasted%20image%2020241103141806.png)
 
 ##### 8421 BCD优先编码器
 
-![[屏幕截图 2024-11-03 141914.png]]
+![屏幕截图 2024-11-03 141914](images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-11-03%20141914.png)
 
 ##### 集成10线-4线
 
-![[Pasted image 20241103142311.png]]
+![Pasted image 20241103142311](images/Pasted%20image%2020241103142311.png)
 
 ### Section 3 译码器
 -译码是编码的逆过程，例如：BCD码返回信号。可以将输入二进制代码的状态翻译成输出型号
 
-![[Pasted image 20241103142750.png]]
+![Pasted image 20241103142750](images/Pasted%20image%2020241103142750.png)
 
 #### 3.1 二进制译码器
 
 ##### 3位二进制译码器
 - 3线-8线译码器
 
-![[Pasted image 20241103143022.png]]
-![[Pasted image 20241103143118.png]]
+![Pasted image 20241103143022](images/Pasted%20image%2020241103143022.png)
+![Pasted image 20241103143118](images/Pasted%20image%2020241103143118.png)
 
 
 ##### 集成3线-8线译码器
-![[Pasted image 20241103143350.png]]
-![[Pasted image 20241103143420.png]]
+![Pasted image 20241103143350](images/Pasted%20image%2020241103143350.png)
+![Pasted image 20241103143420](images/Pasted%20image%2020241103143420.png)
 
 ##### 二进制译码器的级联
-![[Pasted image 20241103143510.png]]
+![Pasted image 20241103143510](images/Pasted%20image%2020241103143510.png)
 
 ##### 二进制译码器特点
 - 功能特点
@@ -213,13 +213,13 @@ international standardization organization 编码是国际标准化组织编制�
 #### 3.2 二-十进制译码器
 将十进制数的二进制编码即BCD码翻译成对应的10个输出信号电路（4线-10线译码器）
 
-![[屏幕截图 2024-11-03 145113.png]]
+![屏幕截图 2024-11-03 145113](images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-11-03%20145113.png)
 
 （伪码）
 
-![[Pasted image 20241103144700.png]]
+![Pasted image 20241103144700](images/Pasted%20image%2020241103144700.png)
 
-![[Pasted image 20241103144957.png]]
+![Pasted image 20241103144957](images/Pasted%20image%2020241103144957.png)
 
 #### 3.3 显示译码器
 在数字系统和装置中，经常需要把数字、文字和符号等的二进制翻译成人们习惯的形式直观的显示出来，利用译码器驱动显示器的译码器就是显示译码器
@@ -227,30 +227,30 @@ international standardization organization 编码是国际标准化组织编制�
 ##### 半导体显示器
 显示原理：某些特殊的半导体材料，例如用磷砷化镓做成的PN结，当外加正向电压时，可以将电能转换成光能。
 
-![[屏幕截图 2024-11-03 151054.png]]
+![屏幕截图 2024-11-03 151054](images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-11-03%20151054.png)
 
 - 特点：清晰悦目，工作电压低（1.5V-3V）、体积小、寿命长（>1000h）、响应速度快、颜色丰富（红绿黄等色）
 
 ##### 显示译码器
 -设计显示译码器首先需要考虑显示器的字形，现在用驱动七段发光二极管的二-十进制译码器为例来说明显示译码器的设计过程。
 
-![[Pasted image 20241103152100.png|400]]
+![Pasted image 20241103152100](images/Pasted%20image%2020241103152100.png)
 
-![[屏幕截图 2024-11-03 152141.png]]
+![屏幕截图 2024-11-03 152141](images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-11-03%20152141.png)
 
-![[Pasted image 20241103152614.png]]
+![Pasted image 20241103152614](images/Pasted%20image%2020241103152614.png)
 
 上图是共阳极LED（阳极的1是白的，所以卡诺图要合并0），下图是共阴极LED（阴极的1是黑的，所以卡诺图要合并1）
-![[Pasted image 20241103152649.png]]
+![Pasted image 20241103152649](images/Pasted%20image%2020241103152649.png)
 
-![[屏幕截图 2024-11-03 152834.png]]
+![屏幕截图 2024-11-03 152834](images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-11-03%20152834.png)
 
 
 - 应用图
-![[Pasted image 20241103153103.png]]
+![Pasted image 20241103153103](images/Pasted%20image%2020241103153103.png)
 
 ##### 集成显示译码器
-![[Pasted image 20241103153208.png]]
+![Pasted image 20241103153208](images/Pasted%20image%2020241103153208.png)
 
 ### Part 5 数据选择器和分配器
 ### Section 1 数据选择器
@@ -258,28 +258,28 @@ international standardization organization 编码是国际标准化组织编制�
 #### 1.1 4选1数据选择器
 - 输入信号：4路数据，用$D_0,D_1,D_2,D_3$表示；两个选择控制信号，用$A_1,A_0$表示
 - 输出信号：用Y表示（由控制信号表示）
-![[Pasted image 20241119212233.png|500]]
+![Pasted image 20241119212233](images/Pasted%20image%2020241119212233.png)
 
 - 真值表
-![[Pasted image 20241119212349.png]]
+![Pasted image 20241119212349](images/Pasted%20image%2020241119212349.png)
 
 - 逻辑表达式
 $Y=D_0\overline A_1\overline A_0+D_1\overline A_1A_0+D_2A_1\overline A_0+D_3A_1A_0$
 - 逻辑图
-![[Pasted image 20241119212720.png|400]]
+![Pasted image 20241119212720](images/Pasted%20image%2020241119212720.png)
 #### 1.2 集成数据选择器
 ##### 8选1数据选择器
-![[Pasted image 20241119212831.png|600]]
+![Pasted image 20241119212831](images/Pasted%20image%2020241119212831.png)
 - 真值表
-![[Pasted image 20241119212926.png|600]]
+![Pasted image 20241119212926](images/Pasted%20image%2020241119212926.png)
 
 - 分析
-![[Pasted image 20241119213619.png|500]]
+![Pasted image 20241119213619](images/Pasted%20image%2020241119213619.png)
 
 ##### 扩展（16选1）
-![[Pasted image 20241119213055.png|500]]
+![Pasted image 20241119213055](images/Pasted%20image%2020241119213055.png)
 - 分析
-![[Pasted image 20241119213414.png|500]]
+![Pasted image 20241119213414](images/Pasted%20image%2020241119213414.png)
 
 ##### 实现逻辑函数
 - n个地址变量的数据选择器，如果不增加门电路，最多可以实现n+1个变量的函数,拿$L=\overline A\overline BC+\overline AB\overline C+AB$举例
@@ -290,11 +290,11 @@ $$\begin{align}L&=\overline A\overline BC+\overline AB\overline C+AB\\
 4选1数据选择器输出表达式为：
 $Y=m_0D_0+m_1D_1+m_2D_2+m_3D_3$
 可得：$D_0=C、D_1=\overline C、D_2=0、D_3=1$
-![[Pasted image 20241119214550.png|400]]
+![Pasted image 20241119214550](images/Pasted%20image%2020241119214550.png)
 
 2. 真值表
-![[Pasted image 20241119214707.png|500]]3. 图形法
-![[Pasted image 20241119214806.png|500]]
+![Pasted image 20241119214707](images/Pasted%20image%2020241119214707.png)3. 图形法
+![Pasted image 20241119214806](images/Pasted%20image%2020241119214806.png)
 
 ### Section 2 数据分配器
 - 将一个输入数据根据需要传送到m个输出端中的任何一个的电路
@@ -303,10 +303,10 @@ $Y=m_0D_0+m_1D_1+m_2D_2+m_3D_3$
 - 输入信号：1路输入数据，D；2个输入选择控制信号$A_0,A_1$
 - 输出信号：4个数据输出端，用$Y_0、Y_1、Y_2、Y_3$
 
-![[Pasted image 20241120083319.png|500]]
+![Pasted image 20241120083319](images/Pasted%20image%2020241120083319.png)
 
 - 真值表
-![[Pasted image 20241120083408.png]]
+![Pasted image 20241120083408](images/Pasted%20image%2020241120083408.png)
 
 - 逻辑表达式
 $Y_0=D\overline A_1\overline A_0$   
@@ -315,27 +315,27 @@ $Y_2=DA_1\overline A_0$
 $Y_3=DA_1A_0$
 
 - 逻辑图
-![[Pasted image 20241120083616.png|500]]
+![Pasted image 20241120083616](images/Pasted%20image%2020241120083616.png)
 
 #### 2.2 集成数据分配器
 - 1路-8路数据分配器
-![[Pasted image 20241120084203.png|500]]
+![Pasted image 20241120084203](images/Pasted%20image%2020241120084203.png)
 
 - 讲二进制译码器的使能端作为数据输入端，二进制代码输入段作为地址码输入段，则带使能端的二进制译码器就是数据分配器
 
 ### Section 3 应用
 - 数据分配器和数据选择器一起构成数据分时传送系统
-![[Pasted image 20241120085742.png]]
+![Pasted image 20241120085742](images/Pasted%20image%2020241120085742.png)
 
 ## Part 6 数值比较器
 - 对两个n位二进制数A和B进行比较的多输入多输出的组合逻辑电路
 ### Section 1 1位数值比较器
 - 输入信号：要进行比较的两个1为二进制数，用$A_i$、$B_i$表示
 - 输出信号：三种情况，大于，小于，等于(L:大于，G:等于，M:小于)
-![[Pasted image 20241120091221.png|400]]
+![Pasted image 20241120091221](images/Pasted%20image%2020241120091221.png)
 
 - 真值表
-![[Pasted image 20241120091249.png]]
+![Pasted image 20241120091249](images/Pasted%20image%2020241120091249.png)
 
 - 逻辑表达式
 $L_i=A_i\overline B_i$  
@@ -343,36 +343,36 @@ $G=\overline A_i\overline B_i+A_iB_i$
 $M_i=\overline A_iB_i$
 
 - 逻辑图
-![[Pasted image 20241120091645.png]]
+![Pasted image 20241120091645](images/Pasted%20image%2020241120091645.png)
 
 ### Section 2 4位数值比较器
 - 比较方法：从最高位开始比较，依次逐位进行比较，直到比较出结果为止
-![[Pasted image 20241120092504.png|400]]
+![Pasted image 20241120092504](images/Pasted%20image%2020241120092504.png)
 
 - 逻辑表达式
-![[Pasted image 20241120092722.png|500]]
+![Pasted image 20241120092722](images/Pasted%20image%2020241120092722.png)
 
 - 逻辑图
-![[Pasted image 20241120092809.png|500]]
+![Pasted image 20241120092809](images/Pasted%20image%2020241120092809.png)
 
 ### Section 3 集成数值比较器
-![[Pasted image 20241120094827.png|600]]
+![Pasted image 20241120094827](images/Pasted%20image%2020241120094827.png)
 
 - 真值表
-![[Pasted image 20241120094945.png|600]]
+![Pasted image 20241120094945](images/Pasted%20image%2020241120094945.png)
 
 输出的三个分别对应前面的M，G，L
 
 ### Section 4 扩展
 1. 串联扩展
-![[Pasted image 20241120095510.png|600]]
+![Pasted image 20241120095510](images/Pasted%20image%2020241120095510.png)
 
 2. 并联扩展
-![[Pasted image 20241120095528.png|600]]
+![Pasted image 20241120095528](images/Pasted%20image%2020241120095528.png)
 
 ## Part 7 组合逻辑电路中的竞争冒险
-![[Pasted image 20241203155335.png]]
+![Pasted image 20241203155335](images/Pasted%20image%2020241203155335.png)
 
 - 消除竞争冒险的方法
-![[Pasted image 20241203155402.png]]
+![Pasted image 20241203155402](images/Pasted%20image%2020241203155402.png)
 

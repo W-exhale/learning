@@ -1,8 +1,8 @@
 ## Part 1 通信基础的基本概念
 ### 1. 信源、信宿、信号、信道
-- ![[Pasted image 20251227091733.png]]
+- ![Pasted image 20251227091733](images/Pasted%20image%2020251227091733.png)
 - 信号
-	- ![[Pasted image 20251227091821.png]]
+	- ![Pasted image 20251227091821](images/Pasted%20image%2020251227091821.png)
 
 ### 2. 码元、速率、波特
 - 每个信号就是一个码元
@@ -10,9 +10,9 @@
 	- 以上面的数字信号为例，一格就是一个信号周期，一个信号周期有两种情况
 	- 信号周期
 		- 也叫码元宽度
-	- ![[Pasted image 20251227092409.png]]
+	- ![Pasted image 20251227092409](images/Pasted%20image%2020251227092409.png)
 	- 模拟信号设计4进制码元
-		- ![[Pasted image 20251227092515.png]]
+		- ![Pasted image 20251227092515](images/Pasted%20image%2020251227092515.png)
 	- 一个码元可以携带的数据取决于一个周期可能出现多少（K）种信号
 		- 1码元=$log_2Kbit$
 - 速率
@@ -26,7 +26,7 @@
 ### 1. 信道带宽与噪声
 - 带宽
 	- 描述信道传输数据能力
-	- ![[Pasted image 20251227093205.png]]
+	- ![Pasted image 20251227093205](images/Pasted%20image%2020251227093205.png)
 - 噪声
 	- 对信道产生干扰，影响信道的数据传输效率
 ### 2. 奈奎斯特定理
@@ -36,7 +36,7 @@
 	- 单位：波特，码元/s
 	- 极限比特率
 		- 2W$log_2K$ bps
-- ![[Pasted image 20251227094446.png]]
+- ![Pasted image 20251227094446](images/Pasted%20image%2020251227094446.png)
 ### 3. 香农定理
 - 有噪声情况下信道的极限比特率（极光）
 	- $Wlog_2(1+S/N)$
@@ -46,42 +46,42 @@
 		- 以分贝为单位记录信噪比
 			- 信噪比=$10log_{10}S/N$
 			- 单位：dB
-- ![[Pasted image 20251227094616.png]]
+- ![Pasted image 20251227094616](images/Pasted%20image%2020251227094616.png)
 
 ## Part 3 编码和调制
 ### 1. 概念
-- ![[Pasted image 20251227101517.png]]
+- ![Pasted image 20251227101517](images/Pasted%20image%2020251227101517.png)
 
 ### 2. 常用编码
-![[Pasted image 20251227102331.png]]
+![Pasted image 20251227102331](images/Pasted%20image%2020251227102331.png)
 #### 不归零编码（NRZ）
 - Non-Return-to-Zero
 - 低0高1，中不变
 - 相较于归零编码，需要时钟线（都需要数据线）
-- ![[Pasted image 20251227102346.png]]
+- ![Pasted image 20251227102346](images/Pasted%20image%2020251227102346.png)
 #### 归零编码（RZ）
 - Return-to-Zero
 - 可以不用时钟线
 - 低0高1，中归0
-- ![[Pasted image 20251227102410.png]]
+- ![Pasted image 20251227102410](images/Pasted%20image%2020251227102410.png)
 #### 反向非归零编码（NRZI）
 - Non-Return-to-Zero Inverted
 - 跳0不跳1看起点，中不变
-- ![[Pasted image 20251227102538.png]]
+- ![Pasted image 20251227102538](images/Pasted%20image%2020251227102538.png)
 #### 曼彻斯特编码
 - 相较于各种归零编码
 	- 中间跳变可作为时钟节拍使用，分隔bit与bit，根据跳变节奏完成信号同步
 	- 抗干扰能力更强
 		- 环境噪声影响更弱
 - 跳0反跳1看中间，中必变
-- ![[Pasted image 20251227102754.png]]
+- ![Pasted image 20251227102754](images/Pasted%20image%2020251227102754.png)
 - 两种表示方式
 	- 上0下1
 	- 下0上1
-	- ![[Pasted image 20251227102918.png]]
+	- ![Pasted image 20251227102918](images/Pasted%20image%2020251227102918.png)
 #### 差分曼彻斯特编码
 - 跳0不跳1看起点，中必变
-- ![[Pasted image 20251227103018.png]]
+- ![Pasted image 20251227103018](images/Pasted%20image%2020251227103018.png)
 #### 各编码特点
 - 自同步能力
 	- 信源和信宿可以根据信号完成节奏同步，无需时钟信号
@@ -104,16 +104,16 @@
 	- 来自信源的数字信号需要调制后才能在某些信道上使用
 - 有的信号只能传播模拟信号
 	- 模拟信号的抗干扰能力更强
-- ![[Pasted image 20251227104628.png]]
+- ![Pasted image 20251227104628](images/Pasted%20image%2020251227104628.png)
 #### 调幅（AM）
-- ![[Pasted image 20251227104723.png]]
+- ![Pasted image 20251227104723](images/Pasted%20image%2020251227104723.png)
 - 若设计K个幅值，1码元=$log_2K$bit
 
 #### 调频（FM）
-- ![[Pasted image 20251227104803.png]]
+- ![Pasted image 20251227104803](images/Pasted%20image%2020251227104803.png)
 - 若设计K个频率，1码元=$log_2K$bit
 #### 调相（PM）
-- ![[Pasted image 20251227104828.png]]
+- ![Pasted image 20251227104828](images/Pasted%20image%2020251227104828.png)
 - 若设计K个相位，1码元=$log_2K$bit
 
 #### 正交幅度调制（QAM）
@@ -123,7 +123,7 @@
 - QAM-16：表示采用QAM调制技术，有16种码元
 ## Part 4 传输介质
 ### 1. 整体介绍
-- ![[Pasted image 20251227112603.png]]
+- ![Pasted image 20251227112603](images/Pasted%20image%2020251227112603.png)
 
 ### 2. 常用运输介质
 #### 导向型（固定方向）
@@ -137,23 +137,23 @@
 		- 较好。绞合、屏蔽层可以提升抗电磁干扰能力
 	- 代表应用
 		- 局域网网线、早期电话线
-	- ![[Pasted image 20251227112929.png]]
-	-  ![[Pasted image 20251227113143.png]]
+	- ![Pasted image 20251227112929](images/Pasted%20image%2020251227112929.png)
+	-  ![Pasted image 20251227113143](images/Pasted%20image%2020251227113143.png)
 - 同轴电缆
 	- 构成
 		- 内导体（用于传输信号）
 		- 外导体屏蔽层（用于抗电磁干扰）
-		- ![[Pasted image 20251227113443.png]]
+		- ![Pasted image 20251227113443](images/Pasted%20image%2020251227113443.png)
 	- 抗干扰能力
 		- 好。屏蔽层带来良好抗干扰性
 	- 应用
 		- 早期局域网、早期有线电视
-		- ![[Pasted image 20251227113509.png]]
+		- ![Pasted image 20251227113509](images/Pasted%20image%2020251227113509.png)
 - 光纤
 	- 构成
 		- 纤芯（高折射率）
 		- 包层（低折射率）
-		- ![[Pasted image 20251227113957.png]]
+		- ![Pasted image 20251227113957](images/Pasted%20image%2020251227113957.png)
 	- 原理
 		- 利用光的全反射特性，在纤芯内传输光脉冲信号
 	- 分类
@@ -164,8 +164,8 @@
 			- 多条光线在一根光纤中传输
 			- 适合近距离传输
 			- 远距离容易失真
-		- ![[Pasted image 20251227125206.png]]
-		- ![[Pasted image 20251227125246.png]]
+		- ![Pasted image 20251227125206](images/Pasted%20image%2020251227125206.png)
+		- ![Pasted image 20251227125246](images/Pasted%20image%2020251227125246.png)
 	- 抗干扰能力
 		- 非常好。光信号对电磁干扰不敏感
 	- 优点
@@ -183,8 +183,8 @@
 	- 卫星通信
 		- 卫星作为信号中继器，传播时延大
 			- 传播时延大，可用近地卫星群解决
-		- ![[Pasted image 20251227130904.png]]
-	- ![[Pasted image 20251227130610.png]]
+		- ![Pasted image 20251227130904](images/Pasted%20image%2020251227130904.png)
+	- ![Pasted image 20251227130610](images/Pasted%20image%2020251227130610.png)
 - 其他
 	- 红外线通信、激光通信
 		- 信号指向性强
@@ -215,13 +215,13 @@
 - 机械特性
 	- 指明接口所用接线器的形状、尺寸、引脚数目和排列、固定和锁定装置
 		- 水晶头的长宽高，引脚对应关系
-		- ![[Pasted image 20251227131644.png]]
+		- ![Pasted image 20251227131644](images/Pasted%20image%2020251227131644.png)
 - 电气特性
 	- 指明接口电缆的各条线上出现的*电压*的范围、传输速率、距离限制
-	- ![[Pasted image 20251227131834.png]]
+	- ![Pasted image 20251227131834](images/Pasted%20image%2020251227131834.png)
 - 功能特性
 	- 指明某条线上出现的某一电平的电压的意义
-	- ![[Pasted image 20251227131741.png]] 
+	- ![Pasted image 20251227131741](images/Pasted%20image%2020251227131741.png) 
 - 过程特性（规程特性）
 	- 指明对于不同功能的各种可能事件的*出现顺序*
 		- 插上网线后怎么反应
@@ -235,24 +235,24 @@
 	- 两端不可同时发送数据
 	- 可以从左往右，也可以从右往左
 
-- ![[Pasted image 20251227132624.png]]
+- ![Pasted image 20251227132624](images/Pasted%20image%2020251227132624.png)
 ### 2. 集线器（Hub）
 - 本质上是*多端口中继器*，将其中一个端口收到的信号整形再生后，转发到其他端口
 - 各端口连接的结点*不可同时发送*数据，会冲突
 - N个端口对应N个网段，各网段属于同一个*冲突域*
-- ![[Pasted image 20251227132842.png]]
+- ![Pasted image 20251227132842](images/Pasted%20image%2020251227132842.png)
 - 冲突域
-	- ![[Pasted image 20251227132955.png]]
+	- ![Pasted image 20251227132955](images/Pasted%20image%2020251227132955.png)
 	- 集线器不能隔离冲突域
-		- ![[Pasted image 20251227133115.png]]
+		- ![Pasted image 20251227133115](images/Pasted%20image%2020251227133115.png)
 ### 3. 一些特性
  - 集线器、中继器不能“无限串联”
 	- 如，10Base5的5-4-3原则
 		- 使用集线器（或中继器）连接10Base5网段时，最多只能串5个网段，4个集线器，只有3个网段可以挂接计算机
-		- ![[Pasted image 20251227133832.png]]
+		- ![Pasted image 20251227133832](images/Pasted%20image%2020251227133832.png)
 - 集线器
 	- 连接的网络，物理上是星型拓扑，逻辑上是总线型拓扑
-		- ![[Pasted image 20251227133918.png]]
+		- ![Pasted image 20251227133918](images/Pasted%20image%2020251227133918.png)
 	- 连接的各网段“共享带宽”
 		- 带宽为10Mbps的集线器连接8台主机，每台主机平均只有1.25Mbps带宽
 	- 可以连接不同的传输介质

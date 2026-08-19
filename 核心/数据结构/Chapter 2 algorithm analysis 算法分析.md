@@ -18,10 +18,10 @@
 第三个定义： $T(N) = \Theta(h(N))$是说T（N）的增长率等于$\Theta$(h(N))的增长率
 第四个定义： $T(N) = o(p(N))$ 是说T（N）的增长率小于p(N)的增长率
 
-![[Pasted image 20240228211259.png]]
+![Pasted image 20240228211259](images/Pasted%20image%2020240228211259.png)
 
 ### 重要结论
-![[Pasted image 20240228212000.png]]
+![Pasted image 20240228212000](images/Pasted%20image%2020240228212000.png)
 
 - 注意事项：
      不要将常数项或低阶项放进大O，即不要写成$T(N) = O(2N^2)$或$T(N) = O(N^2+N)$.
@@ -29,8 +29,8 @@
 
 ### 通过计算极限确定两个函数的相对增长率
 
-![[Pasted image 20240228213100.png]]
-![[Pasted image 20240228213229.png]]
+![Pasted image 20240228213100](images/Pasted%20image%2020240228213100.png)
+![Pasted image 20240228213229](images/Pasted%20image%2020240228213229.png)
 
 - 注意事项
 不要说f(N)小于等于O(g(N))，O已经有隐含意思了。

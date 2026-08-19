@@ -2,7 +2,7 @@
 - 选择一家合适的sdk
 - 平台：虹软
 - 人脸识别sdk
-![[Pasted image 20250126212538.png]]
+![Pasted image 20250126212538](images/Pasted%20image%2020250126212538.png)
 
 网络编程，gdb，udb编程？，新特性，λ表达式（为什么会有这个东西），
 iop面向接口编程，

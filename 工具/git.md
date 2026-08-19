@@ -36,16 +36,16 @@ $ git config --global user.email "email@example.com"
 ```
 - 注意
 	- `git config`命令的`--global`参数，用了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然也可以对某个仓库指定不同的用户名和Email地址。
-	- ![[Pasted image 20250321172404.png]]
+	- ![Pasted image 20250321172404](images/Pasted%20image%2020250321172404.png)
 - 后续可以通过`git config --list`来查看当前目录的用户名和邮箱
 
 ### 创建版本库
 - 即创建一个目录（也可以在一个有东西的目录），这个目录里的所有文件都可以被Git管理起来，每个文件的修改、删除Git都可以跟踪
 1. 先找一个没有中文的目录创建一个文件夹
-2. 在那个文件夹git bash，然后输入`git init`（如下图就是创建好了，还告诉你是一个空的仓库）![[Pasted image 20250321164739.png|500]]![[Pasted image 20250321170627.png]]
+2. 在那个文件夹git bash，然后输入`git init`（如下图就是创建好了，还告诉你是一个空的仓库）![Pasted image 20250321164739](images/Pasted%20image%2020250321164739.png)![Pasted image 20250321170627](images/Pasted%20image%2020250321170627.png)
 3. 创建一个文件：`README.txt`，使用`git add README.txt`添加到仓库
 	1. 可以同时添加很多文件：`git add file2.txt file3.txt`
-4. 提交：`git commit -m "wrote a readme file"`![[Pasted image 20250321173548.png]]
+4. 提交：`git commit -m "wrote a readme file"`![Pasted image 20250321173548](images/Pasted%20image%2020250321173548.png)
 	1. `-m`后面输入的是本次提交的说明
 
 - 注意
@@ -65,23 +65,23 @@ $ git config --global user.email "email@example.com"
 
 ## 提交
 ### 基础提交
-- 查看仓库当前状态：`git status`，下面的modified表示已修改，红色表示还没提交![[Pasted image 20250322133627.png]]
-- 查看更改(不同)：`git diff`，减号表示删减，加号表示添加的内容（abc）![[Pasted image 20250322133909.png]]
+- 查看仓库当前状态：`git status`，下面的modified表示已修改，红色表示还没提交![Pasted image 20250322133627](images/Pasted%20image%2020250322133627.png)
+- 查看更改(不同)：`git diff`，减号表示删减，加号表示添加的内容（abc）![Pasted image 20250322133909](images/Pasted%20image%2020250322133909.png)
 - 提交到仓库前可以通过上面的方式检查，提交修改和提交新文件也是先`git add README.txt`，然后`git commit -m "add abc"`
-- ![[Pasted image 20250322134513.png]]
+- ![Pasted image 20250322134513](images/Pasted%20image%2020250322134513.png)
 ### 版本回退
 - 存快照，快照叫`commit`
 - 用`git log`查看历史记录，也可以加上`--pretty=oneline`参数，更简约
 
-![[Pasted image 20250322205651.png]]![[Pasted image 20250322210225.png]]
+![Pasted image 20250322205651](images/Pasted%20image%2020250322205651.png)![Pasted image 20250322210225](images/Pasted%20image%2020250322210225.png)
 一串乱码样的是`commit id`（版本号），和SVN不一样，Git的版本号不是1，2，3....，这是由SHA1计算出来的一个非常大的数字，用16进制表示，因为Git是分布式版本控制系统，会有很多人协同开发，如果都用1，2，3....，一定会冲突
 
 
 - `HEAD`表示当前版本，`HEAD^`表示上一个版本，上上个`HEAD^^`，如果上100个`HEAD~100`。
-- 回退到上一个版本：`git reset --hard HEAD^`，`--hard`表示回退到上一个版本的已提交状态，`--soft`回到未提交状态，`--mixed`回退到已添加但未提交状态![[Pasted image 20250322213039.png]]
+- 回退到上一个版本：`git reset --hard HEAD^`，`--hard`表示回退到上一个版本的已提交状态，`--soft`回到未提交状态，`--mixed`回退到已添加但未提交状态![Pasted image 20250322213039](images/Pasted%20image%2020250322213039.png)
 - 如果想回到未来，可以向上翻，找到未来的版本号，输入前几个就可以，Git会自动找
-- Git的版本回退速度非常快，因为Git在内部有个指向当前版本的`HEAD`指针，当你回退版本的时候，Git仅仅是把HEAD指向之前的版本![[Pasted image 20250322214501.png]]
-- 如果关了电脑就没办法往上翻找版本号了，git提供了一个命令`git reflog`来记录每一次命令：![[Pasted image 20250322214725.png]]
+- Git的版本回退速度非常快，因为Git在内部有个指向当前版本的`HEAD`指针，当你回退版本的时候，Git仅仅是把HEAD指向之前的版本![Pasted image 20250322214501](images/Pasted%20image%2020250322214501.png)
+- 如果关了电脑就没办法往上翻找版本号了，git提供了一个命令`git reflog`来记录每一次命令：![Pasted image 20250322214725](images/Pasted%20image%2020250322214725.png)
 ## 工作区和暂存区
 - Git和SVN等其他版本控制系统有个不同的地方就是有个暂存区
 ### 工作区(Working Directory)
@@ -113,9 +113,9 @@ $ git config --global user.email "email@example.com"
 ### 删除文件
 - 一般是直接在文件管理器中将文件删了，或者用`rm`命令删除
 - 这时git知道我们删除了文件，所以工作区和版本库不一致，可以用`git status`看哪些文件被删除了
-![[Pasted image 20250323192017.png]]
+![Pasted image 20250323192017](images/Pasted%20image%2020250323192017.png)
 
-1. 如果确实要从版本库中删除该文件，`git rm`，然后`git commit`![[Pasted image 20250323192224.png]]
+1. 如果确实要从版本库中删除该文件，`git rm`，然后`git commit`![Pasted image 20250323192224](images/Pasted%20image%2020250323192224.png)
 2. 使用`git checkout -- test.txt`：其实就是用版本库替换工作区的版本，无论工作区是修改还是删除都可以一键还原（或者用`git restore test.txt`）
 3. 没有加到版本库中的文件无法恢复的（暂存区的可以恢复）
 ## 远程仓库
@@ -129,15 +129,15 @@ $ git config --global user.email "email@example.com"
 
 - 我们本地Git仓库和GitHub仓库之间的传输是通过SSH加密的，所以我们需要进行设置：
 	1. 创建SSH Key。在用户主目录下，看看有没有.ssh目录，如果有，可以看看这个目录下有无`id_rsa`和`id_rsa.pub`这两个文件，如果已经有了，可以直接下一步，没有就打开Shell(windows打开Git Bash)创建SSH Key（将邮件地址换成我们自己的一路回车，使用默认值就行，这个key不是很重要可以不设置）：`ssh-keygen -t rsa -C "youremail@example.com"`
-		1. 如果创建好了，就可以看到.ssh下面有上面两个文件![[Pasted image 20250323224520.png]]
-		2. `id_rsa`是私钥，不能泄露，`id_rsa.pub`是公钥可以告诉别人![[Pasted image 20250323224340.png]]
-	2. 登录GitHub，打开“Account settings”，"SSH Keys"页面：点击“Add SSH Key”，填上任意Title，在“Key”文本框粘贴`id_rsa.pub`里面的内容![[Pasted image 20250323224944.png]]
+		1. 如果创建好了，就可以看到.ssh下面有上面两个文件![Pasted image 20250323224520](images/Pasted%20image%2020250323224520.png)
+		2. `id_rsa`是私钥，不能泄露，`id_rsa.pub`是公钥可以告诉别人![Pasted image 20250323224340](images/Pasted%20image%2020250323224340.png)
+	2. 登录GitHub，打开“Account settings”，"SSH Keys"页面：点击“Add SSH Key”，填上任意Title，在“Key”文本框粘贴`id_rsa.pub`里面的内容![Pasted image 20250323224944](images/Pasted%20image%2020250323224944.png)
 - 为什么需要Key，因为要确定这台电脑提交的是我们自己，假如我们有多台电脑，可以将这几台电脑的ssh都加上，这样每台电脑上的都可以推送了
 - GitHub上免费托管的Git仓库，任何人都可以看到，只是只有自己才能改
 	- 可以将公开的仓库设置为私有的，这样别人就看不见
 	- 自己动手搭建一个Git服务器，因为是自己的服务器，所以别人看不见。
 ### 添加到远程仓库
-- 和本地关联：`git remote add origin git@github.com:W-exhale/gitRepository.git`（添加后，远程库的名字就是`origin`，这是Git默认的叫法，也可以改成别的，但是`origin`这个名字一看就知道是远程库。）![[Pasted image 20250323230512.png]]
+- 和本地关联：`git remote add origin git@github.com:W-exhale/gitRepository.git`（添加后，远程库的名字就是`origin`，这是Git默认的叫法，也可以改成别的，但是`origin`这个名字一看就知道是远程库。）![Pasted image 20250323230512](images/Pasted%20image%2020250323230512.png)
 - 将本地库内容推送到远程，用`git push`命令，实际上是将当前分支`master`推送到远程
 - 由于远程库是空的，我们第一次推送`master`分支时，加上了`-u`参数，Git不但会把本地的`master`分支内容推送的远程新的`master`分支，还会把本地的`master`分支和远程的`master`分支关联起来，在以后的推送或者拉取时就可以简化命令（`git push origin master`）。
 
@@ -164,7 +164,7 @@ Warning: Permanently added 'github.com' (RSA) to the list of known hosts.
 ### 删除远程库和本地的绑定关系
 - `git remote rm <name>`
 - 最好先用`git remote -v`查看远程库信息
-![[Pasted image 20250324124211.png]]
+![Pasted image 20250324124211.png](<./images/Pasted image 20250324124211.png>)
 
 分布式版本系统的最大好处之一是在本地工作完全不需要考虑远程库的存在，也就是有没有联网都可以正常工作，而SVN在没有联网的时候是拒绝干活的！
 
@@ -180,8 +180,8 @@ Warning: Permanently added 'github.com' (RSA) to the list of known hosts.
 - 更新最新的代码，`git pull`（假如是在gitee上上传文件更改，在vs code端使用这个命令更新）
 
 ### 推送
-
-- `git push -u origin main`
+- `git pull --rebase origin main`：拉取
+- `git push -u origin main`：推送
 
 ## 分支管理
 分支类似平行宇宙，当你正在电脑前努力学习Git的时候，另一个你正在另一个平行宇宙里努力学习SVN。两个平行宇宙互不干扰，不过，在某个时间点，两个平行宇宙合并了，结果，你既学会了Git又学会了SVN！
@@ -191,13 +191,13 @@ Warning: Permanently added 'github.com' (RSA) to the list of known hosts.
 #### 思想
 - 主分支是`master`
 - 一开始的时候，`master`分支是一条线，Git用`master`指向最新的提交，再用`HEAD`指向`master`，就能确定当前分支，以及当前分支的提交点
-![[Pasted image 20250324131723.png|400]]
+![Pasted image 20250324131723](images/Pasted%20image%2020250324131723.png)
 每次提交，`master`分支都会向前移动一步，这样，随着你不断提交，`master`分支的线也越来越长。
 
-- 假如我们创建了一个新的分支`dev`，指向`master`相同的提交，再将`HEAD`指向`dev`，就表示当前分支在`dev`上![[Pasted image 20250324131917.png|400]]
-- 更改HEAD之后，对工作区的修改就是针对`dev`分支的，新提交一次后，`dev`指针往前，而`master`指针不变![[Pasted image 20250324132311.png|300]]
-- 假如我们在`dev`上的工作完成了，就可以把`dev`合并到`master`上。直接把`master`指向`dev`的当前提交，就完成了合并![[Pasted image 20250324132512.png|400]]
-- 合并完分支后，甚至可以删除`dev`分支。删除`dev`分支就是把`dev`指针给删掉，删掉后，我们就剩下了一条`master`分支：![[Pasted image 20250324132539.png|300]]
+- 假如我们创建了一个新的分支`dev`，指向`master`相同的提交，再将`HEAD`指向`dev`，就表示当前分支在`dev`上![Pasted image 20250324131917](images/Pasted%20image%2020250324131917.png)
+- 更改HEAD之后，对工作区的修改就是针对`dev`分支的，新提交一次后，`dev`指针往前，而`master`指针不变![Pasted image 20250324132311](images/Pasted%20image%2020250324132311.png)
+- 假如我们在`dev`上的工作完成了，就可以把`dev`合并到`master`上。直接把`master`指向`dev`的当前提交，就完成了合并![Pasted image 20250324132512](images/Pasted%20image%2020250324132512.png)
+- 合并完分支后，甚至可以删除`dev`分支。删除`dev`分支就是把`dev`指针给删掉，删掉后，我们就剩下了一条`master`分支：![Pasted image 20250324132539](images/Pasted%20image%2020250324132539.png)
 #### 步骤
 - 查看当前分支：`git branch`，当前分支会有一个`*`，
 - 创建新分支：`git branch <branch-name>`
@@ -209,15 +209,15 @@ Warning: Permanently added 'github.com' (RSA) to the list of known hosts.
 2. 修改：`vim README.txt`
 3. `git add`，`git commit`
 4. 切换回去：`git checkout master`，（此时看README.txt是没有刚刚添加的内容的）
-5. 将dev的分支合并到`master`分支上：`git merge dev`![[Pasted image 20250324134359.png]]
+5. 将dev的分支合并到`master`分支上：`git merge dev`![Pasted image 20250324134359](images/Pasted%20image%2020250324134359.png)
 	- 有很多种合并方式
 6. 合并成功后就可以删除`dev`分支了：`git branch -d dev`
 ### 解决冲突
-- 在一个分支上修改提交，没有合并，在另一个分支上修改提交，就会引发冲突![[Pasted image 20250324141700.png|300]]
-- 这时候如果用merge进行合并就会发生冲突，必须手动解决冲突后再进行提交，也可以用`git status`看冲突的文件![[Pasted image 20250324142533.png]]
-- 合并失败之后，文件就会变成![[Pasted image 20250324142626.png]]
-- 修改后再提交![[Pasted image 20250324142918.png|300]]
-- 可以用`git log`查看合并情况![[Pasted image 20250324143139.png]]
+- 在一个分支上修改提交，没有合并，在另一个分支上修改提交，就会引发冲突![Pasted image 20250324141700](images/Pasted%20image%2020250324141700.png)
+- 这时候如果用merge进行合并就会发生冲突，必须手动解决冲突后再进行提交，也可以用`git status`看冲突的文件![Pasted image 20250324142533](images/Pasted%20image%2020250324142533.png)
+- 合并失败之后，文件就会变成![Pasted image 20250324142626](images/Pasted%20image%2020250324142626.png)
+- 修改后再提交![Pasted image 20250324142918](images/Pasted%20image%2020250324142918.png)
+- 可以用`git log`查看合并情况![Pasted image 20250324143139](images/Pasted%20image%2020250324143139.png)
 - 删除`dev`分支
 - 用`git log --graph`命令可以看到分支合并图。
 - 使用`git log`会进入分页器，
@@ -238,25 +238,25 @@ Warning: Permanently added 'github.com' (RSA) to the list of known hosts.
 - 如果强制禁用`Fast forward`模式，Git就会在merge时生成一个新的commit，这样从分支历史上就可以看出分支信息
 
 1. 切换到dev，进行修改提交，切换回master，进行合并
-2. `git merge --no-ff -m "merge with no-ff" dev`：`--no-ff`参数表示禁用`Fast forward`，禁用后用git log可以看出合并`git log --graph --pretty=oneline --abbrev-commit`![[Pasted image 20250324152413.png]]
+2. `git merge --no-ff -m "merge with no-ff" dev`：`--no-ff`参数表示禁用`Fast forward`，禁用后用git log可以看出合并`git log --graph --pretty=oneline --abbrev-commit`![Pasted image 20250324152413](images/Pasted%20image%2020250324152413.png)
 3. 合并分支时，加上`--no-ff`参数就可以用普通模式合并，合并后的历史有分支，能看出来曾经做过合并，而`fast forward`合并就看不出来曾经做过合并。
 
 - 原则：
 	- `master`分支应该是非常稳定的，仅用来发布最新版本，平时不能在上面干活
 	- 干活在dev，所以这个分支不稳定，到1.0发布时再将dev分支合并到master上，在master分支发布1.0版本
-- 团队合作的合并就会像这样![[Pasted image 20250324152803.png]]
+- 团队合作的合并就会像这样![Pasted image 20250324152803](images/Pasted%20image%2020250324152803.png)
 ### Bug分支
 - 每个bug都可以通过一个新的临时分支来修复，修复后合并分支，再将临时分支删除
 - 假如现在需要创建一个新的分支来修复一个bug，但是在当前的工作还没有完成，新任务又很急，可以使用`git stash`，将当前工作现场“存储起来”，恢复后继续工作
 
-1. 在dev分支中工作，还未加入暂存区，使用`git stash`保存状态，用`git status`，可以看到没有未提交![[Pasted image 20250324154209.png]]
+1. 在dev分支中工作，还未加入暂存区，使用`git stash`保存状态，用`git status`，可以看到没有未提交![Pasted image 20250324154209](images/Pasted%20image%2020250324154209.png)
 2. 假如我们要在`master`分支上修bug，就从`master`分支上创建分支`bug`，修改提交后回到`master`合并。
-3. 回到dev分支，使用`git stash list`命令查看刚刚的工作现场，工作现场还在，只是需要恢复一下![[Pasted image 20250324185547.png]]
+3. 回到dev分支，使用`git stash list`命令查看刚刚的工作现场，工作现场还在，只是需要恢复一下![Pasted image 20250324185547](images/Pasted%20image%2020250324185547.png)
 4. 恢复：`stash`的内容就就是存储区，
 	1. 使用`git stash apply`，但是恢复后，`stash`的内容不删除，需要使用`git stash drop`来删除
 	2. `git stash pop`：恢复的同时会把`stash`的内容也删掉（比较方便的感觉），使用`git stash list`就看不到刚刚的记录了
-- 但是如果dev是从master分出来的，说明bug在dev也有，在dev要修复同样的bug，不用重复操作一次，有更简单的方法，只要找到bug的版本号，将这个提交所作的修改“复制”到`dev`分支即可![[Pasted image 20250324191010.png]]
-- git的`cherry-pick`命令，让我们可以复制一个特定的提交到当前分支![[Pasted image 20250324191350.png]]
+- 但是如果dev是从master分出来的，说明bug在dev也有，在dev要修复同样的bug，不用重复操作一次，有更简单的方法，只要找到bug的版本号，将这个提交所作的修改“复制”到`dev`分支即可![Pasted image 20250324191010](images/Pasted%20image%2020250324191010.png)
+- git的`cherry-pick`命令，让我们可以复制一个特定的提交到当前分支![Pasted image 20250324191350](images/Pasted%20image%2020250324191350.png)
 - git自动给`dev`分支做了一次提交，可以看到这次的提交和之前的版本号不一样
 
 ### Feature分支
@@ -310,7 +310,7 @@ Branch 'dev' set up to track remote branch 'dev' from 'origin'.
 如果`git pull`提示`no tracking information`，则说明本地分支和远程分支的链接关系没有创建，用命令`git branch --set-upstream-to <branch-name> origin/<branch-name>`。
 
 ### Rebase
-- 多人协作时很容易出现冲突，后push的人必须先pull，在本地合并后才能push，git的log历史也很不美观![[Pasted image 20250324201517.png]]
+- 多人协作时很容易出现冲突，后push的人必须先pull，在本地合并后才能push，git的log历史也很不美观![Pasted image 20250324201517](images/Pasted%20image%2020250324201517.png)
 - 变基：`rebase`，也就是将基于上一次的修改变了
 
 在和远程分支同步后，我们对`hello.py`这个文件做了两次提交。用`git log`命令看看：
@@ -524,7 +524,7 @@ $ git check-ignore -v App.class
 
 可以通过[GitIgnore Online Generator](https://michaelliao.github.io/gitignore-online-generator/)在线生成`.gitignore`文件并直接下载。
 一个Git仓库也可以有多个`.gitignore`文件，`.gitignore`文件放在哪个目录下，就对哪个目录（包括子目录）起作用。
-![[Pasted image 20250325090959.png|500]]
+![Pasted image 20250325090959](images/Pasted%20image%2020250325090959.png)
 
 ### 配置别名
 - 比如将`git status`换成`git st`：`git config --global alias.st status`
@@ -602,14 +602,17 @@ warning: You appear to have cloned an empty repository.
 - 也可以选择“New”-->“Clone from URL”从远程克隆到本地
 
 ### 提交
-我们双击`learngit`这个本地库，SourceTree会打开另一个窗口，展示这个Git库的当前所有分支以及文件状态。选择左侧面板的“WORKSPACE”-“File status”，右侧会列出当前已修改的文件（Unstaged files）：![[Pasted image 20250325101943.png]]选中某个文件，该文件就自动添加到“Staged files”，实际上是执行了`git add README.md`命令：![[Pasted image 20250325102004.png]]然后，我们在下方输入Commit描述，点击“Commit”，就完成了一个本地提交：
-实际上是执行了`git commit -m "update README.md"`命令。
-![[Pasted image 20250325102038.png]]
+我们双击 `learngit` 这个本地库，SourceTree会打开另一个窗口，展示这个Git库的当前所有分支以及文件状态。选择左侧面板的“WORKSPACE”-“File status”，右侧会列出当前已修改的文件（Unstaged files）：![Pasted image 20250325101943](images/Pasted%20image%2020250325101943.png) 
+- 选中某个文件，该文件就自动添加到“Staged files”，实际上是执行了 `git add README.md` 命令：![Pasted image 20250325102004](images/Pasted%20image%2020250325102004.png) 然后，我们在下方输入Commit描述，点击“Commit”，就完成了一个本地提交：
+- 实际上是执行了 `git commit -m "update README.md"` 命令。
+![Pasted image 20250325102038](images/Pasted%20image%2020250325102038.png)
 
 ### 分支
-在左侧面板的“BRANCHES”下，列出了当前本地库的所有分支。当前分支会加粗并用○标记。要切换分支，我们只需要选择该分支，例如`master`，然后点击右键，在弹出菜单中选择“Checkout master”，实际上是执行命令`git checkout master`：![[Pasted image 20250325102257.png]]要合并分支，同样选择待合并分支，例如`dev`，然后点击右键，在弹出菜单中选择“Merge dev into master”，实际上是执行命令`git merge dev`：![[Pasted image 20250325102317.png]]
+在左侧面板的“BRANCHES”下，列出了当前本地库的所有分支。当前分支会加粗并用○标记。要切换分支，我们只需要选择该分支，例如`master`，然后点击右键，在弹出菜单中选择“Checkout master”，实际上是执行命令`git checkout master`：![Pasted image 20250325102257](images/Pasted%20image%2020250325102257.png)要合并分支，同样选择待合并分支，例如`dev`，然后点击右键，在弹出菜单中选择“Merge dev into master”，实际上是执行命令`git merge dev`：![Pasted image 20250325102317](images/Pasted%20image%2020250325102317.png)
 ### 推送
-在SourceTree的工具栏上，分别有`Pull`和`Push`，分别对应命令`git pull`和`git push`，只需注意本地和远程分支的名称要对应起来。其实就是将敲命令转化为了点击，如果操作失误还是会报错![[Pasted image 20250325102444.png]]
+在SourceTree的工具栏上，分别有`Pull`和`Push`，分别对应命令`git pull`和`git push`，只需注意本地和远程分支的名称要对应起来。其实就是将敲命令转化为了点击，如果操作失误还是会报错![Pasted image 20250325102444](images/Pasted%20image%2020250325102444.png)
+
+
 - 常用命令
 [git-cheat-sheet](https://liaoxuefeng.com/books/git/conclusion/git-cheat-sheet.pdf)
 - 官网

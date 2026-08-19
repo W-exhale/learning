@@ -6,12 +6,12 @@ A水库的水通过管道流到B家，对于B来说是input，A来说就是outpu
 - 都是在应用程序的视角来看input还是output
 1. 读入
 - 例如下图，对于数据源来说就是output，对于program（右边的）来说就是input，中间的就是流
-![[Pasted image 20241120210825.png]]
+![Pasted image 20241120210825](images/Pasted%20image%2020241120210825.png)
 - 比如说我们打开记事本读取东西的时候，对于记事本这个程序来说就是输入（我们也可以将输入理解为获取），获取一个文件也是输入，所以*读文件*的时候是*input*
 
 2. 写入
 
-![[Pasted image 20241120211320.png]]
+![Pasted image 20241120211320](images/Pasted%20image%2020241120211320.png)
 - 如上图，我们要写入，所以对于数据源而言是input，而对于程序而言是output，而我们都是对程序进行操作，所以写入是output
 
 ## Part 2 InputStream和OutputStream
@@ -104,7 +104,7 @@ public void bufferFileBase () throws IOException {
 
 属于Reader和Writer
 
-![[Pasted image 20241125113530.png|400]]
+![Pasted image 20241125113530](images/Pasted%20image%2020241125113530.png)
 
 ```java
 public void fileReaderTest() throws IOException{  
@@ -151,7 +151,7 @@ public void bufferReaderTest() throws IOException{
 ### Section 1 用字节流操作字符流
 让字节流转化为字符流再转回来（操纵文本文件）
 - InputStreamReader，
-![[Pasted image 20241125182102.png|500]]
+![Pasted image 20241125182102](images/Pasted%20image%2020241125182102.png)
 
 - 对应的还有OutputStreamWriter
 

@@ -14,7 +14,7 @@
 	    - 适合需要临时或用户级别更改而不影响全局策略的场景。
 
 - 安装：`irm https://get.scoop.sh | iex`，这是`Invoke-RestMethod -Uri "https://get.scoop.sh" | Invoke-Expression`的简写
-![[Pasted image 20250326083258.png]]
+![Pasted image 20250326083258](images/Pasted%20image%2020250326083258.png)
 
 ## 将通过scoop下载的软件安装到其他地方
 **使用 `scoop config` 只修改软件安装目录**
@@ -28,7 +28,7 @@
 `scoop install -g maven`
 ## 使用
 - 使用`scoop help`看命令的使用方式，或者`scoop help <command>`
-- find app（假如我们要找ssh命令，但是不知道在哪）：`scoop search ssh`![[Pasted image 20250326084121.png]]
+- find app（假如我们要找ssh命令，但是不知道在哪）：`scoop search ssh`![Pasted image 20250326084121](images/Pasted%20image%2020250326084121.png)
 - 更新：`scoop update`
 	- `scoop update curl`
 	- `scoop update *`
@@ -36,7 +36,7 @@
 
 ## bucket
 - Scoop分为多个分类仓库(`bucket`)，默认情况下，使用的是`main`，如果需要安装其他仓库的软件，可以添加对应的`bucket`
-- `scoop bucket list`：![[Pasted image 20250326090501.png]]
+- `scoop bucket list`：![Pasted image 20250326090501](images/Pasted%20image%2020250326090501.png)
 - 添加新的`bucket`：`scoop bucket add <仓库名>`
 	- 例如：`scoop bucket add extras`
 - 删除已添加的`bucket`：`scoop bucket rm <仓库名>`
@@ -86,7 +86,7 @@ min-split-size=1M
 - 完全禁用 `aria2`：`scoop config aria2-enabled false`
 	- Scoop 会切换回默认的下载方式。
 
-![[Pasted image 20250326093004.png]]
+![Pasted image 20250326093004](images/Pasted%20image%2020250326093004.png)
 
 
 ## 配置Scoop

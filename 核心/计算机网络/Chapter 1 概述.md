@@ -4,7 +4,7 @@
 	- 结点：计算机、交换机、路由器
 - internet（互连网）：网络的网络（用路由器把小网络连在一起）
 	- 网络连接计算机，互连网连接网络
-	- ![[Pasted image 20250917175331.png]]
+	- ![Pasted image 20250917175331](images/Pasted%20image%2020250917175331.png)
 - 主机：与网络相连的计算机（路由器不是主机）
 - Internet：互联网，专用名词，是一个特定的互连网
 - ISP：Internet Service Provider，互联网服务提供商（中国电信...）
@@ -12,7 +12,7 @@
 	- 分类：主干ISP、地区ISP、本地ISP
 - IXP：互联网交换点，允许两个ISP网络直接相连并且交换分组（老古董）
 - ICP：内容提供者，各个网站
-	- ![[Pasted image 20250917180316.png]]
+	- ![Pasted image 20250917180316](images/Pasted%20image%2020250917180316.png)
 - 制定互联网正式标准
 	- 互联网草案
 	- 建议标准：RFC文档
@@ -20,8 +20,8 @@
 - 分类：边缘部分、核心部分
 	- 边缘部分：
 		- 端系统之间的通信方式（2种）
-			- C/S 方式：这里的C指客户机![[Pasted image 20250917180802.png]]
-			- P2P方式（peer to peer，对等方式）：![[Pasted image 20250917180914.png]]
+			- C/S 方式：这里的C指客户机![Pasted image 20250917180802](images/Pasted%20image%2020250917180802.png)
+			- P2P方式（peer to peer，对等方式）：![Pasted image 20250917180914](images/Pasted%20image%2020250917180914.png)
 	- 核心部分：
 		- 核心：路由器（router），实现分组交换（packet switching）
 		- 分组交换：存储转发技术
@@ -33,7 +33,7 @@
 	- 主机与路由器
 		- 主机：为用户进行信息处理
 		- 路由器：进行分组交换
-	- ![[Pasted image 20250917182047.png]]
+	- ![Pasted image 20250917182047](images/Pasted%20image%2020250917182047.png)
 	- 假设H1向H5发送数据，数据只占用一段链路
 		1. H1将分组逐个发给A
 		2. A把H1发来的分组放进缓存

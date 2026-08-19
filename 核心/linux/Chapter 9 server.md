@@ -1,7 +1,7 @@
 ## 下载安装
 - 工具：putty
 - 下载：官网下载LTS
-- 装好虚拟机后开启，![[Pasted image 20250220095705.png]]
+- 装好虚拟机后开启，![Pasted image 20250220095705](images/Pasted%20image%2020250220095705.png)
 
 ## SSH
 - 将服务器连接到putty
@@ -15,5 +15,5 @@
 - 如果是自己买的服务器，服务器主页的控制面板上会有一个公开的ip，将这个ip输入putty即可
 - 也可以用windows自带的终端来连接：输入`ssh ip地址`
 - windows中的wsl（可以直接在windows中使用ubuntu）
-	- 打开windows功能![[Pasted image 20250220150433.png]]
+	- 打开windows功能![Pasted image 20250220150433](images/Pasted%20image%2020250220150433.png)
 	- 微软商店中搜索ubuntu选择一个下载

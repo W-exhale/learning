@@ -11,14 +11,14 @@
 	- 对象的创建主要在工厂中
 - 缺点：工厂类的职责太重如果增加新的产品种类就要改工厂类，违反开闭原则？
 
-![[Pasted image 20250310223845.png|500|536x349]]
+![Pasted image 20250310223845](images/Pasted%20image%2020250310223845.png)
 
 
 ### 商场收银软件，使用Simple Factory Pattern
 [[收银系统.excalidraw|收银系统]]
 
 - 假设使用简单工厂模式：
-![[Pasted image 20250311133350.png]]
+![Pasted image 20250311133350](images/Pasted%20image%2020250311133350.png)
 
 - 实现：
 ```java
@@ -121,7 +121,7 @@ public class Main {
 
 
 ## UML类图
-![[Pasted image 20250310231620.png]]
+![Pasted image 20250310231620](images/Pasted%20image%2020250310231620.png)
 
 ## 策略模式
 - Strategy：将每种算法都独立封装为一个类，使其可以互相互换，使算法的变化不会影响到算法的用户（可以避免使用很多条件语句）
@@ -131,7 +131,7 @@ public class Main {
 	- 具体策略类（Concrete Stratery）：实现策略接口的具体类，封装算法逻辑，可以在运行时动态替换
 ### 商城收银软件，使用Strategy
 
-![[Pasted image 20250311192446.png]]
+![Pasted image 20250311192446](images/Pasted%20image%2020250311192446.png)
 
 - 将CashFactory换成CashContext
 ```java
